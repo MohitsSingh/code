@@ -1,0 +1,19 @@
+function extract_descs(VOCopts,globalOpts,image_ids)
+%EXTRACT_DESCS preprocess each of the images in the given list to extract
+%descriptors from the tiny images.
+%   Detailed explanation goes here
+
+% Extract PHOW descriptors
+for ii = 1:length(image_ids)
+    currentID = image_ids{ii};
+    fprintf('calculating descriptors for image %s %d/%d [%s%03.3f]\n', ...
+        currentID, ii, length(image_ids), '%', 100*ii/length(image_ids));
+    descPath = sprintf(globalOpts.featPath,[currentID]);
+    if (exist(descPath,'file'))
+        continue;
+    end
+    imagePath = sprintf(VOCopts.imgpath,currentID);
+    im = imread(imagePath);
+    [F,D] = globalOpts.descfun(im, globalOpts.phowOpts
+    save(descPath,'F','D');
+end

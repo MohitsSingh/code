@@ -1,0 +1,99 @@
+function [configs,scores] = findBestConfiguration(imgData,I,gt_graph,regionSampler,params,featureExtractor,w_parts)
+gt_configurations = {};
+cur_config = struct('bbox',gt_graph{1}.bbox,'mask',gt_graph{1}.roiMask);
+cur_config.endPoint = boxCenters(cur_config.bbox);
+cur_config.poly = box2Pts(cur_config.bbox);
+cur_config.theta = 0;
+cur_config.score = 0; % no need to score the first one as we're looking for the argmax
+faceBox = imgData.faceBox;
+scaleFactor = faceBox(4)-faceBox(2);
+nSamples = params.nSamples;
+
+scores = cur_config.score;
+configs = {cur_config};
+expansionFactor = 5;
+for iPart = 2:length(gt_graph)
+    [r,ir] = sort(scores,'descend');
+    n = length(configs);
+    prev_configs = configs(1:min(n,expansionFactor));
+    configs = {};
+    scores = {};
+    for iConfig = 1:length(prev_configs) % iterate over candidates of depth -1       
+        cur_config = prev_configs{iConfig}; % get configuration to expand
+        cur_score = cur_config(end).score;
+        prev_endpoint = cur_config(end).endPoint;
+        % find overalpping regions...
+        for iSample = 1:expansionFactor
+            if strcmp(params.cand_mode,'sliding')
+                p = params.sampling;
+                p.thetas = vl_colsubset(p.thetas,1,'random');
+                p.widths = vl_colsubset(p.widths,1,'random');
+                p.lengths = vl_colsubset(p.lengths(p.lengths>=p.widths),1,'random');
+                rois = getCandidateRoisSliding(prev_endpoint,scaleFactor,p,false);
+                if (isempty(rois))
+                    disp('11');
+                end
+                if ~all(inImageBounds([1 1 fliplr(size2(I))],rois{1}.xy))
+                    isBad = true;
+                    break;
+                end
+                poly_masks = cellfun2(@(x) poly2mask2(x.xy,size2(I)), rois);
+                rois = rois{1};
+                cur_config(iPart).endPoint = rois.endPoint;
+                cur_config(iPart).mask = poly_masks{1};
+                cur_config(iPart).bbox = region2Box(cur_config(iPart).mask);
+                cur_config(iPart).theta = rois.theta;
+                curPartFeatures = configurationToFeats2(I,{cur_config(iPart)},featureExtractor,params);
+                
+                cur_config(iPart).score = w_parts{iPart}'*curPartFeatures{1};
+                cur_config(iPart).poly = rois.xy;
+                
+                %         displayRegions(I,poly_masks,ovp)
+                %         [x3, y3] = polybool(operation, x1, y1, x2, y2, varargin)
+            else
+                error('current candidate mode not supported')
+            end
+                               
+            scores{end+1} = cur_config(iPart).score;
+            configs{end+1} = cur_config;            
+        end                        
+    end
+    
+    scores = [scores{:}];
+    
+end
+
+visualizeConfigurations(I,configs,[scores{:}],5,.5);
+
+% if ~isBad
+%     gt_configurations{end+1} = cur_config;
+% end
+
+function rois = getCandidateRoisSliding(startPt,scaleFactor,samplingParams,onlyTheta,thetaToKeep)
+
+if nargin < 5
+    thetaToKeep = true(size(samplingParams.thetas));
+end
+thetas = samplingParams.thetas(thetaToKeep);
+lengths = samplingParams.lengths*scaleFactor;
+widths = samplingParams.widths*scaleFactor;
+if onlyTheta
+    lengths = max(lengths);
+    widths = mean(widths);
+end
+all_rois = {};
+
+for iLength = 1:length(lengths)
+    for iWidth = 1:length(widths)
+        curLength = lengths(iLength);
+        curWidth = widths(iWidth);
+        if curWidth > curLength
+            continue
+        end
+        all_rois{end+1} = hingedSample(startPt,curWidth,curLength,thetas);
+    end
+end
+
+rois = cat(2,all_rois{:});
+%     roiMasks = cellfun2(@(x) poly2mask2(x.xy,size2(I)),rois);
+% roiPatches = cellfun2(@(x) rectifyWindow(I,round(x.xy),[avgLength avgWidth]),rois);

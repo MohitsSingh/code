@@ -1,0 +1,74 @@
+function [feats,labels,regions,inds] = collectSamples(conf, fra_db,cur_set,params,featureExtractor)
+dlib_landmark_split;
+tic_id = ticStatus('extracting training features...',.5,.5,false);
+samples = {};
+% if nargin < 6
+%     debug_jump = 1;
+% end
+debug_jump = params.debug_jump;
+for iImage = 1:debug_jump:length(cur_set)
+    %     iImage
+    imgInd = cur_set(iImage);
+    imgData = fra_db(imgInd);
+    faceBox = imgData.faceBox;
+    I = getImage(conf,imgData);
+    [I_sub,faceBox,mouthBox] = getSubImage2(conf,imgData);
+    [mouthMask,curLandmarks] = getMouthMask(I_sub,mouthBox,imgData.Landmarks_dlib,dlib,imgData.isTrain);        
+    [groundTruth,isValid] = getGroundTruthHelper(imgData,params,I,mouthBox);
+    if ~isValid
+        warning(sprintf('invalid image found : %d --> %s\nskipping this image!!!',...
+            imgInd,imgData.imageID));
+    else        
+        % coarse stage:
+        imgData.I = I;
+        imgData.I_sub = I_sub;
+        imgData.mouthMask = mouthMask;
+        imgData.curLandmarks = curLandmarks;
+        prev_candidates = [];
+        for iPhase = 1:length(phases)
+            candidates = phases(iPhase).getCandidates(conf,imgData,prev_candidates);
+        end
+        %candidates = getCoarseCandidates(conf,imgData,I_sub);
+        [candidates,ucm2,isvalid] = getCandidateRegions(conf,imgData,I_sub);
+        candidates.masks = processRegions(I_sub,candidates,mouthMask); % remove some obviously bad regions;        
+        [regions,labels,ovps] = sampleRegions(col(candidates.masks),{groundTruth},params);
+        %[f_int,f_app,f_shape] = featureHelper(I_sub,regions,featureExtractor);
+        currentFeats = featureExtractor.extractFeatures(I_sub,regions);
+        curSamples.imgInd = imgInd;
+        curSamples.regions = regions;
+        curSamples.labels = labels;
+        curSamples.feats = currentFeats;
+        %         curSamples.f_int = f_int;
+        %         curSamples.f_app = f_app;
+        %         curSamples.f_shape = f_shape;
+        curSamples.ovps = ovps;
+        samples{end+1} = curSamples;
+    end
+    tocStatus(tic_id,iImage/length(cur_set));
+end
+
+[feats,labels,regions,inds] = aggregateSamples(fra_db,samples);
+
+function [feats,labels,regions,inds] = aggregateSamples(fra_db, samples)
+labels = {};
+feats = {};
+inds = {};
+regions = {};
+for t = 1:length(samples)
+    curSamples = samples{t};
+    imgInd = curSamples.imgInd;
+    curClassLabel = fra_db(imgInd).classID;
+    curLabels = curSamples.labels;
+    
+    curLabels(curLabels==1) = curClassLabel;
+    inds{t} = ones(1,length(curLabels))*imgInd;
+    labels{t} = curLabels;
+    regions{t} = row(curSamples.regions);
+    %feats{t} = [curSamples.f_int;curSamples.f_app;curSamples.f_shape]
+    feats{t} = curSamples.feats;
+    %[curSamples.f_int;curSamples.f_app;curSamples.f_shape]
+end
+inds = cat(2,inds{:});
+feats = cat(2,feats{:});
+labels = cat(1,labels{:});
+regions = cat(2,regions{:});

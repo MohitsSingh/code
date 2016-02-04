@@ -1,0 +1,50 @@
+function setup
+% This function downloads the depedencies and installs them
+Url_model = ['http://cs.brown.edu/~pff/latent-release4/voc-release4.01.tgz'];
+Url_cascade = ['http://people.cs.uchicago.edu/~rbg/star-cascade/voc-release4.01-star-cascade.tgz'];
+Url_SVM = ['http://download.joachims.org/svm_light/v6.01/svm_light.tar.gz'];
+
+disp('Downloading parts based model');
+untar(Url_model, 'code/pff_code');
+!mv code/pff_code/voc-release4.01/* code/pff_code
+!rm -r code/pff_code/voc-release4.01
+
+disp('Downloading star-cascade model for faster performance');
+untar(Url_cascade, 'code/pff_code');
+
+disp('Downloading svm-light');
+untar(Url_SVM, 'code/svm_light');
+
+disp('Compiling downloaded code');
+cd('code/pff_code');
+compile;
+mkdir('boxes/shape');
+mkdir('boxes/context');
+
+cd('star-cascade');
+!make
+cd('../../../');
+
+!cp data/svm_model/model code/svm_light/
+cd('code/svm_light');
+!make
+cd('../../');
+
+cd('code/skin_based_detector');
+mex triLinearVoting.cpp
+cd('../../');
+
+disp('Copying data and other wrapper code');
+!mv code/my_imgdetect_r.m code/pff_code/
+!cp data/cascade_data/hand* code/pff_code/star-cascade/data/
+
+fid = fopen('code/pff_code/globals.m', 'a');
+fprintf(fid,'\ncscdir = ''code/pff_code/star-cascade/data/'';');
+fclose(fid);
+
+fprintf('\n\n\n');
+disp('Now download super-pixel code from:');
+disp('http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/resources.html');
+disp('and install it at code/globalPb');
+fprintf('\n');
+disp('Then run process_gPb to generate the super-pixels');

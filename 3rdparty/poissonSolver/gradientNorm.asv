@@ -1,0 +1,15 @@
+function [ result ] = gradientNorm(im, box)
+
+x0 = box(1);
+x1 = box(2);
+y0 = box(3);
+y1 = box(4);
+
+height
+
+% GRADIENTNORM 
+% calculate the gradient norm inside the box
+
+imout = gradientMagnitude(im);
+
+  sum(sum(imout(x0:x1, y0:y1)));

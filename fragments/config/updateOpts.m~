@@ -1,0 +1,53 @@
+% This script must be called after calling defaultOpts.
+% it is used to change some values in globalOpts to reflect
+% values that were set after defaultOpts was called.
+
+
+% Names, Paths
+globalOpts.descName = 'phowDesc';
+
+globalOpts.spatialName = strrep(num2str(globalOpts.numSpatialX),' ','_');
+globalOpts.exp_name = [globalOpts.VOCopts.dataset '_' num2str(globalOpts.numWords) '_' globalOpts.spatialName '_gtbox_phow'];
+globalOpts.vocab_name = [num2str(globalOpts.numWords) '_10e4'];
+
+scaleChoiceString = '_';
+if (~isempty(globalOpts.scale_choice))
+    scaleChoiceString = ['_' num2str(globalOpts.scale_choice)];
+end
+
+globalOpts.modelName = [num2str(globalOpts.numTrain) '_model'];
+globalOpts.modelName = [globalOpts.modelName '_rescale_' num2str(globalOpts.det_rescale) ...
+    scaleChoiceString];
+globalOpts.exp_name = [globalOpts.exp_name '_' num2str(globalOpts.numTrain) '_rescale_' num2str(globalOpts.det_rescale)...
+    scaleChoiceString];
+
+ovrlapstr = '_no_ovp';
+if globalOpts.use_overlapping_negatives
+    ovrlapstr = '_ovp';
+end
+
+
+globalOpts.expPath = fullfile(globalOpts.dataDir,[globalOpts.exp_name ovrlapstr]);
+globalOpts.vocabPath = fullfile(globalOpts.expPath, [globalOpts.vocab_name '_vocab.mat']) ;
+globalOpts.histPath = fullfile(globalOpts.expPath, [globalOpts.vocab_name '_hists.mat']) ;
+globalOpts.resultPath = fullfile(globalOpts.expPath, 'result');
+featDir = fullfile(globalOpts.expPath, 'feat');
+globalOpts.featPath = fullfile(featDir, [globalOpts.descName '_%s_fd.mat']);
+
+if (~exist(globalOpts.dataDir, 'dir'))
+    mkdir(globalOpts.dataDir);
+end
+
+if (~exist(globalOpts.featPath, 'dir'))
+    mkdir(globalOpts.featPath);
+end
+
+if (~exist(globalOpts.expPath, 'dir'))
+    mkdir(globalOpts.expPath);
+end
+
+if (~exist(globalOpts.resultPath, 'dir'))
+    mkdir(globalOpts.resultPath);
+end
+
+globalOpts.modelPath = fullfile([globalOpts.expPath '_model.mat']) ;

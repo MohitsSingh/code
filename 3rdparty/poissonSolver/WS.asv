@@ -1,0 +1,36 @@
+im = double(imread('../images/test002.tif', 'TIF'));
+figure;
+imshow(mat2gray(im));
+
+iminsert = double(imread('../images/test002insert.tif', 'TIF'));
+figure;
+imshow(mat2gray(iminsert));
+
+
+[imr img imb] = decomposeRGB(im);
+[imir imig imib] = decomposeRGB(iminsert);
+
+m = 60;
+endpt = 61;
+
+% imr = poisson1(m, endpt, 5, imr, imir);
+% img = poisson1(m, endpt, 5, img, imig);
+% imb = poisson1(m, endpt, 5, imb, imib);
+
+boxSrc = [20 40 20 40];
+posDest = [20 20];
+imr = poissonSolver(imr, imir, boxSrc, posDest);
+img = poissonSolver(img, imig, boxSrc, posDest);
+imb = poissonSolver(imb, imib, box);
+
+imnew = composeRGB(imr, img, imb);
+
+figure(100);
+imshow(mat2gray(imnew));
+imwrite(mat2gray(imnew), '../images/test002Result.jpg', 'JPG');
+% poisson1(50, 51, 5);
+
+
+% im = double(imread('../images/test001BW.tif', 'TIFF'));
+% figure;
+% imshow(mat2gray(im));

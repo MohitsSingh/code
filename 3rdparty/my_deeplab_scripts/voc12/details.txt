@@ -1,0 +1,8 @@
+DeepLab-MSc-COCO-LargeFOV exploits (1) Multiscale features, (2) extra annotations from MS-COCO dataset (pretrained on MS-COCO, and then fine-tuned on PASCAL), and (3) large Field-Of-View.
+
+Performance
+
+After DenseCRF, the model yields 73.6% performance on the PASCAL VOC 2012 test set.
+
+CRF parameters: bi_w = 4, bi_xy_std = 59, bi_rgb_std = 5, pos_w = 3, pos_xy_std = 3
+

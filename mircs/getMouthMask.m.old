@@ -1,0 +1,29 @@
+function [mouthMask,curLandmarks] = getMouthMask(I_sub,mouthBox,curLandmarks,dlib,isTraining)
+% function [mouthMask,curLandmarks] = getMouthMask(imgData,dlib,isTraining)
+% assume that image data has now :
+%I_sub,,mouthBox,curLandmarks
+% curLandmarks = imgData.Landmarks_dlib
+curLandmarks = bsxfun(@minus,curLandmarks,mouthBox(:,1:2));
+outer_mouth = curLandmarks(dlib.mouth_outer,:);
+% make sure that the mouth center point is inside the mouth mask,
+% otherwise, make your own mouth mask
+mouthMask = poly2mask2(outer_mouth,size2(I_sub));
+% make sure that the mouth center point is inside the mouth mask,
+% otherwise, make your own mouth mask
+windowCenter = round(fliplr(size2(I_sub))/2);
+if (isTraining && mouthMask(windowCenter(2),windowCenter(1)) == 0) || nnz(mouthMask)==0
+    %     disp([imgData.imageID ': mouth center not in mask!']);
+    %     outer_mouth_mask_orig = outer_mouth_mask;
+    z = zeros(size2(I_sub));
+    z(windowCenter(2),windowCenter(1)) = 1;
+    z = bwdist(z) < mean(size2(I_sub))/8;
+    mouthMask = z;
+    % % %         clf;
+    % % %         subplot(1,2,1);
+    % % %         displayRegions(I_sub,outer_mouth_mask_orig); title('estimated mouth mask');
+    % % %         plotPolygons(windowCenter,'m*','LineWidth',3);
+    % % %         subplot(1,2,2);
+    % % %         displayRegions(I_sub,outer_mouth_mask); title('corrected mouth mask');
+    % % %         clf
+    % % %         displayRegions(I_sub,outer_mouth_mask); title('estimated mouth mask');
+end

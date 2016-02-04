@@ -1,0 +1,73 @@
+
+load('data\front.mat'); 
+load('data\gt.mat');
+
+
+dataDir = 'data';
+imgDir = 'X:\data\poselets\data\person\image_sets\h3d\images';
+masksDir = 'masks';
+
+part_to_detect = 'R_Shoulder';
+
+crop_size = [40 40];
+
+%%
+% Mark locations of positive examples. While at it, create
+% for each image a mask containing the poeple in it (used for learning)
+
+for k = 1:length(front)
+    if (front(k))
+                       
+        matPath = fullfile(dataDir,sprintf('train_person_%d.mat',k));
+        load(matPath);
+        
+        img_name = training_data.img_name;
+        imgPath = fullfile(imgDir,[img_name '.jpg']);
+                        
+        faceMask = training_data.face_mask;
+        rprops = regionprops(faceMask,'BoundingBox');
+        % size of face
+        bbsize = rprops.BoundingBox(3:4);
+        
+       
+        [tf,part_idx]=ismember(part_to_detect,training_data.keypoints_labels);
+        if (tf)
+            part_loc= training_data.keypoints_gt(:,part_idx);
+        end
+        
+%         figure,imshow(imgPath);
+%         hold on;
+%         plot(part_loc(1),part_loc(2),'g*');
+        I = imread(imgPath);
+               
+        % extract image of desired part around part location
+        
+        %TODO: careful not to crop outside the image. I hope this 
+        % doesn't happen;  currently it's NOT handled. 
+        
+        %TODO - make the cropping size a per-part parameter
+        
+        crop_size_ = norm(bbsize)*crop_size/sqrt(800);
+        
+        [patch_ rect] = imcrop(I,[part_loc(1)-crop_size_(2)/2,...
+            part_loc(2)-crop_size_(1)/2,...
+            fliplr(crop_size_)]);
+        
+        imwrite(imresize(patch_,crop_size,'bicubic'),...
+            fullfile('pos_shoulders',sprintf('%05.0f.png',k)));
+        
+        
+        maskFile = fullfile(masksDir, [img_name '.png']);
+        person_mask = training_data.body_mask;
+        if (exist(maskFile,'file'))
+            person_mask = max(person_mask , imread(maskFile));
+        end
+        imwrite(person_mask,maskFile);
+    end
+end
+
+
+% extract hogs ?
+img = imread('pos_shoulders/00001.png');
+
+[hog,samples_x,samples_y]=compute_hog(img);

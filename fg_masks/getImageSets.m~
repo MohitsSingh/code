@@ -1,0 +1,18 @@
+
+function trainSet,testSet = getImageSet(conf)
+
+function imageSet = getImageSet(setName)
+
+
+
+
+if (strcmp(conf.mode,'seg'))
+    imageSetPath = sprintf(conf.VOCopts.seg.imgsetpath,conf.imageSet);
+else
+    imageSetPath = sprintf(conf.VOCopts.imgsetpath,conf.imageSet);
+end
+fid = fopen(imageSetPath);
+trainIDs = textscan(fid,'%s');
+trainIDs = trainIDs{1};
+fclose(fid);
+imageSet = trainIDs;

@@ -1,0 +1,933 @@
+%% demo_withFace
+% this experiment sho
+
+initpath;
+config;
+
+% precompute the cluster responses for the entire training set.
+%
+conf.suffix = 'train_dt_noperson';
+baseSuffix = 'train_noperson_top_nosv';
+conf.suffix = baseSuffix;
+
+conf.VOCopts = VOCopts;
+% dataset of images with ground-truth annotations
+% start with a one-class case.
+
+[train_ids,train_labels] = getImageSet(conf,'train',1,0);
+[test_ids,test_labels] = getImageSet(conf,'test');
+conf.detetion.params.detect_max_windows_per_exemplar = 1;
+%%
+frontBoxes = getFaceBoxes(conf,train_ids,'haarcascade_frontalface_default');
+sideBoxes = getFaceBoxes(conf,train_ids,'haarcascade_profileface');
+
+
+%% get detections locs for train images.
+frontLocs = boxes2Locs(conf,frontBoxes,train_ids);
+save frontLocsTrain frontLocs
+sideLocs = boxes2Locs(conf,sideBoxes,train_ids);
+save sideLocsTrain sideLocs
+mFront = visualizeFaceRects(conf,frontLocs,train_ids);
+save mFront mFront;
+mSide = visualizeFaceRects(conf,sideLocs,train_ids);
+save mSide mSide;
+
+imwrite(multiImage(mSide,false),'mSide.jpg');
+imwrite(multiImage(mFront,false),'mFront.jpg');
+
+%% get detections for test images
+frontBoxesTest = getFaceBoxes(conf,test_ids,'haarcascade_frontalface_default');
+sideBoxesTest = getFaceBoxes(conf,test_ids,'haarcascade_profileface');
+frontLocsTest = boxes2Locs(conf,frontBoxesTest,test_ids);
+save frontLocsTest frontLocsTest
+sideLocsTest = boxes2Locs(conf,sideBoxesTest,test_ids);
+save sideLocsTest sideLocsTest
+mFrontTest = visualizeFaceRects(conf,frontLocsTest,test_ids);
+save mFrontTest mFrontTest;
+mSideTest = visualizeFaceRects(conf,sideLocsTest,test_ids);
+save mSideTest mSideTest;
+
+imwrite(multiImage(mSideTest,false),'mSideTest.jpg');
+imwrite(multiImage(mFrontTest,false),'mFrontTest.jpg');
+
+%%
+load frontLocsTrain;
+load sideLocsTrain;
+load frontLocsTest;
+load sideLocsTest;
+load mFront;
+load mSide;
+load mFrontTest;
+load mSideTest;
+%%
+
+mAll = [mSide];
+
+conf.features.vlfeat.cellsize = 16;
+X = imageSetFeatures2(conf,mAll);
+
+X = cat(2,X{:});
+[C,IC] = vl_kmeans(X,5,'Algorithm','Elkan','NumRepetitions',5);
+makeClusterImages(mAll,C,IC,X,'side_faceClusters_kmeans');
+
+% take the top two clusters as positive examples for face detectors...
+conf.max_image_size = 512;
+c = [];
+for k = [2 4 5]
+    %     k = 9
+    clusterElements = find(IC==k);
+    curX = X(:,clusterElements);
+    distToCenter = l2(C(:,k)',curX');
+    [~,id] = sort(distToCenter,'ascend');
+    x1 = curX(:,id);
+    x1 = x1(:,1:120);
+    c = [c,makeCluster(x1,[])];
+end
+conf.features.winsize = [5 5];
+conf.detection.params.max_models_before_block_method = 0;
+conf.max_image_size = 100;
+conf.clustering.num_hard_mining_iters = 10;
+k = 10;
+curSuffix = num2str(k);
+c_trained = train_patch_classifier(conf,c,getNonPersonIds(VOCopts),'suffix',['face_new_' curSuffix],'override',true,'w1',1);
+imshow(showHOG(conf, c_trained(2)))
+
+
+%%
+conf.max_image_size = 256;
+[qq1,q1,aps] = applyToSet(conf,c_trained,train_ids(train_labels),[],'c_check_new','override',true,'uniqueImages',false,...
+    'nDetsPerCluster',10,'disp_model',true,'visualizeClusters',true,'nDetsPerCluster',10);
+
+aa = visualizeLocs2_new(conf,train_ids(train_labels),qq1(3).cluster_locs);
+figure,imshow(multiImage(aa))
+
+ff = find(train_labels);
+qq1(3).cluster_locs(95,11)
+r = (getImage(conf,train_ids{ff(61)}));
+
+%%
+
+curSuffix = num2str(k);
+conf.clustering.num_hard_mining_iters = 20;
+c_trained2 = train_patch_classifier(conf,c,getNonPersonIds(VOCopts),'suffix',['face2_' curSuffix],'override',true,'C',.1);
+
+for q = 1:4
+    figure,imshow(showHOG(conf,c_trained(q)));
+    pause;
+end
+close all
+f = find(train_labels);
+conf.detection.params.detect_min_scale = .5;
+conf.max_image_size = 256;
+
+% apply the detector to a subset of the training images to rank faces.
+
+
+[qq1,q1,aps] = applyToSet(conf,c_trained,train_ids,[],'c_check','override',false,'uniqueImages',true,...
+    'nDetsPerCluster',10,'disp_model',true,'visualizeClusters',false);
+
+[qq2,q2,aps] = applyToSet(conf,c_trained,train_ids,[],'c_check2','override',false,'uniqueImages',true,...
+    'nDetsPerCluster',10,'disp_model',true,'visualizeClusters',false);
+
+conf.max_image_size = 256;
+[qq11,q11,aps1] = applyToSet(conf,c_trained,train_ids(train_labels),[],'c_check1','override',false,'uniqueImages',true,...
+    'nDetsPerCluster',10,'disp_model',true);
+
+[qq2,q2,aps2] = applyToSet(conf,c_trained2,train_ids(1:100),[],'c_check2','override',true,'uniqueImages',true,...
+    'nDetsPerCluster',10,'disp_model',true);
+
+% go over the images to mark false detections.
+for k = 1:length(qq1)
+    k  =4;
+    t = qq1(k).cluster_locs(:,11);
+    s = qq1(k).cluster_locs(:,12);
+    tt = train_labels(t) & s > -1000;
+    m = visualizeLocs2_new(conf,train_ids,qq1(k).cluster_locs(tt,:),'height',80,'add_border',false,'inflateFactor',1.25);
+    m_orig_t = m;
+    
+    
+    
+    %     z = zeros(128);
+    %     m = m(1:10);
+    %     for r = 1:length(m)
+    %         z = z+im2double(rgb2gray(m{r}));
+    %     end
+    %     z = z/10;
+    
+    [Z,Zind] = multiImage(m);
+    Z = imresize(Z,.5);
+    Zind = imresize(Zind,.5,'nearest');
+    sel_ = chooseMulti(Z,Zind);
+    imshow(multiImage(m))
+    
+    sel_ =setdiff(1:100, [15 23 32 34 37 43 47 48 51 55 57 62 64 66 68 71:73 75:78 80 82 84 85 86 88:97 100]);
+    m = m(sel_);
+    Z_true=  multiImage(m);
+    imshow(Z_true)
+    
+    tt_false = find(~tt);
+    m1 = visualizeLocs2_new(conf,train_ids,qq1(k).cluster_locs(tt_false(1:200),:),'height',80,'add_border',false,'inflateFactor',1.25);
+    
+    m1_train = visualizeLocs2_new(conf,train_ids,qq1(k).cluster_locs(1:1000,:),'height',80,'add_border',false,'inflateFactor',1.25);
+    m_train = visualizeLocs2_new(conf,train_ids,qq1(k).cluster_locs,'height',80,'add_border',false,'inflateFactor',1.25);
+    
+    train_true_labels = train_labels(qq1(k).cluster_locs(1:1000,11));
+    
+    m1_train_true = m1_train(train_true_labels);
+    m1_train_false = m1_train(~train_true_labels);
+    figure,imshow(multiImage(m1_train_true));
+    
+    [ x1 ] = imageSetFeatures( conf,m1_train_true,5)
+    [ x2 ] = imageSetFeatures( conf,m1_train_false,5)
+    
+    x1 = cat(2,x1{:});
+    x2 = cat(2,x2{:});
+    L = l2(x1',x2');
+    
+    [L,iL] = sort(L,2,'ascend');
+    
+    b = [];
+    for ib = 1:size(L,1)
+        bb = multiImage(m1_train_false(iL(ib,1:10)),false,true);
+        b = [b;[m1_train_true{ib},bb]];
+    end
+    
+    imwrite(b,'b.jpg');
+    
+    I = mm{1};
+    figure,imshow(I);
+    I1 = rgb2gray(im2double(I));
+    figure,imshow(edge(I1,'canny'));
+    I = imresize(I,2);
+    for v = 1:length(mm)
+        segments = vl_slic(single(vl_rgb2xyz(im2single(mm{v}))), 150, 1) ;
+        subplot(121),imshow(mm{v})
+        subplot(122),imshow(segments,[])
+        pause
+    end
+    
+    
+    save m_train m_train
+    
+    % find drinking with straw in this dataset...
+    
+    
+    save someFaces m m1
+    mm = visualizeLocs2_new(conf,train_ids,qq1(k).cluster_locs(ftt,:),'height',200,'add_border',false,'inflateFactor',1.25);
+    
+    ftt = find(tt);
+    figure,imshow(edge(im2double(rgb2gray(multiImage(mm(1:50)))),'canny'))
+    
+    I = mm{1};
+    figure,imshow(I);
+    I1 = rgb2gray(im2double(I));
+    figure,imshow(edge(I1,'canny'));
+    I = imresize(I,2);
+    for v = 1:length(mm)
+        segments = vl_slic(single(vl_rgb2xyz(im2single(mm{v}))), 150, 1) ;
+        subplot(121),imshow(mm{v})
+        subplot(122),imshow(segments,[])
+        pause
+    end
+    
+    %     z1 = zeros(128);
+    %     for r = 1:length(m)
+    %         z1 = z1+im2double(rgb2gray(m1{r}));
+    %     end
+    %     z1 = z1/10;
+    %     imwrite(multiImage(m,false),[num2str(k) '_false.jpg']);
+    %
+    % find for each positive the nearest negative....
+    conf.detection.params.detect_min_scale = .5;
+    [x,u,v,s,t] = allFeatures(conf,m{1});
+    bbs = uv2boxes(conf,u,v,s,t);
+    
+    posXbbs = bbs(5,:);
+    posXbbs = repmat(posXbbs,length(m),1);
+    posXbbs(:,11) = 1:length(m);
+    posX = imageSetFeatures(conf,m,5);
+    
+    % clustering...
+    
+    %     for kk = 1:length(posX) posX{kk} = posX{k}(:,5); end
+    negX = imageSetFeatures(conf,m1,5);
+    %     for kk = 1:length(negX) negX{kk} = negX{k}(:,5); end
+    posX = cat(2,posX{:});
+    negX = cat(2,negX{:});
+    x_dist = l2(posX',negX');
+    [r,ir] = sort(x_dist,2,'ascend');
+    
+    
+    [C_,IC_] = vl_kmeans(posX,5,'Algorithm','Elkan','NumRepetitions',100);
+    makeClusterImages(m,C_,IC_,posX,'drinkingClusters_kmeans');
+    
+    aa = 1;
+    clusterElements = find(IC_==aa);
+    curX = posX(:,clusterElements);
+    distToCenter = l2(C_(:,k)',curX');
+    [~,id] = sort(distToCenter,'ascend');
+    x1 = curX(:,id);
+    x1 = x1(:,1:14);
+    c = makeCluster(x1,[]);
+    
+    
+    conf.max_image_size = 100;
+    conf.clustering.num_hard_mining_iters = 10;
+    k = 10;
+    curSuffix = num2str(k);
+    c_trained_new = train_patch_classifier(conf,c,getNonPersonIds(VOCopts),'suffix','face_new','override',false);
+    
+    imshow(showHOG(conf,c_trained_new));
+    conf.max_image_size= 256;
+    [qq_new,q_new,aps_new] = applyToSet(conf,c_trained_new,test_ids(test_labels),[],'c_check_train_new','override',true,'uniqueImages',true,...
+        'nDetsPerCluster',10,'disp_model',true);
+    
+    mAll3 = visualizeLocs2_new(conf,test_ids(test_labels),qq_new.cluster_locs(1:150,:));
+    figure,imshow(multiImage(mAll3))
+    figure,plot(qq_new.cluster_locs(:,12))
+    
+    
+    [qq_new,q_new,aps_new] = applyToSet(conf,c_trained_new,test_ids,[],'c_check_train_new','override',true,'uniqueImages',true,...
+        'nDetsPerCluster',10,'disp_model',true);
+    
+    [qq_new,q_new,aps_new] = applyToSet(conf,c_trained_new,test_ids,[],'c_check_train_new','override',true,'uniqueImages',true,...
+        'nDetsPerCluster',10,'disp_model',true);
+    mAll3 = visualizeLocs2_new(conf,test_ids,qq_new.cluster_locs(1:150,:));
+    
+    mAll3 = visualizeLocs2_new(conf,test_ids,qq_new.cluster_locs(test_labels(qq_new.cluster_locs(:,11)),:),...
+        'inflateFactor',2,'height',256);;
+    figure,imshow(multiImage(mAll3(1:25)));
+%     figure,imshow(multiImage(mAll3(test_labels(qq_new.cluster_locs(1:150,:)
+    figure,plot(qq_new.cluster_locs(:,12))
+    
+    [prec,rec,aps,T,M] = calc_aps(qq_new,test_labels);
+    plot(rec,prec)
+    
+    [qq_new_t,q_new_t,aps_new_t] = applyToSet(conf,c_trained_new,m_test,[],'c_check_train_new_mtest','override',true,'uniqueImages',true,...
+        'nDetsPerCluster',10,'disp_model',true);
+    
+    mAll3_t = visualizeLocs2_new(conf,m_test,qq_new_t.cluster_locs(1:1500,:));
+    figure,imshow(multiImage(mAll3_t(1:10:550)))
+    
+end
+
+% show...
+f = [];
+for v = 1:length(m)
+    g = [m(v),m1(ir(v,1:50))];
+    f = [f;(multiImage(g,false,true))];
+    %         imshow(m{v}-m1{ir(v,1)});
+    %         pause;
+end
+
+
+% get landmarks...
+getFacialLandmarks(g1,'facialLandmarks');
+
+g1 = g;
+imshow(multiImage(g1));
+
+z = zeros(size(g{1}));
+for q = 2:length(g)
+    z = z+im2double(g{q});
+end
+
+zz_gray = im2double(rgb2gray((z/(length(g)-1))));
+
+C = normxcorr2(zz_gray, im2double(rgb2gray(g{2}))) ;
+figure,imagesc(C)
+[max_cc, imax] = max(abs(C(:)));
+[ypeak, xpeak] = ind2sub(size(C),imax(1));
+corr_offset = [ (ypeak-size(g{1},1)) (xpeak-size(g{1},2)) ];
+
+imwrite(f,'f1.jpg')
+
+a = selectSamples(conf,m(v));
+save a a
+conf2 = conf;
+conf2.detection.params.init_params.sbin = 5;
+conf2.features.winsize = 5;
+clusters_pos = rects2clusters(conf2,repmat(a,length(m),1),m,[],false);
+clusters_neg = [];
+for cc = 1:5
+    clusters_neg = [clusters_neg ,rects2clusters(conf2,repmat(a,50,1),m1(ir(1:50,cc)),[],false)];
+end
+
+% visualize the mouth areas.
+mouth_locs = cat(1,clusters_pos.cluster_locs);
+m_mouth = visualizeLocs2_new(conf2,m,mouth_locs,'height',64);
+imwrite(multiImage(m_mouth,false),'mouths.jpg')
+
+mouth_locs_neg = cat(1,clusters_neg.cluster_locs);
+m_mouth_neg = visualizeLocs2_new(conf2,m1,mouth_locs_neg,'height',64);
+imwrite(multiImage(m_mouth_neg,true),'mouths_neg.jpg')
+x_mouth_pos = cat(2,clusters_pos.cluster_samples);
+x_mouth_pos = x_mouth_pos(:,1:20);
+x_mouth_neg = cat(2,clusters_neg.cluster_samples);
+x_mouth_neg = unique(x_mouth_neg','rows')';
+x_all = [x_mouth_pos,x_mouth_neg];
+y_train = ones(size(x_all,2),1);
+y_train(size(x_mouth_pos,2)+1:end) = -1;
+svmModel= svmtrain(y_train(:), x_all','-t 2');
+
+% try to classify new samples...
+[qq1_test,q1_test,aps_test] = applyToSet(conf,c_trained,test_ids,[],'c_check_test','override',false,'uniqueImages',true,...
+    'nDetsPerCluster',10,'disp_model',true);
+k = 4;
+m_test = visualizeLocs2_new(conf,test_ids,qq1_test(k).cluster_locs,'height',80,'add_border',false,'inflateFactor',1.25);
+save m_test m_test
+
+% 362
+rr = 1500;
+
+x_ = imageSetFeatures(conf2,m_test(1:rr),362);
+x_ = cat(2,x_{:});
+sub = 300;
+
+m_test1 = m_test;
+for zz = 1:length(m_test1)
+    if (test_labels(qq1_test(4).cluster_locs(zz,11)))
+        zz
+        m_test1{zz} = addBorder(m_test1{zz},2,[0 255 0]);
+    end
+end
+
+% find for each mouth area it's nearest neighbor...
+[~, ~, decision_values_test] = svmpredict(zeros(sub,1),double(x_(:,1:sub))',svmModel);
+
+decision_values_test = decision_values_test(1:sub);
+%     decision_values_test = d_test(1:500)';
+[prec,rec,aps,T] = calc_aps2(decision_values_test,test_labels(qq1_test(4).cluster_locs(1:rr,11)));
+
+%     plot(test_labels(qq1_test(4).cluster_locs(1:rr,11)))
+%     plot(cumsum(test_labels(qq1_test(4).cluster_locs(is,11))))
+plot(rec,prec)
+[s,is] = sort(decision_values_test,'descend');
+figure,imshow(multiImage(m_test(is(1:50))))
+
+% show the candidate mouth areas.
+m_mouths_test = {};
+aa = round(a);
+%     aa(3) = aa(1)+aa(3);
+%     aa(4) = aa(4)+aa(2);
+parfor kk = 1:1000%length(m_test)
+    kk
+    m_mouths_test{kk} = imresize(cropper(m_test{kk},aa),[64 64]);
+end
+
+bb = zeros(31,33);
+for kk = 1:1000
+    bb = bb+rgb2gray(im2double(m_mouths_test{kk}));
+end
+%imshow(bb.^.5,[])
+figure,imshow(m_test1{1})
+figure,imshow(multiImage(m_mouths_test((1:150)),false))
+figure,imshow(multiImage(m_test1(is(1:150))));
+figure,imshow(multiImage(m_mouths_test(is(1:50))))
+
+%% choose manually the mouths from the true/false detections...
+t = qq1_test(k).cluster_locs(:,11);
+s = qq1_test(k).cluster_locs(:,12);
+tt = test_labels(t) & s > -1000;
+m_test_t = visualizeLocs2_new(conf,test_ids,qq1_test(k).cluster_locs(tt,:),'height',80,'add_border',false,'inflateFactor',1.25);
+figure,imshow(multiImage(m_test_t))
+
+%     z = zeros(128);
+%%
+
+imwrite(multiImage(m_test(1:1500)),'f.jpg')
+
+imwrite(f,'f.jpg')
+
+figure,imshow(multiImage(g,false,true))
+
+figure,
+subplot(231);imshow(z);title('drinking');
+subplot(232);imshow(z1);title('not drinking');
+z_diff = z-z1;
+subplot(233);imshow(z_diff,[]);title('not drinking');
+h = features(cat(3,z,z,z),8);
+subplot(234),imshow(HOGpicture(h,20));
+h = features(cat(3,z1,z1,z1),8);
+subplot(235),imshow(HOGpicture(h,20));
+h = features(cat(3,z_diff,z_diff,z_diff),8);
+subplot(236),imshow(HOGpicture(h,20));
+%     pause;
+% end
+
+ws = zeros(1,4);
+bs = zeros(1,4);
+for k = 1:4
+    X  = qq1(k).cluster_locs(1:100,12);
+    y = false(size(X));
+    y(1:40) = true;
+    [ws(k),bs(k)] = logReg(X, y);
+end
+qq2 = applyLogReg(qq1,ws,bs);
+plot(qq2(1).cluster_locs(:,12))
+
+%%
+trainPatches = [m_mouth,m_mouth_neg];
+
+
+imwrite(multiImage(m_mouth,false),'mouth_pos.jpg');
+imwrite(multiImage(m_mouth_neg,false),'mouth_neg.jpg');
+
+testPatches = m_mouths_test(1:500);
+dict = learnBowDictionary(conf,trainPatches);
+model.numSpatialX = [1 2];
+model.numSpatialY = [1 2];
+model.kdtree = vl_kdtreebuild(dict) ;
+model.quantizer = 'kdtree';
+model.vocab = dict;
+model.w = [] ;
+model.b = [] ;
+model.phowOpts = {};
+
+hists_train = getHists(conf,model,trainPatches);
+hists_test = getHists(conf,model,testPatches);
+
+y_train = ones(length(trainPatches),1);
+y_train(length(m_mouth)+1:end) = -1;
+y_test = test_labels(qq1_test(4).cluster_locs(1:length(testPatches),11));
+y_train = 2 * (y_train==1) - 1;
+y_test = 2 * (y_test==1) - 1;
+% imshow(multiImage(trainPatches(y_train==-1)))
+
+
+
+%%
+%%
+psix_train = vl_homkermap(hists_train, 1, 'kchi2', 'gamma', .5) ;
+psix_test = vl_homkermap(hists_test, 1, 'kchi2', 'gamma', .5) ;
+% [w b info] = vl_pegasos(psix_train,int8(y_train),.01);
+svmModel= svmtrain(y_train(:), double(psix_train'),'-t 2');
+[~, ~, decision_values_test] = svmpredict(zeros(size(psix_test',1),1),double(psix_test'),svmModel);
+%%
+% psix_test = vl_homkermap(hists_test, 1, 'kchi2', 'gamma', .5)';
+% decision_values_test = psix_test*w;
+[s,is] = sort(decision_values_test,'descend');
+% [~,b] = unique(s,'first');
+% b = sort(b);
+% is = is(b);
+[p,r,a_,t] = calc_aps2(decision_values_test,y_test==1,sum(test_labels));
+a_
+%%
+plot(r,p)
+title(num2str(a_))
+%%
+%     figure,imshow(multiImage(m_mouths_test((1:150)),false))
+figure,imshow(multiImage(testPatches(is(1:150))));
+ff = find(y_test==1);
+
+figure,imshow(multiImage(testPatches(ff)));
+
+
+%%
+
+trainPatches = [mSide];
+testPatches = [mSideTest];
+dict = learnBowDictionary(conf,trainPatches);
+model.numSpatialX = [3];
+model.numSpatialY = [3];
+model.kdtree = vl_kdtreebuild(dict) ;
+model.quantizer = 'kdtree';
+model.vocab = dict;
+model.w = [] ;
+model.b = [] ;
+model.phowOpts = {};
+
+hists_train = getHists(conf,model,trainPatches);
+hists_test = getHists(conf,model,testPatches);
+
+locsTrain = [sideLocs];
+locsTrain = locsTrain(locsTrain(:,1)>=0 & locsTrain(:,2)>=0,:);
+y_train = train_labels(locsTrain(:,11));
+locsTest = [sideLocsTest];
+locsTest = locsTest(locsTest(:,1)>=0 & locsTest(:,2)>=0,:);
+y_test = test_labels(locsTest(:,11));
+y_train = 2 * (y_train==1) - 1;
+y_test = 2 * (y_test==1) - 1;
+
+% imshow(multiImage(trainPatches(y_train==-1)))
+
+%%
+%%
+psix_train = vl_homkermap(hists_train, 1, 'kchi2', 'gamma', .5) ;
+[w b info] = vl_pegasos(psix_train,int8(y_train),.01);
+% svmModel= svmtrain(y_train(:), double(psix_train'),'-t 2');
+
+dd = [];
+for k = 1:500:size(hists_test,2)
+    k
+    psix_test = vl_homkermap(hists_test(:,k:min(k+499,end)), 1, 'kchi2', 'gamma', .5)';
+    decision_values_test = psix_test*w;
+    %     psix_test = hists_test(:,k:min(k+499,end))';
+    %[~, ~, decision_values_test] = svmpredict(zeros(size(psix_test,1),1),double(psix_test),svmModel);
+    dd = [dd;decision_values_test];
+end
+
+[s,is] = sort(dd,'descend');
+% [~,b] = unique(s,'first');
+% b = sort(b);
+% is = is(b);
+[p,r,a,t] = calc_aps2(dd,y_test==1,sum(test_labels));
+plot(r,p)
+title(num2str(a))
+%%
+
+% [s,is] = sort(dd,'descend');
+%
+% % remove duplicates (two results with same grade...)
+% % inds_i = inds(is);
+%
+% % inds_i(6)
+% [~,b] = unique(s,'first');
+% b = sort(b);
+% is = is(b);
+R = testPatches(is(1:50));
+figure,imshow(multiImage(R,false));
+
+imwrite(multiImage(testPatches,false),'testPatches.jpg')
+
+%%
+% scan each image for the nn...
+
+conf2_ = conf2;
+conf2_.detection.params.detect_min_scale = .7711;
+conf2_.detection.params.detect_max_scale = .7711;
+
+d_test = zeros(1,rr);
+for xx = 1:500%length(m_test(1:rr))
+    xx
+    X1 = allFeatures(conf2,m_test{xx})';
+    dist_pos1 = min(l2(X1,x_mouth_pos'),[],2);
+    dist_neg1 = min(l2(X1,x_mouth_neg'),[],2);
+    d_test(xx) = max(exp(-dist_pos1/sigma_)./exp(-(dist_neg1+dist_pos1)/sigma_));
+end
+
+x_ = imageSetFeatures(conf2,m_test(1:rr),362);
+
+dist_pos = min(l2(x_',x_mouth_pos'),[],2);
+dist_neg = min(l2(x_',x_mouth_neg'),[],2);
+sub = 500;
+sigma_ = 10000;
+decision_values_test = exp(-dist_pos/sigma_)./exp(-(dist_neg+dist_pos)/sigma_);
+%%
+
+[C_,IC_] = vl_kmeans(x_mouth_pos,5,'Algorithm','Elkan','NumRepetitions',100);
+makeClusterImages(m_mouth,C_,IC_,x_mouth_pos,'mouth_drinkingClusters_kmeans');
+
+sel__ = 1:20;
+x_mouth_pos_new = tightenGroups(conf2,x_mouth_pos(:,sel__),mouth_locs(sel__,:),m);
+
+sel__ = 1:50;
+posX_ = cat(2,posX{:});
+x_face_new = tightenGroups(conf,posX_(:,sel__),posXbbs(sel__,:),train_ids(train_labels));
+
+imshow(showHOG(conf,mean(x_face_new,2)))
+
+%%
+%%
+% match the faces...
+%learn an eye detector
+eyeRects = selectSamples(conf,m(1:5));
+save eyeRects eyeRects
+conf2 = conf;
+conf2.detection.params.init_params.sbin = 3;
+conf2.features.winsize = 5;
+eyeClusts = rects2clusters(conf2,eyeRects,m(1:5),[],1);
+conf2.max_image_size = 80;
+eyeClusts_trained = train_patch_classifier(conf2,eyeClusts,getNonPersonIds(VOCopts),'suffix',...
+    'eyeClusts','override',false);
+conf2.detection.params.detect_save_features = 1;
+[qq1_eye,q1_eye,aps_eye] = applyToSet(conf2,eyeClusts_trained,m,[],'c_check_eye','override',true,'uniqueImages',true,...
+    'nDetsPerCluster',inf,'disp_model',true,'visualizeClusters',false);
+
+mmm = [];
+for k = 1:5
+    mmm = [mmm,visualizeLocs2_new(conf2,m,qq1_eye(k).cluster_locs,'height',7)];
+end
+
+figure,imshow(multiImage(mmm,false))
+figure,imshow(imresize(multiImage(mmm,false),2,'bicubic'));
+figure,imshow(imresize(multiImage(mmm,false),4,'bicubic'));
+
+XX = [];
+for k = 1:5
+    XX = [XX,qq1_eye(k).cluster_samples];
+end
+
+[C_,IC_] = vl_kmeans(XX,10,'Algorithm','Elkan','NumRepetitions',10);
+makeClusterImages(m_eye,C_,IC_,XX,'eyeClusters_kmeans');
+
+z = zeros(size(m_eye{1}));
+cc = 20;
+for r = 1:cc%length(m_eye)
+    z = z+im2double((m_eye{r}));
+end
+
+z  = z/cc;
+figure,imshow(z);
+
+
+fid = fopen('/home/amirro/code/3rdparty/congeal/input/input.list','wt');
+for k = 1:43
+    fprintf(fid,fullfile('/home/amirro/code/3rdparty/congeal/input/',[num2str(k) '.jpg\n']));
+end
+fclose(fid)
+
+fid = fopen('/home/amirro/code/3rdparty/congeal/output/output.list','wt');
+for k = 1:43
+    fprintf(fid,fullfile('/home/amirro/code/3rdparty/congeal/output/',[num2str(k) '_aligned.jpg\n']));
+end
+fclose(fid)
+
+%%
+imshow(multiImage(m,false))
+
+
+%% eyes detector...
+eyeRects = selectSamples(conf,m1(1:9));
+save eyeRects eyeRects
+conf2 = conf;
+conf2.detection.params.init_params.sbin = 5;
+conf2.features.winsize = [4 4];
+eyeClusts = rects2clusters(conf2,eyeRects,m1(1:9),[],1);
+conf2.max_image_size = 80;
+eyeClusts_trained = train_patch_classifier(conf2,eyeClusts,getNonPersonIds(VOCopts),'suffix',...
+    'eyeClusts','override',false);
+conf2.detection.params.detect_save_features = 0;
+[qq1_eye,q1_eye,aps_eye] = applyToSet(conf2,eyeClusts_trained,m1_train,[],'c_check_eye','override',false,'uniqueImages',true,...
+    'nDetsPerCluster',10,'disp_model',true,'visualizeClusters',true);
+
+%% lips detector...
+lipRects = selectSamples(conf,m1(1:9));
+save lipRects lipRects
+conf2 = conf;
+conf2.detection.params.init_params.sbin = 5;
+conf2.features.winsize = [4 4];
+lipClusts = rects2clusters(conf2,lipRects,m1(1:9),[],1);
+conf2.max_image_size = 80;
+lipClusts_trained = train_patch_classifier(conf2,lipClusts,getNonPersonIds(VOCopts),'suffix',...
+    'lipClusts','override',false);
+conf2.detection.params.detect_save_features = 0;
+[qq1_lip,q1_lip,aps_lip] = applyToSet(conf2,lipClusts_trained,m1_train,[],'c_check_lip','override',false,'uniqueImages',true,...
+    'nDetsPerCluster',10,'disp_model',true,'visualizeClusters',true);
+
+Z_lips = createConsistencyMaps(qq1_lip,size(m1_train{1}(:,:,1)),[],10,[35 7]);
+figure,imshow(multiImage(jettify(Z_lips)))
+lip_avg = sum(cat(3,Z_lips{:}),3);
+lip_avg = lip_avg/max(lip_avg(:));
+
+[qq1_lip,q1_lip,aps_lip] = applyToSet(conf2,lipClusts_trained,m1_train,[],'c_check_lip','override',false,'uniqueImages',true,...
+    'nDetsPerCluster',10,'disp_model',true,'visualizeClusters',false,'useLocation',0);
+lipDetectorIndex = 8;
+eyeDetectorIndex = 1;
+lipDet = qq1_lip(lipDetectorIndex);
+eyeDet = qq1_eye(eyeDetectorIndex);
+
+% Z_eyes = createConsistencyMaps(qq1_eye,size(m1_train{1}(:,:,1)),[],10,[35 7]);
+sz = [80 80];
+[~,c1,] = intersect(eyeDet.cluster_locs(:,11),1:1000);
+bb1 = eyeDet.cluster_locs(c1,:);
+bb1(bb1(:,7)==1,:) = flip_box(bb1(bb1(:,7)==1,:),sz);
+bb1_c = boxCenters(bb1);
+
+[~,c2,] = intersect(lipDet.cluster_locs(:,11),1:1000);
+bb2 = lipDet.cluster_locs(c2,:);
+bb2(bb2(:,7)==1,:) = flip_box(bb2(bb2(:,7)==1,:),sz);
+bb2_c = boxCenters(bb2);
+
+bb_diff = (bb2_c-bb1_c)./repmat(bb1(:,8),1,2);
+
+% just take the top N samples.
+% bb_diff = bb_diff(1:10,:);
+
+figure,plot(bb_diff(:,1),bb_diff(:,2),'r+');hold on;
+
+options = statset('Display','final');
+obj = gmdistribution.fit(bb_diff,1,'Options',options);
+h = ezcontour(@(x,y)pdf(obj,[x y]),[-50 50],[-50 50])
+
+Z = zeros(80);
+pp = pdf(obj,bb_diff);
+% Z = accumarray(round(fliplr(bb2_c)),pp,[80 80]);
+% figure,imagesc(Z);
+% 
+
+imshow(multiImage(m1_train(1:25)))
+figure,imshow(multiImage(aaa(c2(1:25))))
+figure,imshow(multiImage(aaa_eye(c1(1:25))))
+% 1 show the eye locations for some patches. make sure the re-ordering
+% hasn't scrabmled things up
+
+%% todo: include prior probability for eye location, use eye score + mouth score as well. 
+% learn how to incroporate these parameters to get the best score overall. 
+% pp = pp+bb1(:,12);
+pp(~train_true_labels)= 0;
+
+%
+%%
+% sort by probability...
+[~,ip] = sort(pp,'descend');
+for q = 1:length(ip)
+    subplot(1,3,1);imshow(m1_train{ip(q)}); hold on;
+    quiver(bb1_c(ip(q),1),bb1_c(ip(q),2),bb_diff(ip(q),1),bb_diff(ip(q),2));    
+    plotBoxes2(bb2(ip(q),[2 1 4 3]),'Color','g','LineWidth',1);
+    plotBoxes2(bb1(ip(q),[2 1 4 3]),'Color','r','LineWidth',1);
+    plot(bb2_c(ip(q),1),bb2_c(ip(q),2),'g+');
+    plot(bb1_c(ip(q),1),bb1_c(ip(q),2),'r+');
+    subplot(1,3,2);
+    imshow(aaa_eye{c1(ip(q))});
+    subplot(1,3,3);
+    imshow(aaa{c2(ip(q))});
+    
+    pause
+end
+
+%%
+Z_mouth_eye = createCondMap(qq1_eye(1).cluster_locs,qq1_lip(1).cluster_locs,sz);
+
+
+eyeDet = qq1_eye(eyeDetectorIndex);
+aaa = visualizeLocs2_new(conf2,m1_train,lipDet.cluster_locs);
+aaa_eye = visualizeLocs2_new(conf2,m1_train,eyeDet.cluster_locs);
+
+figure,imshow(multiImage(aaa(1:10:500)))
+
+
+faceScores = qq1(k).cluster_locs(1:1000,12);
+lipScores = lipDet.cluster_locs(:,12);
+
+faceScores_L = faceScores(lipDet.cluster_locs(:,11));
+figure,plot(faceScores_L,lipScores,'r+');
+train_true_labels_L = train_true_labels((lipDet.cluster_locs(:,11)));
+
+lipScoresInDrinking = lipScores(train_true_labels_L);
+faceScoresInDrinking = faceScores_L(train_true_labels_L);
+lipScoresInNotDrinking = lipScores(~train_true_labels_L);
+faceScoresInNotDrinking = faceScores_L(~train_true_labels_L);
+
+faceImages_train = m1_train((lipDet.cluster_locs(:,11)));
+
+f = find(train_true_labels_L);
+for q = 1:length(f)
+    clf;
+    subplot(1,2,1);
+    imshow([faceImages_train{f(q)} imresize(aaa{f(q)},[80 80])]);
+    subplot(1,2,2);
+    plot(faceScoresInDrinking,lipScoresInDrinking,'r+'); hold on;
+     plot(faceScoresInDrinking(q),lipScoresInDrinking(q),'go');
+    pause;
+end
+    
+% [n2,xout2] = hist(lipScoresInNotDrinking,20);
+% [n1,xout1] = hist(lipScoresInDrinking,xout2);
+% 
+% plot(xout1,n1/sum(n1),'r');
+% hold on;
+% plot(xout2,n2/sum(n2),'g');
+plot(faceScoresInNotDrinking,lipScoresInNotDrinking,'go');hold on;
+plot(faceScoresInDrinking,lipScoresInDrinking,'r+');
+
+
+rr= 1.014; % drinking with straw
+ss = -.8642;
+
+rr= .873; % drinking with straw 2
+ss = -.8527;
+
+rr= .6267; % drinking with cup. 
+ss = -.6712;
+
+rr= .1512; % actally not a face! good, since there's a low face score
+ss = -.4915; % and, lips were discovered with a high score. 
+
+rr= -.1995; % very low face score, and really not a face
+ss = -.6697;
+
+rr= .07051; % side facing
+ss = -.9682;
+
+
+rr= .6751; 
+ss = .0937;
+
+rr= .07051; % side facing
+ss = .4709;
+
+rr= .253; % side facing
+ss = .5015;
+[cc,icc] = min(sum([faceScores_L-rr,lipScores-ss].^2,2));
+
+figure,imshow(faceImages_train{icc})
+figure,imshow(aaa{icc})
+
+
+sel_ = 1:50;
+figure,imshow(multiImage(aaa(sel_)))
+figure,imshow(multiImage(faceImages_train(sel_)));
+
+% 
+y = 2*train_true_labels_L-1;
+feats = [faceScores_L(:),lipScores];
+
+bestcv = 0;
+for log2c = -6:10,
+  for log2g = -6:3,
+    cmd = ['-q -v 5 -c ', num2str(2^log2c), ' -g ', num2str(2^log2g) ' -w1 16'];
+    cv = svmtrain(y,feats, cmd);
+    if (cv >= bestcv),
+      bestcv = cv; bestc = 2^log2c; bestg = 2^log2g;
+    end
+    fprintf('(best c=%g, g=%g, rate=%g)\n',bestc, bestg, bestcv);
+  end
+end
+
+cmd = [' -c ', num2str(bestc), ' -g ', num2str(bestg) ' -w1 16'];
+model = svmtrain(y(1:2:end),feats(1:2:end,:), cmd);
+[p_label,~,decision_values] = svmpredict(y(2:2:end,:),feats(2:2:end,:),model);
+
+figure,plot(decision_values);
+tt =faceImages_train(2:2:end);
+figure,imshow(multiImage(faceImages_train(p_label==1)))
+[r,ir] = sort(decision_values,'ascend');
+figure,imshow(multiImage(tt(ir(sel_))));
+yy = find(y==1);
+figure,imshow(multiImage(faceImages_train(yy(sel_))));
+
+
+[lips_test,lips_test_det,aps_lip] = applyToSet(conf2,lipClusts_trained,m_test,[],'c_lips_test','override',true,'uniqueImages',true,...
+    'nDetsPerCluster',10,'disp_model',true,'visualizeClusters',true);
+[lips_m,lips_m_det,aps_lipm] = applyToSet(conf2,lipClusts_trained,m,[],'c_lips_m','override',false,'uniqueImages',true,...
+    'nDetsPerCluster',inf,'disp_model',true,'visualizeClusters',true);
+
+lipsRetrained = train_patch_classifier(conf,[],[],[],'toSave',true,'suffix','lipRectsCheck_retrain');
+
+m_test_check = m_test(test_labels(qq1_test(4).cluster_locs(:,11)));
+
+conf2.detection.params.detect_levels_per_octave = 10;
+conf2.detection.params.detect_min_scale = .4;
+[lips_re] = applyToSet(conf2,lipsRetrained,m1,[],'lipRectsCheckTest_retrained','override',true,'uniqueImages',true,...
+    'nDetsPerCluster',10,'disp_model',true,'visualizeClusters',true);
+
+[lips_11] = applyToSet(conf2,lipsRetrained,m1_train_true,[],'lipRectsCheckTrain_retrained','override',false,'uniqueImages',true,...
+    'nDetsPerCluster',10,'disp_model',true,'visualizeClusters',true);
+%%
+Z = createConsistencyMaps(lips_re,[80 80],[],200,[15 3]);
+
+bc = boxCenters(lips_re(6).cluster_locs);
+% plot(bc(:,1),bc(:,2),'r+')
+obj = gmdistribution.fit(bc,1);
+figure,imshow(m1{1}); hold on;
+h = ezcontour(@(x,y)pdf(obj,[x y]),[0 80],[0 80]);
+
+% visualizeLocs2(conf2,m1,lips_re(1).cluster_locs,'draw_rect',true);
+figure(1),imshow(multiImage(jettify(Z)))
+%%
+train_lipImages = visualizeLocs2(conf2,m1_train_true,lips_11(1).cluster_locs,'draw_rect',true);
+figure,imshow(multiImage(train_lipImages))
+
+figure,imshow(multiImage(lipImages(1:100)));
+

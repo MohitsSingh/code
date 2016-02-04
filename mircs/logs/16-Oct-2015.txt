@@ -1,0 +1,202 @@
+2015-10-16 18:38:25,549 INFO training first phase... - run_pipeline
+2015-10-16 18:42:09,360 INFO training first phase... - run_pipeline
+2015-10-16 18:56:16,338 WARN invalid image found : 372 --> brushing_teeth_113.jpg
+skipping this image!!! - collectSamples
+2015-10-16 18:56:20,112 WARN invalid image found : 418 --> brushing_teeth_159.jpg
+skipping this image!!! - collectSamples
+2015-10-16 22:36:15,612 INFO training first phase... - run_pipeline
+2015-10-16 22:36:37,540 WARN invalid image found : 372 --> brushing_teeth_113.jpg
+skipping this image!!! - collectSamples
+2015-10-16 22:36:40,838 WARN invalid image found : 418 --> brushing_teeth_159.jpg
+skipping this image!!! - collectSamples
+2015-10-16 22:43:41,919 INFO training first phase... - run_pipeline
+2015-10-16 22:43:52,371 WARN invalid image found : 372 --> brushing_teeth_113.jpg
+skipping this image!!! - collectSamples
+2015-10-16 22:43:55,697 WARN invalid image found : 418 --> brushing_teeth_159.jpg
+skipping this image!!! - collectSamples
+2015-10-16 22:48:49,012 INFO training first phase... - run_pipeline
+2015-10-16 22:49:13,113 INFO training first phase... - run_pipeline
+2015-10-16 22:49:26,526 INFO training first phase... - run_pipeline
+2015-10-16 22:50:50,166 WARN invalid image found : 372 --> brushing_teeth_113.jpg
+skipping this image!!! - collectSamples
+2015-10-16 22:50:53,554 WARN invalid image found : 418 --> brushing_teeth_159.jpg
+skipping this image!!! - collectSamples
+2015-10-16 23:06:23,485 INFO training first phase... - run_pipeline
+2015-10-16 23:06:38,705 INFO training first phase... - run_pipeline
+2015-10-16 23:06:50,027 WARN invalid image found : 372 --> brushing_teeth_113.jpg
+skipping this image!!! - collectSamples
+2015-10-16 23:06:53,283 WARN invalid image found : 418 --> brushing_teeth_159.jpg
+skipping this image!!! - collectSamples
+2015-10-16 23:32:57,943 INFO training first phase... - run_pipeline
+2015-10-16 23:34:45,566 WARN invalid image found : 372 --> brushing_teeth_113.jpg
+skipping this image!!! - collectSamples
+2015-10-16 23:34:49,043 WARN invalid image found : 418 --> brushing_teeth_159.jpg
+skipping this image!!! - collectSamples
+2015-10-16 23:39:09,977 WARN invalid image found at test time: 386 --> brushing_teeth_127.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-16 23:41:45,047 INFO training first phase... - run_pipeline
+2015-10-16 23:41:54,227 INFO training first phase... - run_pipeline
+2015-10-16 23:42:07,308 WARN invalid image found : 372 --> brushing_teeth_113.jpg
+skipping this image!!! - collectSamples
+2015-10-16 23:42:11,169 WARN invalid image found : 418 --> brushing_teeth_159.jpg
+skipping this image!!! - collectSamples
+2015-10-16 23:52:11,113 WARN invalid image found at test time: 386 --> brushing_teeth_127.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-16 23:55:17,944 INFO training first phase... - run_pipeline
+2015-10-16 23:55:41,388 WARN invalid image found at test time: 386 --> brushing_teeth_127.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 00:02:18,170 INFO training first phase... - run_pipeline
+2015-10-17 00:02:29,495 INFO training first phase... - run_pipeline
+2015-10-17 00:02:43,647 WARN invalid image found : 372 --> brushing_teeth_113.jpg
+skipping this image!!! - collectSamples
+2015-10-17 00:02:47,518 WARN invalid image found : 418 --> brushing_teeth_159.jpg
+skipping this image!!! - collectSamples
+2015-10-17 00:10:18,789 INFO training first phase... - run_pipeline
+2015-10-17 00:11:19,909 WARN invalid image found at test time: 386 --> brushing_teeth_127.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 00:19:13,904 INFO training first phase... - run_pipeline
+2015-10-17 00:19:48,040 WARN invalid image found : 372 --> brushing_teeth_113.jpg
+skipping this image!!! - collectSamples
+2015-10-17 00:19:59,762 WARN invalid image found : 418 --> brushing_teeth_159.jpg
+skipping this image!!! - collectSamples
+2015-10-17 00:21:59,652 WARN invalid image found at test time: 386 --> brushing_teeth_127.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 00:49:07,015 INFO training first phase... - run_pipeline
+2015-10-17 00:49:13,007 INFO training first phase... - run_pipeline
+2015-10-17 00:49:15,908 INFO training first phase... - run_pipeline
+2015-10-17 00:49:24,279 INFO training first phase... - run_pipeline
+2015-10-17 00:49:55,161 WARN invalid image found : 372 --> brushing_teeth_113.jpg
+skipping this image!!! - collectSamples
+2015-10-17 00:49:59,502 WARN invalid image found : 418 --> brushing_teeth_159.jpg
+skipping this image!!! - collectSamples
+2015-10-17 00:54:17,983 WARN invalid image found at test time: 386 --> brushing_teeth_127.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 01:02:57,183 WARN invalid image found at test time: 2 --> blowing_bubbles_002.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 01:03:17,141 INFO training first phase... - run_pipeline
+2015-10-17 01:03:34,738 WARN invalid image found : 88 --> blowing_bubbles_088.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:03:46,752 WARN invalid image found : 168 --> blowing_bubbles_168.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:03:47,240 WARN invalid image found : 178 --> blowing_bubbles_178.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:03:47,276 WARN invalid image found : 180 --> blowing_bubbles_180.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:03:47,964 WARN invalid image found : 188 --> blowing_bubbles_188.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:03:53,067 WARN invalid image found : 221 --> blowing_bubbles_221.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:04:17,147 WARN invalid image found : 372 --> brushing_teeth_113.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:04:24,536 WARN invalid image found : 418 --> brushing_teeth_159.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:05:18,672 WARN invalid image found : 717 --> phoning_002.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:05:26,030 WARN invalid image found : 770 --> phoning_055.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:05:26,242 WARN invalid image found : 781 --> phoning_066.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:05:43,328 WARN invalid image found : 901 --> phoning_186.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:05:45,500 WARN invalid image found : 929 --> phoning_214.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:05:49,585 WARN invalid image found : 957 --> phoning_242.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:05:49,627 WARN invalid image found : 959 --> phoning_244.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:05:53,730 WARN invalid image found : 979 --> smoking_005.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:05:54,556 WARN invalid image found : 985 --> smoking_011.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:05:54,869 WARN invalid image found : 991 --> smoking_017.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:05:54,926 WARN invalid image found : 994 --> smoking_020.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:05:55,558 WARN invalid image found : 1000 --> smoking_026.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:05:55,607 WARN invalid image found : 1002 --> smoking_028.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:05:55,655 WARN invalid image found : 1005 --> smoking_031.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:05:56,132 WARN invalid image found : 1012 --> smoking_038.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:00,766 WARN invalid image found : 1046 --> smoking_072.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:00,801 WARN invalid image found : 1048 --> smoking_074.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:00,835 WARN invalid image found : 1049 --> smoking_075.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:00,869 WARN invalid image found : 1050 --> smoking_076.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:02,122 WARN invalid image found : 1071 --> smoking_097.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:03,537 WARN invalid image found : 1087 --> smoking_113.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:05,575 WARN invalid image found : 1101 --> smoking_127.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:05,612 WARN invalid image found : 1102 --> smoking_128.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:05,646 WARN invalid image found : 1104 --> smoking_130.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:06,635 WARN invalid image found : 1111 --> smoking_137.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:06,669 WARN invalid image found : 1114 --> smoking_140.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:06,705 WARN invalid image found : 1115 --> smoking_141.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:07,353 WARN invalid image found : 1120 --> smoking_146.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:07,388 WARN invalid image found : 1127 --> smoking_153.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:08,354 WARN invalid image found : 1137 --> smoking_163.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:08,401 WARN invalid image found : 1141 --> smoking_167.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:08,451 WARN invalid image found : 1142 --> smoking_168.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:08,847 WARN invalid image found : 1146 --> smoking_172.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:09,213 WARN invalid image found : 1150 --> smoking_176.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:10,101 WARN invalid image found : 1156 --> smoking_182.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:10,158 WARN invalid image found : 1159 --> smoking_185.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:10,914 WARN invalid image found : 1165 --> smoking_191.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:11,329 WARN invalid image found : 1167 --> smoking_193.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:12,164 WARN invalid image found : 1176 --> smoking_202.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:13,629 WARN invalid image found : 1189 --> smoking_215.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:15,636 WARN invalid image found : 1197 --> smoking_223.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:16,352 WARN invalid image found : 1205 --> smoking_231.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:06:16,747 WARN invalid image found : 1210 --> smoking_236.jpg
+skipping this image!!! - collectSamples
+2015-10-17 01:08:54,349 WARN invalid image found at test time: 386 --> brushing_teeth_127.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 07:34:25,641 INFO training first phase... - run_pipeline
+2015-10-17 08:24:03,277 WARN invalid image found at test time: 386 --> brushing_teeth_127.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 10:19:09,118 INFO training first phase... - run_pipeline
+2015-10-17 10:19:21,449 INFO training first phase... - run_pipeline
+2015-10-17 10:20:12,826 WARN invalid image found at test time: 386 --> brushing_teeth_127.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 10:26:25,654 INFO training first phase... - run_pipeline
+2015-10-17 10:26:36,993 INFO training first phase... - run_pipeline
+2015-10-17 10:26:55,251 INFO training first phase... - run_pipeline
+2015-10-17 10:27:09,081 INFO training first phase... - run_pipeline
+2015-10-17 10:30:15,637 WARN invalid image found at test time: 386 --> brushing_teeth_127.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 11:04:54,166 INFO training first phase... - run_pipeline
+2015-10-17 11:05:12,504 WARN invalid image found : 372 --> brushing_teeth_113.jpg
+skipping this image!!! - collectSamples
+2015-10-17 11:05:16,560 WARN invalid image found : 418 --> brushing_teeth_159.jpg
+skipping this image!!! - collectSamples
+2015-10-17 11:09:21,084 WARN invalid image found : 372 --> brushing_teeth_113.jpg
+skipping this image!!! - collectSamples
+2015-10-17 11:09:25,165 WARN invalid image found : 418 --> brushing_teeth_159.jpg
+skipping this image!!! - collectSamples

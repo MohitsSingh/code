@@ -1,0 +1,362 @@
+2015-10-17 11:19:33,197 INFO training first phase... - run_pipeline
+2015-10-17 11:20:11,279 WARN invalid image found : 372 --> brushing_teeth_113.jpg
+skipping this image!!! - collectSamples
+2015-10-17 11:20:15,205 WARN invalid image found : 418 --> brushing_teeth_159.jpg
+skipping this image!!! - collectSamples
+2015-10-17 11:25:32,633 INFO training first phase... - run_pipeline
+2015-10-17 11:26:14,019 INFO training first phase... - run_pipeline
+2015-10-17 11:26:28,434 WARN invalid image found : 372 --> brushing_teeth_113.jpg
+skipping this image!!! - collectSamples
+2015-10-17 11:26:32,387 WARN invalid image found : 418 --> brushing_teeth_159.jpg
+skipping this image!!! - collectSamples
+2015-10-17 11:28:44,209 INFO training first phase... - run_pipeline
+2015-10-17 11:28:56,078 WARN invalid image found : 372 --> brushing_teeth_113.jpg
+skipping this image!!! - collectSamples
+2015-10-17 11:28:59,972 WARN invalid image found : 418 --> brushing_teeth_159.jpg
+skipping this image!!! - collectSamples
+2015-10-17 11:34:27,187 INFO training first phase... - run_pipeline
+2015-10-17 11:49:50,958 WARN invalid image found : 372 --> brushing_teeth_113.jpg
+skipping this image!!! - collectSamples
+2015-10-17 11:49:54,769 WARN invalid image found : 418 --> brushing_teeth_159.jpg
+skipping this image!!! - collectSamples
+2015-10-17 11:52:02,058 WARN invalid image found : 372 --> brushing_teeth_113.jpg
+skipping this image!!! - collectSamples
+2015-10-17 11:55:19,127 WARN empty ground truth found : 372 --> brushing_teeth_113.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 11:55:28,304 WARN empty ground truth found : 372 --> brushing_teeth_113.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 11:55:58,738 WARN empty ground truth found : 372 --> brushing_teeth_113.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 12:00:46,492 WARN empty ground truth found : 372 --> brushing_teeth_113.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 12:02:30,844 INFO training first phase... - run_pipeline
+2015-10-17 12:02:49,046 WARN empty ground truth found : 372 --> brushing_teeth_113.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 12:02:53,081 WARN empty ground truth found : 418 --> brushing_teeth_159.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 12:03:49,725 WARN empty ground truth found : 372 --> brushing_teeth_113.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 12:03:53,799 WARN empty ground truth found : 418 --> brushing_teeth_159.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 12:05:01,005 INFO training first phase... - run_pipeline
+2015-10-17 12:05:12,943 WARN empty ground truth found : 372 --> brushing_teeth_113.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 12:05:16,959 WARN empty ground truth found : 418 --> brushing_teeth_159.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 12:06:34,767 INFO training first phase... - run_pipeline
+2015-10-17 12:06:52,526 WARN empty ground truth found : 372 --> brushing_teeth_113.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 12:06:56,528 WARN empty ground truth found : 418 --> brushing_teeth_159.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 12:08:16,827 INFO training first phase... - run_pipeline
+2015-10-17 12:08:31,191 WARN empty ground truth found : 372 --> brushing_teeth_113.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 12:08:35,240 WARN empty ground truth found : 418 --> brushing_teeth_159.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 12:13:42,105 WARN empty ground truth found : 386 --> brushing_teeth_127.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 17:11:22,437 INFO training first phase... - run_pipeline
+2015-10-17 17:12:19,914 WARN empty ground truth found : 372 --> brushing_teeth_113.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 17:12:24,007 WARN empty ground truth found : 418 --> brushing_teeth_159.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 20:56:48,147 WARN empty ground truth found : 386 --> brushing_teeth_127.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:15:23,781 INFO training first phase... - run_pipeline
+2015-10-17 21:23:36,678 INFO training first phase... - run_pipeline
+2015-10-17 21:27:00,666 INFO training first phase... - run_pipeline
+2015-10-17 21:28:31,798 INFO training first phase... - run_pipeline
+2015-10-17 21:31:17,927 INFO training first phase... - run_pipeline
+2015-10-17 21:33:07,753 WARN empty ground truth found : 88 --> blowing_bubbles_088.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:33:53,728 WARN empty ground truth found : 168 --> blowing_bubbles_168.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:33:58,140 WARN empty ground truth found : 178 --> blowing_bubbles_178.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:34:00,128 WARN empty ground truth found : 180 --> blowing_bubbles_180.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:34:04,530 WARN empty ground truth found : 188 --> blowing_bubbles_188.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:34:25,273 WARN empty ground truth found : 221 --> blowing_bubbles_221.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:35:59,445 WARN empty ground truth found : 372 --> brushing_teeth_113.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:36:29,098 WARN empty ground truth found : 418 --> brushing_teeth_159.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:39:55,098 WARN empty ground truth found : 717 --> phoning_002.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:40:28,081 WARN empty ground truth found : 770 --> phoning_055.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:40:31,041 WARN empty ground truth found : 781 --> phoning_066.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:41:41,790 WARN empty ground truth found : 901 --> phoning_186.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:41:51,677 WARN empty ground truth found : 929 --> phoning_214.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:42:09,484 WARN empty ground truth found : 957 --> phoning_242.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:42:11,571 WARN empty ground truth found : 959 --> phoning_244.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:42:25,975 WARN empty ground truth found : 979 --> smoking_005.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:42:31,452 WARN empty ground truth found : 985 --> smoking_011.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:42:34,552 WARN empty ground truth found : 991 --> smoking_017.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:42:36,482 WARN empty ground truth found : 994 --> smoking_020.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:42:40,765 WARN empty ground truth found : 1000 --> smoking_026.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:42:42,779 WARN empty ground truth found : 1002 --> smoking_028.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:42:44,826 WARN empty ground truth found : 1005 --> smoking_031.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:42:48,155 WARN empty ground truth found : 1012 --> smoking_038.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:43:05,175 WARN empty ground truth found : 1046 --> smoking_072.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:43:07,168 WARN empty ground truth found : 1048 --> smoking_074.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:43:09,147 WARN empty ground truth found : 1049 --> smoking_075.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:43:11,518 WARN empty ground truth found : 1050 --> smoking_076.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:43:18,419 WARN empty ground truth found : 1071 --> smoking_097.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:43:24,999 WARN empty ground truth found : 1087 --> smoking_113.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:43:32,290 WARN empty ground truth found : 1101 --> smoking_127.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:43:34,201 WARN empty ground truth found : 1102 --> smoking_128.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:43:36,282 WARN empty ground truth found : 1104 --> smoking_130.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:43:41,759 WARN empty ground truth found : 1111 --> smoking_137.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:43:44,065 WARN empty ground truth found : 1114 --> smoking_140.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:43:45,995 WARN empty ground truth found : 1115 --> smoking_141.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:43:50,352 WARN empty ground truth found : 1120 --> smoking_146.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:43:52,442 WARN empty ground truth found : 1127 --> smoking_153.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:43:57,968 WARN empty ground truth found : 1137 --> smoking_163.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:44:00,066 WARN empty ground truth found : 1141 --> smoking_167.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:44:02,004 WARN empty ground truth found : 1142 --> smoking_168.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:44:05,351 WARN empty ground truth found : 1146 --> smoking_172.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:44:08,502 WARN empty ground truth found : 1150 --> smoking_176.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:44:13,165 WARN empty ground truth found : 1156 --> smoking_182.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:44:15,168 WARN empty ground truth found : 1159 --> smoking_185.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:44:19,008 WARN empty ground truth found : 1165 --> smoking_191.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:44:22,292 WARN empty ground truth found : 1167 --> smoking_193.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:44:27,642 WARN empty ground truth found : 1176 --> smoking_202.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:44:35,469 WARN empty ground truth found : 1189 --> smoking_215.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:44:45,015 WARN empty ground truth found : 1197 --> smoking_223.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:44:50,223 WARN empty ground truth found : 1205 --> smoking_231.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 21:44:53,325 WARN empty ground truth found : 1210 --> smoking_236.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 22:19:32,017 INFO training first phase... - run_pipeline
+2015-10-17 22:39:10,622 WARN empty ground truth found : 386 --> brushing_teeth_127.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 22:54:21,336 INFO training first phase... - run_pipeline
+2015-10-17 22:57:20,623 WARN empty ground truth found : 386 --> brushing_teeth_127.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 23:14:58,914 WARN empty ground truth found : 19 --> blowing_bubbles_019.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 23:15:58,335 WARN empty ground truth found : 27 --> blowing_bubbles_027.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 23:25:57,752 WARN empty ground truth found : 80 --> blowing_bubbles_080.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 23:27:08,217 WARN empty ground truth found : 93 --> blowing_bubbles_093.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 23:33:28,907 WARN empty ground truth found : 136 --> blowing_bubbles_136.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 23:33:36,366 WARN empty ground truth found : 137 --> blowing_bubbles_137.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 23:37:18,335 WARN empty ground truth found : 175 --> blowing_bubbles_175.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 23:39:24,839 WARN empty ground truth found : 192 --> blowing_bubbles_192.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 23:40:16,815 WARN empty ground truth found : 199 --> blowing_bubbles_199.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 23:41:50,008 WARN empty ground truth found : 210 --> blowing_bubbles_210.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 23:42:51,147 WARN empty ground truth found : 215 --> blowing_bubbles_215.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 23:42:58,452 WARN empty ground truth found : 216 --> blowing_bubbles_216.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 23:43:02,741 WARN empty ground truth found : 217 --> blowing_bubbles_217.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 23:46:30,994 WARN empty ground truth found : 239 --> blowing_bubbles_239.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 23:47:50,611 WARN empty ground truth found : 243 --> blowing_bubbles_243.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 23:50:02,968 WARN empty ground truth found : 264 --> brushing_teeth_005.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 23:56:15,537 WARN empty ground truth found : 340 --> brushing_teeth_081.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-17 23:57:36,700 WARN empty ground truth found : 348 --> brushing_teeth_089.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:04:38,737 WARN empty ground truth found : 420 --> brushing_teeth_161.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:08:23,226 WARN empty ground truth found : 469 --> drinking_010.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:14:28,911 WARN empty ground truth found : 504 --> drinking_045.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:16:21,025 WARN empty ground truth found : 518 --> drinking_059.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:25:09,707 WARN empty ground truth found : 568 --> drinking_109.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:25:18,466 WARN empty ground truth found : 571 --> drinking_112.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:27:03,493 WARN empty ground truth found : 585 --> drinking_126.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:30:37,587 WARN empty ground truth found : 613 --> drinking_154.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:30:56,948 WARN empty ground truth found : 617 --> drinking_158.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:33:32,495 WARN empty ground truth found : 636 --> drinking_177.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:35:07,957 WARN empty ground truth found : 650 --> drinking_191.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:37:32,365 WARN empty ground truth found : 673 --> drinking_214.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:38:31,961 WARN empty ground truth found : 683 --> drinking_224.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:43:03,958 WARN empty ground truth found : 719 --> phoning_004.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:47:36,870 WARN empty ground truth found : 753 --> phoning_038.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:48:29,062 WARN empty ground truth found : 758 --> phoning_043.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:49:24,513 WARN empty ground truth found : 768 --> phoning_053.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:51:54,746 WARN empty ground truth found : 788 --> phoning_073.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:52:04,029 WARN empty ground truth found : 789 --> phoning_074.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:52:24,826 WARN empty ground truth found : 797 --> phoning_082.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:58:11,589 WARN empty ground truth found : 838 --> phoning_123.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 00:59:37,586 WARN empty ground truth found : 848 --> phoning_133.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:01:36,179 WARN empty ground truth found : 869 --> phoning_154.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:02:36,326 WARN empty ground truth found : 880 --> phoning_165.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:03:43,333 WARN empty ground truth found : 888 --> phoning_173.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:04:35,317 WARN empty ground truth found : 899 --> phoning_184.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:05:50,075 WARN empty ground truth found : 908 --> phoning_193.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:06:09,573 WARN empty ground truth found : 911 --> phoning_196.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:06:20,252 WARN empty ground truth found : 913 --> phoning_198.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:08:15,113 WARN empty ground truth found : 923 --> phoning_208.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:10:50,911 WARN empty ground truth found : 948 --> phoning_233.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:14:41,505 WARN empty ground truth found : 974 --> phoning_259.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:14:55,450 WARN empty ground truth found : 977 --> smoking_003.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:15:55,244 WARN empty ground truth found : 981 --> smoking_007.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:17:58,442 WARN empty ground truth found : 1003 --> smoking_029.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:19:37,913 WARN empty ground truth found : 1013 --> smoking_039.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:19:43,502 WARN empty ground truth found : 1014 --> smoking_040.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:20:09,560 WARN empty ground truth found : 1017 --> smoking_043.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:20:17,974 WARN empty ground truth found : 1018 --> smoking_044.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:20:56,052 WARN empty ground truth found : 1023 --> smoking_049.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:21:18,305 WARN empty ground truth found : 1027 --> smoking_053.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:21:44,847 WARN empty ground truth found : 1029 --> smoking_055.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:21:50,962 WARN empty ground truth found : 1030 --> smoking_056.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:21:57,673 WARN empty ground truth found : 1031 --> smoking_057.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:23:08,620 WARN empty ground truth found : 1041 --> smoking_067.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:23:16,399 WARN empty ground truth found : 1042 --> smoking_068.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:24:39,510 WARN empty ground truth found : 1054 --> smoking_080.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:25:10,178 WARN empty ground truth found : 1058 --> smoking_084.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:26:33,393 WARN empty ground truth found : 1062 --> smoking_088.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:27:36,481 WARN empty ground truth found : 1070 --> smoking_096.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:27:44,522 WARN empty ground truth found : 1072 --> smoking_098.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:28:31,734 WARN empty ground truth found : 1081 --> smoking_107.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:28:45,287 WARN empty ground truth found : 1083 --> smoking_109.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:29:09,637 WARN empty ground truth found : 1085 --> smoking_111.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:29:37,420 WARN empty ground truth found : 1090 --> smoking_116.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:30:00,296 WARN empty ground truth found : 1093 --> smoking_119.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:30:59,749 WARN empty ground truth found : 1105 --> smoking_131.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:31:28,608 WARN empty ground truth found : 1112 --> smoking_138.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:34:25,036 WARN empty ground truth found : 1135 --> smoking_161.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:35:24,884 WARN empty ground truth found : 1145 --> smoking_171.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:35:54,381 WARN empty ground truth found : 1152 --> smoking_178.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:36:01,192 WARN empty ground truth found : 1153 --> smoking_179.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:36:17,277 WARN empty ground truth found : 1157 --> smoking_183.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:36:25,306 WARN empty ground truth found : 1158 --> smoking_184.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:36:31,509 WARN empty ground truth found : 1160 --> smoking_186.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:36:52,975 WARN empty ground truth found : 1162 --> smoking_188.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:40:52,992 WARN empty ground truth found : 1193 --> smoking_219.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:41:28,822 WARN empty ground truth found : 1203 --> smoking_229.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:41:34,725 WARN empty ground truth found : 1207 --> smoking_233.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:41:48,533 WARN empty ground truth found : 1209 --> smoking_235.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:42:23,575 WARN empty ground truth found : 1213 --> smoking_239.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:42:32,355 WARN empty ground truth found : 1214 --> smoking_240.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 01:42:34,941 WARN empty ground truth found : 1215 --> smoking_241.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-18 09:20:49,317 INFO training first phase... - run_pipeline
+2015-10-18 09:21:22,985 INFO training first phase... - run_pipeline
+2015-10-18 09:21:30,023 INFO training first phase... - run_pipeline

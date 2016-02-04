@@ -1,0 +1,8 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="150px" height="201px" version="1.1"
+ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<path d="M 80.038937,90.270105 A7.090357,7.090357 0.000000 0,1 80.056399,76.108616" fill="none" stroke ="blue" stroke-width="1" />
+<line x1="76.841178" y1="78.103177" x2="73.461024" y2="83.341814"  fill="none" stroke ="green" stroke-width="1" />
+</svg>

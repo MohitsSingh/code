@@ -1,0 +1,45 @@
+
+VOCinit;
+
+[imgids,objids]=textread(sprintf(VOCopts.layout.imgsetpath,VOCopts.trainset),'%s %d');
+n = 0;
+tic
+for i=1:length(imgids)
+    % display progress
+    if toc>1
+        fprintf('train: %d/%d\n',i,length(imgids));
+        drawnow;
+        tic;
+    end
+    
+    % read annotation
+    rec=PASreadrecord(sprintf(VOCopts.annopath,imgids{i}));
+    
+    % extract object
+    n=n+1;
+%     objects(n)=rec.objects(objids(i));
+
+    I = imread(sprintf(VOCopts.imgpath,imgids{i}));
+    
+    
+
+    for k = 1:length(objects)
+      obj = objects(k);
+      p = obj.part;
+      for kk = 1:length(p)
+          prt = p(kk);
+          if (strcmp(prt.class,'hand'))
+              I2 = imcrop(I, prt
+          end
+      end
+      
+    end
+    
+%     % move bounding box to origin    
+%     xmin=objects(n).bbox(1);
+%     ymin=objects(n).bbox(2);
+%     objects(n).bbox=objects(n).bbox-[xmin ymin xmin ymin];
+%     for j=1:numel(objects(n).part)
+%         objects(n).part(j).bbox=objects(n).part(j).bbox-[xmin ymin xmin ymin];
+%     end
+end

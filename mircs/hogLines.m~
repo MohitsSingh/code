@@ -1,0 +1,5 @@
+function L = hogLines(I)
+    I = im2single(I);
+    % make the filter...
+    A = ones(11,5);
+end

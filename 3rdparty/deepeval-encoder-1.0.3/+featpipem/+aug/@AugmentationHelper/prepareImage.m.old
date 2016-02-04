@@ -1,0 +1,205 @@
+function images = prepareImage(obj, im, varargin)
+
+    p = inputParser();
+    p.addParamValue('mean_img', []);
+    p.addParamValue('preproc_dup_grey', false, @islogical);
+    if nargin >= 3
+        p.parse(varargin{:});
+    else
+        p.parse();
+    end
+    
+    opts = p.Results;
+    
+    assert(isa(im, 'single'));
+    
+    run_config = obj.get_run_config();
+
+    % argument parsing
+    if nargin < 2, error('Not enough input arguments! (only %d when 2 are required)', ...
+                         nargin); end
+
+    if obj.base_opts.downsize_to_fixed_dims
+        IMAGE_DIM = obj.default_consts_.IMAGE_DIM;
+        CROPPED_DIM = obj.default_consts_.CROPPED_DIM;
+    else
+        if ~isempty(opts.mean_img)
+            error(['Specified mean_image, but base_opts.downsize_to_fixed_dims ' ...
+                   '!= true']);
+        end
+        IMAGE_DIM = min([size(im, 1), size(im, 2)]);
+        CROPPED_DIM = floor(0.875*IMAGE_DIM);
+    end
+    IMAGE_MEAN = 0;
+
+    if (opts.preproc_dup_grey)
+        if max(im(:)) > 1.0
+            im = im/255.0;
+            assert(max(im(:)) <= 1.0);
+            im = rgb2gray(im);
+            im = im*255.0;
+        else
+            im = rgb2gray(im);
+        end
+        im = repmat(im, [1, 1, 3]);
+    end
+
+    excess_sz = floor((IMAGE_DIM - CROPPED_DIM)/2)+1;
+    if ~isempty(opts.mean_img)
+        if ischar(opts.mean_img)
+            d = load(opts.mean_img);
+            mean_img = d.mean_img;
+        else
+            mean_img = opts.mean_img;
+        end
+        IMAGE_MEAN = mean_img(excess_sz:excess_sz+CROPPED_DIM-1, ...
+                              excess_sz:excess_sz+CROPPED_DIM-1, :);
+
+        if (opts.preproc_dup_grey)
+            IMAGE_MEAN = IMAGE_MEAN / 255.0;
+            IMAGE_MEAN = rgb2gray(IMAGE_MEAN);
+            IMAGE_MEAN = repmat(IMAGE_MEAN, [1, 1, 3]);
+            IMAGE_MEAN = IMAGE_MEAN * 255.0;
+        end
+    end
+
+    if obj.base_opts.downsize_to_fixed_dims || ...
+            strcmp(run_config.augmentation, 'squashed_corners')
+        if strcmp(run_config.augmentation, 'squashed_corners')
+            im = imresize(im, [IMAGE_DIM IMAGE_DIM], 'bilinear');
+        else
+            % resize to IMAGE_DIM x N where IMAGE_DIM is the smaller dimension
+            if size(im, 1) < size(im, 2)
+                im = imresize(im, [IMAGE_DIM NaN], 'bilinear');
+            else
+                im = imresize(im, [NaN IMAGE_DIM], 'bilinear');
+            end
+        end
+    end
+    
+    if strcmp(run_config.augmentation, 'centre_corners')
+        % take central IMAGE_DIM x IMAGE_DIM crop
+        if size(im, 1) < size(im, 2)
+            excess_sz = floor((size(im, 2) - IMAGE_DIM)/2)+1;
+            im = im(:, excess_sz:excess_sz+IMAGE_DIM-1, :);
+        else
+            excess_sz = floor((size(im, 1) - IMAGE_DIM)/2)+1;
+            im = im(excess_sz:excess_sz+IMAGE_DIM-1, :, :);
+        end
+    end
+    
+    if ~strcmp(run_config.augmentation, 'none') || ...
+            (obj.base_opts.downsize_to_fixed_dims)
+        max_i = size(im,1)-CROPPED_DIM + 1;
+        max_j = size(im,2)-CROPPED_DIM + 1;
+        centre_i = floor(max_i/2) + 1;
+        centre_j = floor(max_j/2) + 1;
+    end
+
+    if strcmp(run_config.augmentation, 'centre_corners') || ...
+            strcmp(run_config.augmentation, 'aspect_corners') || ...
+            strcmp(run_config.augmentation, 'squashed_corners') || ...
+            ~isempty(regexp(run_config.augmentation, obj.default_consts_.AUG_SAMPLEGRID_RE, 'once'))
+        max_i = size(im,1)-CROPPED_DIM + 1;
+        max_j = size(im,2)-CROPPED_DIM + 1;
+
+        % oversample (4 corners, centre(s), and their x-axis flips)
+        if ~isempty(regexp(run_config.augmentation, obj.default_consts_.AUG_SAMPLEGRID_RE, 'once'))
+            grid_token = regexp(run_config.augmentation, ...
+                                obj.default_consts_.AUG_SAMPLEGRID_RE, 'tokens');
+            grid_token = grid_token{1};
+            centre_grid_dim = str2double(grid_token{1});
+            clear grid_token;
+        else
+            centre_grid_dim = 1;
+        end
+        step_i = floor(max_i/(centre_grid_dim+1));
+        step_j = floor(max_j/(centre_grid_dim+1));
+            
+        indices_i = [1 max_i (step_i+1):step_i:(max_i-step_i+2)];
+        indices_j = [1 max_j (step_j+1):step_j:(max_j-step_j+2)];
+        assert(length(indices_i) == length(indices_j));
+        assert((length(indices_i) - 2) == centre_grid_dim);
+        
+        if centre_grid_dim == 1
+            % check for backwards compatibility with old code - can
+            % remove after convinced that it is working fine
+            assert(indices_i(3) == centre_i);
+            assert(indices_j(3) == centre_j);
+        end
+        
+        aug_images_no_flip = centre_grid_dim*centre_grid_dim + 4;
+
+    end
+    
+    if obj.base_opts.c_image
+        dim_order = [2 1 3];
+    else
+        dim_order = [1 2 3];
+    end
+    flip_dim = find(dim_order == 2);
+    
+    if strcmp(run_config.augmentation, 'centre_corners') || ...
+            strcmp(run_config.augmentation, 'aspect_corners') || ...
+            strcmp(run_config.augmentation, 'squashed_corners') || ...
+            ~isempty(regexp(run_config.augmentation, obj.default_consts_.AUG_SAMPLEGRID_RE, 'once'))
+        images = zeros(CROPPED_DIM, CROPPED_DIM, 3, aug_images_no_flip*2, 'single');
+        curr = 1;
+        for i = indices_i
+            for j = indices_j
+                if xor(i == 1 || i == indices_i(2), ...
+                       j == 1 || j == indices_j(2))
+                    continue;
+                end
+                images(:, :, :, curr) = ...
+                    permute(im(i:i+CROPPED_DIM-1, j:j+CROPPED_DIM-1, :), dim_order) - ...
+                    IMAGE_MEAN;
+                images(:,:,:,curr+aug_images_no_flip) = flipdim(images(:, :, :, curr), flip_dim);
+                curr = curr + 1;
+            end
+        end
+    elseif strcmp(run_config.augmentation, 'flip')
+        if obj.base_opts.downsize_to_fixed_dims
+            images = zeros(CROPPED_DIM, CROPPED_DIM, 3, 2, 'single');
+            images(:,:,:,1) = ...
+            permute(im(centre_i:centre_i+CROPPED_DIM-1,centre_j:centre_j+CROPPED_DIM-1,:), ...
+                    dim_order) - IMAGE_MEAN;
+            images(:,:,:,2) = flipdim(images(:,:,:,1), flip_dim);
+        else
+            if IMAGE_MEAN ~= 0
+                error(['Flip augmentation not supported when specifying image ' ...
+                       'mean and not downsizing to fixed dimensions']);
+            end
+            images = zeros(size(im,1), size(im,2), 3, 2, 'single');
+            images(:,:,:,1) = permute(im, dim_order);
+            images(:,:,:,2) = flipdim(images(:,:,:,1), flip_dim);
+        end
+    elseif strcmp(run_config.augmentation, 'none')
+        if obj.base_opts.downsize_to_fixed_dims
+            images = zeros(CROPPED_DIM, CROPPED_DIM, 3, 'single');
+            images(:,:,:) = ...
+                permute(im(centre_i:centre_i+CROPPED_DIM-1,centre_j:centre_j+CROPPED_DIM-1,:), ...
+                        dim_order) - IMAGE_MEAN;
+        else
+            if IMAGE_MEAN ~= 0
+                error(['None augmentation not supported when specifying image ' ...
+                       'mean and not downsizing to fixed dimensions']);
+            end
+            images = zeros(size(im,1), size(im,2), 3, 'single');
+            images(:,:,:) = permute(im, dim_order);
+        end
+    else
+        error('Unrecognised augmentation type: %s', run_config.augmentation);
+    end
+    
+    % convert to greyscale if necessary
+    if obj.base_opts.conv_to_grey
+        converted_images = zeros(size(images, 1), size(images, 2), size(images, 4), 'single');
+
+        for i = 1:size(images,4)
+            converted_images(:,:,i) = rgb2gray(images(:,:,:,i)/255)*255;
+        end
+        images = converted_images;
+    end
+
+end

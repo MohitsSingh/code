@@ -1,0 +1,8 @@
+2015-10-13 13:57:34,475 INFO training first phase... - run_pipeline
+2015-10-13 14:21:29,394 INFO training first phase... - run_pipeline
+2015-10-13 14:24:33,163 INFO training first phase... - run_pipeline
+2015-10-13 14:39:38,370 INFO training first phase... - run_pipeline
+2015-10-13 14:42:04,322 INFO training first phase... - run_pipeline
+2015-10-13 14:48:27,235 INFO training first phase... - run_pipeline
+2015-10-13 23:05:27,039 INFO training first phase... - run_pipeline
+2015-10-13 23:07:59,216 INFO training first phase... - run_pipeline

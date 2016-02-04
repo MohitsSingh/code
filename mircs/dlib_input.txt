@@ -1,0 +1,3645 @@
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_218.jpg
+1
+188 179 53 52
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_077.jpg
+1
+376 143 85 85
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_156.jpg
+1
+113 19 28 29
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_065.jpg
+1
+298 123 164 164
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_055.jpg
+1
+102 66 81 80
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_109.jpg
+1
+125 68 96 96
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_089.jpg
+1
+111 77 60 60
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_082.jpg
+1
+143 147 47 47
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_094.jpg
+1
+228 261 107 108
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_069.jpg
+1
+79 53 58 58
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_090.jpg
+1
+169 79 104 104
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_008.jpg
+1
+112 71 110 109
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_146.jpg
+1
+105 64 92 92
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_099.jpg
+1
+73 93 76 76
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_185.jpg
+1
+264 166 99 98
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_010.jpg
+1
+289 77 34 33
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_005.jpg
+1
+247 109 47 47
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_245.jpg
+1
+100 137 54 54
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_138.jpg
+1
+120 149 86 87
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_140.jpg
+1
+150 113 69 70
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_024.jpg
+1
+102 80 52 51
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_086.jpg
+1
+129 59 62 62
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_154.jpg
+1
+206 67 40 39
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_117.jpg
+1
+118 97 94 95
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_011.jpg
+1
+116 81 89 89
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_103.jpg
+1
+115 96 52 52
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_147.jpg
+1
+211 58 92 92
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_112.jpg
+1
+166 108 86 86
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_096.jpg
+1
+101 38 63 63
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_079.jpg
+1
+263 106 68 69
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_150.jpg
+1
+120 86 73 72
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_088.jpg
+1
+135 76 53 53
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_144.jpg
+1
+188 83 60 60
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_237.jpg
+1
+216 95 86 86
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_135.jpg
+1
+147 60 52 53
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_021.jpg
+1
+128 82 122 122
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_244.jpg
+1
+215 165 75 75
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_106.jpg
+1
+178 109 61 60
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_143.jpg
+1
+200 70 67 67
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_034.jpg
+1
+109 98 103 102
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_198.jpg
+1
+148 59 52 52
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_051.jpg
+1
+216 66 53 53
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_129.jpg
+1
+98 28 31 32
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_111.jpg
+1
+98 56 82 83
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_213.jpg
+1
+110 109 130 131
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_159.jpg
+1
+207 98 50 51
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_204.jpg
+1
+48 228 59 59
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_205.jpg
+1
+206 122 63 64
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_141.jpg
+1
+90 106 66 65
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_121.jpg
+1
+475 142 123 123
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_161.jpg
+1
+223 28 46 47
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_188.jpg
+1
+114 71 37 37
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_258.jpg
+1
+114 93 51 51
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_225.jpg
+1
+243 65 51 51
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_172.jpg
+1
+238 86 52 52
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_022.jpg
+1
+260 61 61 61
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_017.jpg
+1
+197 42 56 56
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_209.jpg
+1
+220 111 83 82
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_058.jpg
+1
+85 105 91 91
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_230.jpg
+1
+228 98 85 85
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_256.jpg
+1
+179 130 107 107
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_157.jpg
+1
+234 127 71 71
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_104.jpg
+1
+160 142 85 85
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_255.jpg
+1
+137 59 76 77
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_180.jpg
+1
+237 104 63 64
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_014.jpg
+1
+129 60 112 112
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_181.jpg
+1
+261 129 68 68
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_105.jpg
+1
+197 117 49 49
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_219.jpg
+1
+168 91 56 56
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_064.jpg
+1
+169 118 102 102
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_036.jpg
+1
+106 209 67 67
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_085.jpg
+1
+104 86 64 64
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_241.jpg
+1
+196 47 81 81
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_084.jpg
+1
+126 160 72 72
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_214.jpg
+1
+153 143 98 97
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_254.jpg
+1
+102 102 81 81
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_001.jpg
+1
+200 64 62 62
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_123.jpg
+1
+232 44 73 72
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_002.jpg
+1
+251 119 70 70
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_101.jpg
+1
+141 49 92 92
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_063.jpg
+1
+118 88 140 140
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_056.jpg
+1
+90 36 51 51
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_042.jpg
+1
+112 47 46 46
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_195.jpg
+1
+284 99 87 87
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_221.jpg
+1
+104 85 79 79
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_246.jpg
+1
+124 104 96 96
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_163.jpg
+1
+178 70 87 88
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_257.jpg
+1
+103 181 39 40
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_153.jpg
+1
+116 51 102 102
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_234.jpg
+1
+181 104 76 77
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_203.jpg
+1
+117 83 95 94
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_173.jpg
+1
+163 128 46 46
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_178.jpg
+1
+93 72 59 59
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_076.jpg
+1
+77 90 47 47
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_228.jpg
+1
+115 93 116 117
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_052.jpg
+1
+178 70 94 95
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_071.jpg
+1
+531 97 118 118
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_251.jpg
+1
+91 128 76 76
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_168.jpg
+1
+142 58 30 30
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_222.jpg
+1
+229 69 64 63
+D:/datasets/stanford40/JPEGImages/brushing_teeth_073.jpg
+1
+125 89 52 52
+D:/datasets/stanford40/JPEGImages/brushing_teeth_061.jpg
+1
+137 102 81 81
+D:/datasets/stanford40/JPEGImages/brushing_teeth_082.jpg
+1
+106 56 112 111
+D:/datasets/stanford40/JPEGImages/brushing_teeth_070.jpg
+1
+174 85 76 76
+D:/datasets/stanford40/JPEGImages/brushing_teeth_095.jpg
+1
+162 80 90 90
+D:/datasets/stanford40/JPEGImages/brushing_teeth_132.jpg
+1
+263 68 113 112
+D:/datasets/stanford40/JPEGImages/brushing_teeth_059.jpg
+1
+137 64 115 115
+D:/datasets/stanford40/JPEGImages/brushing_teeth_137.jpg
+1
+87 39 42 42
+D:/datasets/stanford40/JPEGImages/brushing_teeth_163.jpg
+1
+191 161 140 140
+D:/datasets/stanford40/JPEGImages/brushing_teeth_143.jpg
+1
+156 98 86 86
+D:/datasets/stanford40/JPEGImages/brushing_teeth_028.jpg
+1
+284 88 66 66
+D:/datasets/stanford40/JPEGImages/brushing_teeth_138.jpg
+1
+203 125 100 100
+D:/datasets/stanford40/JPEGImages/brushing_teeth_190.jpg
+1
+256 66 84 85
+D:/datasets/stanford40/JPEGImages/brushing_teeth_179.jpg
+1
+121 137 229 230
+D:/datasets/stanford40/JPEGImages/brushing_teeth_064.jpg
+1
+223 70 88 89
+D:/datasets/stanford40/JPEGImages/brushing_teeth_007.jpg
+1
+138 62 74 74
+D:/datasets/stanford40/JPEGImages/brushing_teeth_168.jpg
+1
+110 45 79 79
+D:/datasets/stanford40/JPEGImages/brushing_teeth_155.jpg
+1
+248 28 74 73
+D:/datasets/stanford40/JPEGImages/brushing_teeth_173.jpg
+1
+105 19 46 45
+D:/datasets/stanford40/JPEGImages/brushing_teeth_001.jpg
+1
+198 43 64 65
+D:/datasets/stanford40/JPEGImages/brushing_teeth_046.jpg
+1
+159 105 92 91
+D:/datasets/stanford40/JPEGImages/brushing_teeth_171.jpg
+1
+237 65 85 85
+D:/datasets/stanford40/JPEGImages/brushing_teeth_092.jpg
+1
+146 91 107 107
+D:/datasets/stanford40/JPEGImages/brushing_teeth_142.jpg
+1
+128 201 66 66
+D:/datasets/stanford40/JPEGImages/brushing_teeth_131.jpg
+1
+311 103 124 125
+D:/datasets/stanford40/JPEGImages/brushing_teeth_156.jpg
+1
+133 84 52 53
+D:/datasets/stanford40/JPEGImages/brushing_teeth_017.jpg
+1
+130 95 63 64
+D:/datasets/stanford40/JPEGImages/brushing_teeth_021.jpg
+1
+82 51 63 64
+D:/datasets/stanford40/JPEGImages/brushing_teeth_109.jpg
+1
+138 72 77 77
+D:/datasets/stanford40/JPEGImages/brushing_teeth_128.jpg
+1
+339 85 136 135
+D:/datasets/stanford40/JPEGImages/brushing_teeth_077.jpg
+1
+228 86 193 192
+D:/datasets/stanford40/JPEGImages/brushing_teeth_015.jpg
+1
+329 172 147 147
+D:/datasets/stanford40/JPEGImages/brushing_teeth_067.jpg
+1
+132 127 57 57
+D:/datasets/stanford40/JPEGImages/brushing_teeth_141.jpg
+1
+148 160 162 162
+D:/datasets/stanford40/JPEGImages/brushing_teeth_025.jpg
+1
+108 95 59 60
+D:/datasets/stanford40/JPEGImages/brushing_teeth_180.jpg
+1
+111 125 114 113
+D:/datasets/stanford40/JPEGImages/brushing_teeth_159.jpg
+1
+120 64 46 45
+D:/datasets/stanford40/JPEGImages/brushing_teeth_076.jpg
+1
+189 49 104 105
+D:/datasets/stanford40/JPEGImages/brushing_teeth_110.jpg
+1
+144 75 75 75
+D:/datasets/stanford40/JPEGImages/brushing_teeth_136.jpg
+1
+113 129 104 103
+D:/datasets/stanford40/JPEGImages/brushing_teeth_097.jpg
+1
+156 18 54 54
+D:/datasets/stanford40/JPEGImages/brushing_teeth_045.jpg
+1
+215 208 52 52
+D:/datasets/stanford40/JPEGImages/brushing_teeth_013.jpg
+1
+164 110 87 87
+D:/datasets/stanford40/JPEGImages/brushing_teeth_139.jpg
+1
+102 128 103 103
+D:/datasets/stanford40/JPEGImages/brushing_teeth_102.jpg
+1
+278 441 95 95
+D:/datasets/stanford40/JPEGImages/brushing_teeth_174.jpg
+1
+415 62 60 60
+D:/datasets/stanford40/JPEGImages/brushing_teeth_162.jpg
+1
+144 39 57 57
+D:/datasets/stanford40/JPEGImages/brushing_teeth_024.jpg
+1
+237 152 137 137
+D:/datasets/stanford40/JPEGImages/brushing_teeth_069.jpg
+1
+185 153 96 95
+D:/datasets/stanford40/JPEGImages/brushing_teeth_150.jpg
+1
+128 81 92 93
+D:/datasets/stanford40/JPEGImages/brushing_teeth_188.jpg
+1
+163 97 73 72
+D:/datasets/stanford40/JPEGImages/brushing_teeth_103.jpg
+1
+264 101 79 79
+D:/datasets/stanford40/JPEGImages/brushing_teeth_112.jpg
+1
+116 46 76 76
+D:/datasets/stanford40/JPEGImages/brushing_teeth_096.jpg
+1
+20 29 59 58
+D:/datasets/stanford40/JPEGImages/brushing_teeth_062.jpg
+1
+158 68 96 97
+D:/datasets/stanford40/JPEGImages/brushing_teeth_066.jpg
+1
+69 53 55 54
+D:/datasets/stanford40/JPEGImages/brushing_teeth_029.jpg
+1
+100 104 108 108
+D:/datasets/stanford40/JPEGImages/brushing_teeth_057.jpg
+1
+163 111 75 75
+D:/datasets/stanford40/JPEGImages/brushing_teeth_198.jpg
+1
+195 95 55 55
+D:/datasets/stanford40/JPEGImages/brushing_teeth_012.jpg
+1
+63 69 87 86
+D:/datasets/stanford40/JPEGImages/brushing_teeth_119.jpg
+1
+163 201 103 102
+D:/datasets/stanford40/JPEGImages/brushing_teeth_031.jpg
+1
+64 45 50 49
+D:/datasets/stanford40/JPEGImages/brushing_teeth_004.jpg
+1
+155 139 74 74
+D:/datasets/stanford40/JPEGImages/brushing_teeth_149.jpg
+1
+108 71 71 71
+D:/datasets/stanford40/JPEGImages/brushing_teeth_125.jpg
+1
+172 100 102 102
+D:/datasets/stanford40/JPEGImages/brushing_teeth_043.jpg
+1
+485 294 167 168
+D:/datasets/stanford40/JPEGImages/brushing_teeth_187.jpg
+1
+323 110 53 54
+D:/datasets/stanford40/JPEGImages/brushing_teeth_148.jpg
+1
+135 75 51 50
+D:/datasets/stanford40/JPEGImages/brushing_teeth_047.jpg
+1
+75 125 123 123
+D:/datasets/stanford40/JPEGImages/brushing_teeth_178.jpg
+1
+234 147 107 106
+D:/datasets/stanford40/JPEGImages/brushing_teeth_186.jpg
+1
+141 37 46 46
+D:/datasets/stanford40/JPEGImages/brushing_teeth_113.jpg
+1
+96 40 47 47
+D:/datasets/stanford40/JPEGImages/brushing_teeth_197.jpg
+1
+108 92 79 79
+D:/datasets/stanford40/JPEGImages/brushing_teeth_014.jpg
+1
+160 74 59 60
+D:/datasets/stanford40/JPEGImages/brushing_teeth_199.jpg
+1
+70 91 91 91
+D:/datasets/stanford40/JPEGImages/brushing_teeth_177.jpg
+1
+200 43 64 63
+D:/datasets/stanford40/JPEGImages/brushing_teeth_026.jpg
+1
+134 67 75 75
+D:/datasets/stanford40/JPEGImages/brushing_teeth_009.jpg
+1
+300 161 117 117
+D:/datasets/stanford40/JPEGImages/brushing_teeth_087.jpg
+1
+123 180 86 86
+D:/datasets/stanford40/JPEGImages/brushing_teeth_117.jpg
+1
+122 89 83 83
+D:/datasets/stanford40/JPEGImages/brushing_teeth_006.jpg
+1
+118 88 78 78
+D:/datasets/stanford40/JPEGImages/brushing_teeth_041.jpg
+1
+135 103 70 70
+D:/datasets/stanford40/JPEGImages/brushing_teeth_164.jpg
+1
+157 114 91 91
+D:/datasets/stanford40/JPEGImages/brushing_teeth_185.jpg
+1
+143 106 56 56
+D:/datasets/stanford40/JPEGImages/brushing_teeth_105.jpg
+1
+356 83 87 87
+D:/datasets/stanford40/JPEGImages/brushing_teeth_133.jpg
+1
+266 156 97 97
+D:/datasets/stanford40/JPEGImages/brushing_teeth_072.jpg
+1
+89 132 57 57
+D:/datasets/stanford40/JPEGImages/brushing_teeth_060.jpg
+1
+153 24 37 36
+D:/datasets/stanford40/JPEGImages/brushing_teeth_176.jpg
+1
+171 129 59 60
+D:/datasets/stanford40/JPEGImages/brushing_teeth_020.jpg
+1
+252 156 93 93
+D:/datasets/stanford40/JPEGImages/brushing_teeth_181.jpg
+1
+28 30 45 45
+D:/datasets/stanford40/JPEGImages/brushing_teeth_053.jpg
+1
+110 80 77 77
+D:/datasets/stanford40/JPEGImages/brushing_teeth_200.jpg
+1
+227 114 113 113
+D:/datasets/stanford40/JPEGImages/brushing_teeth_129.jpg
+1
+120 18 49 49
+D:/datasets/stanford40/JPEGImages/brushing_teeth_134.jpg
+1
+307 142 61 61
+D:/datasets/stanford40/JPEGImages/brushing_teeth_192.jpg
+1
+302 31 49 49
+D:/datasets/stanford40/JPEGImages/brushing_teeth_074.jpg
+1
+120 163 83 83
+D:/datasets/stanford40/JPEGImages/brushing_teeth_088.jpg
+1
+199 185 45 45
+D:/datasets/stanford40/JPEGImages/brushing_teeth_172.jpg
+1
+200 52 45 46
+D:/datasets/stanford40/JPEGImages/brushing_teeth_175.jpg
+1
+361 147 62 63
+D:/datasets/stanford40/JPEGImages/drinking_168.jpg
+1
+280 45 73 73
+D:/datasets/stanford40/JPEGImages/drinking_226.jpg
+1
+139 106 82 83
+D:/datasets/stanford40/JPEGImages/drinking_197.jpg
+1
+182 223 157 157
+D:/datasets/stanford40/JPEGImages/drinking_074.jpg
+1
+112 44 89 89
+D:/datasets/stanford40/JPEGImages/drinking_237.jpg
+1
+119 127 116 116
+D:/datasets/stanford40/JPEGImages/drinking_195.jpg
+1
+571 133 121 121
+D:/datasets/stanford40/JPEGImages/drinking_203.jpg
+1
+138 47 47 47
+D:/datasets/stanford40/JPEGImages/drinking_027.jpg
+1
+190 56 82 82
+D:/datasets/stanford40/JPEGImages/drinking_204.jpg
+1
+141 98 83 83
+D:/datasets/stanford40/JPEGImages/drinking_105.jpg
+1
+130 78 65 65
+D:/datasets/stanford40/JPEGImages/drinking_230.jpg
+1
+301 131 203 203
+D:/datasets/stanford40/JPEGImages/drinking_174.jpg
+1
+134 83 84 84
+D:/datasets/stanford40/JPEGImages/drinking_006.jpg
+1
+165 150 120 120
+D:/datasets/stanford40/JPEGImages/drinking_110.jpg
+1
+232 88 87 87
+D:/datasets/stanford40/JPEGImages/drinking_142.jpg
+1
+126 77 57 56
+D:/datasets/stanford40/JPEGImages/drinking_063.jpg
+1
+195 82 99 99
+D:/datasets/stanford40/JPEGImages/drinking_047.jpg
+1
+194 88 106 106
+D:/datasets/stanford40/JPEGImages/drinking_092.jpg
+1
+101 33 79 79
+D:/datasets/stanford40/JPEGImages/drinking_246.jpg
+1
+144 59 87 86
+D:/datasets/stanford40/JPEGImages/drinking_215.jpg
+1
+99 165 63 63
+D:/datasets/stanford40/JPEGImages/drinking_031.jpg
+1
+410 161 109 109
+D:/datasets/stanford40/JPEGImages/drinking_067.jpg
+1
+124 128 98 98
+D:/datasets/stanford40/JPEGImages/drinking_015.jpg
+1
+375 200 105 104
+D:/datasets/stanford40/JPEGImages/drinking_001.jpg
+1
+112 27 77 78
+D:/datasets/stanford40/JPEGImages/drinking_196.jpg
+1
+295 133 188 188
+D:/datasets/stanford40/JPEGImages/drinking_152.jpg
+1
+143 108 64 64
+D:/datasets/stanford40/JPEGImages/drinking_053.jpg
+1
+152 52 114 113
+D:/datasets/stanford40/JPEGImages/drinking_181.jpg
+1
+330 152 179 179
+D:/datasets/stanford40/JPEGImages/drinking_017.jpg
+1
+159 117 96 96
+D:/datasets/stanford40/JPEGImages/drinking_210.jpg
+1
+208 56 71 71
+D:/datasets/stanford40/JPEGImages/drinking_079.jpg
+1
+193 6 61 60
+D:/datasets/stanford40/JPEGImages/drinking_058.jpg
+1
+117 172 46 46
+D:/datasets/stanford40/JPEGImages/drinking_145.jpg
+1
+168 72 114 114
+D:/datasets/stanford40/JPEGImages/drinking_016.jpg
+1
+111 59 74 74
+D:/datasets/stanford40/JPEGImages/drinking_040.jpg
+1
+126 28 55 56
+D:/datasets/stanford40/JPEGImages/drinking_140.jpg
+1
+165 102 110 110
+D:/datasets/stanford40/JPEGImages/drinking_193.jpg
+1
+202 141 118 118
+D:/datasets/stanford40/JPEGImages/drinking_166.jpg
+1
+302 16 87 87
+D:/datasets/stanford40/JPEGImages/drinking_244.jpg
+1
+84 19 30 31
+D:/datasets/stanford40/JPEGImages/drinking_115.jpg
+1
+139 89 44 43
+D:/datasets/stanford40/JPEGImages/drinking_102.jpg
+1
+303 215 107 107
+D:/datasets/stanford40/JPEGImages/drinking_252.jpg
+1
+394 93 98 98
+D:/datasets/stanford40/JPEGImages/drinking_206.jpg
+1
+112 112 56 56
+D:/datasets/stanford40/JPEGImages/drinking_185.jpg
+1
+263 75 69 68
+D:/datasets/stanford40/JPEGImages/drinking_149.jpg
+1
+172 102 129 129
+D:/datasets/stanford40/JPEGImages/drinking_032.jpg
+1
+170 41 100 101
+D:/datasets/stanford40/JPEGImages/drinking_170.jpg
+1
+232 37 96 95
+D:/datasets/stanford40/JPEGImages/drinking_122.jpg
+1
+143 135 88 88
+D:/datasets/stanford40/JPEGImages/drinking_254.jpg
+1
+260 42 48 48
+D:/datasets/stanford40/JPEGImages/drinking_025.jpg
+1
+152 44 45 45
+D:/datasets/stanford40/JPEGImages/drinking_222.jpg
+1
+359 197 95 94
+D:/datasets/stanford40/JPEGImages/drinking_208.jpg
+1
+143 47 118 117
+D:/datasets/stanford40/JPEGImages/drinking_144.jpg
+1
+84 70 74 74
+D:/datasets/stanford40/JPEGImages/drinking_184.jpg
+1
+66 76 40 40
+D:/datasets/stanford40/JPEGImages/drinking_156.jpg
+1
+91 15 49 50
+D:/datasets/stanford40/JPEGImages/drinking_147.jpg
+1
+261 41 57 58
+D:/datasets/stanford40/JPEGImages/drinking_035.jpg
+1
+159 53 96 96
+D:/datasets/stanford40/JPEGImages/drinking_160.jpg
+1
+92 77 88 88
+D:/datasets/stanford40/JPEGImages/drinking_133.jpg
+1
+362 210 104 105
+D:/datasets/stanford40/JPEGImages/drinking_116.jpg
+1
+302 229 130 131
+D:/datasets/stanford40/JPEGImages/drinking_186.jpg
+1
+103 80 81 80
+D:/datasets/stanford40/JPEGImages/drinking_209.jpg
+1
+246 54 124 125
+D:/datasets/stanford40/JPEGImages/drinking_229.jpg
+1
+100 74 120 121
+D:/datasets/stanford40/JPEGImages/drinking_198.jpg
+1
+119 31 81 81
+D:/datasets/stanford40/JPEGImages/drinking_085.jpg
+1
+286 175 100 100
+D:/datasets/stanford40/JPEGImages/drinking_247.jpg
+1
+175 119 68 67
+D:/datasets/stanford40/JPEGImages/drinking_176.jpg
+1
+282 71 92 91
+D:/datasets/stanford40/JPEGImages/drinking_111.jpg
+1
+333 125 164 164
+D:/datasets/stanford40/JPEGImages/drinking_213.jpg
+1
+72 66 118 118
+D:/datasets/stanford40/JPEGImages/drinking_178.jpg
+1
+140 118 146 145
+D:/datasets/stanford40/JPEGImages/drinking_118.jpg
+1
+76 47 52 52
+D:/datasets/stanford40/JPEGImages/drinking_232.jpg
+1
+206 89 114 115
+D:/datasets/stanford40/JPEGImages/drinking_082.jpg
+1
+99 125 108 107
+D:/datasets/stanford40/JPEGImages/drinking_212.jpg
+1
+72 40 49 48
+D:/datasets/stanford40/JPEGImages/drinking_231.jpg
+1
+113 88 64 64
+D:/datasets/stanford40/JPEGImages/drinking_077.jpg
+1
+199 26 87 87
+D:/datasets/stanford40/JPEGImages/drinking_011.jpg
+1
+317 146 152 152
+D:/datasets/stanford40/JPEGImages/drinking_038.jpg
+1
+168 60 58 58
+D:/datasets/stanford40/JPEGImages/drinking_216.jpg
+1
+84 35 66 67
+D:/datasets/stanford40/JPEGImages/drinking_238.jpg
+1
+141 75 73 73
+D:/datasets/stanford40/JPEGImages/drinking_207.jpg
+1
+214 52 50 50
+D:/datasets/stanford40/JPEGImages/drinking_044.jpg
+1
+263 130 204 204
+D:/datasets/stanford40/JPEGImages/drinking_169.jpg
+1
+142 103 69 70
+D:/datasets/stanford40/JPEGImages/drinking_243.jpg
+1
+124 33 109 109
+D:/datasets/stanford40/JPEGImages/drinking_240.jpg
+1
+192 76 74 74
+D:/datasets/stanford40/JPEGImages/drinking_093.jpg
+1
+383 169 55 55
+D:/datasets/stanford40/JPEGImages/drinking_008.jpg
+1
+238 156 171 171
+D:/datasets/stanford40/JPEGImages/drinking_221.jpg
+1
+55 41 76 76
+D:/datasets/stanford40/JPEGImages/drinking_159.jpg
+1
+441 176 144 144
+D:/datasets/stanford40/JPEGImages/drinking_136.jpg
+1
+223 367 82 83
+D:/datasets/stanford40/JPEGImages/drinking_057.jpg
+1
+264 104 27 27
+D:/datasets/stanford40/JPEGImages/drinking_242.jpg
+1
+69 158 71 70
+D:/datasets/stanford40/JPEGImages/drinking_061.jpg
+1
+172 103 82 81
+D:/datasets/stanford40/JPEGImages/drinking_164.jpg
+1
+140 108 40 39
+D:/datasets/stanford40/JPEGImages/drinking_080.jpg
+1
+154 54 58 58
+D:/datasets/stanford40/JPEGImages/drinking_139.jpg
+1
+155 51 71 71
+D:/datasets/stanford40/JPEGImages/drinking_037.jpg
+1
+101 75 84 84
+D:/datasets/stanford40/JPEGImages/drinking_183.jpg
+1
+181 35 73 73
+D:/datasets/stanford40/JPEGImages/drinking_121.jpg
+1
+145 63 44 44
+D:/datasets/stanford40/JPEGImages/drinking_127.jpg
+1
+178 164 103 103
+D:/datasets/stanford40/JPEGImages/phoning_201.jpg
+1
+87 115 34 33
+D:/datasets/stanford40/JPEGImages/phoning_220.jpg
+1
+262 123 65 65
+D:/datasets/stanford40/JPEGImages/phoning_192.jpg
+1
+56 18 70 71
+D:/datasets/stanford40/JPEGImages/phoning_046.jpg
+1
+309 108 46 46
+D:/datasets/stanford40/JPEGImages/phoning_174.jpg
+1
+7 42 139 140
+D:/datasets/stanford40/JPEGImages/phoning_209.jpg
+1
+173 148 46 47
+D:/datasets/stanford40/JPEGImages/phoning_214.jpg
+1
+101 123 106 106
+D:/datasets/stanford40/JPEGImages/phoning_106.jpg
+1
+100 38 46 47
+D:/datasets/stanford40/JPEGImages/phoning_185.jpg
+1
+415 82 87 86
+D:/datasets/stanford40/JPEGImages/phoning_025.jpg
+1
+59 58 36 36
+D:/datasets/stanford40/JPEGImages/phoning_221.jpg
+1
+281 126 103 102
+D:/datasets/stanford40/JPEGImages/phoning_107.jpg
+1
+135 53 48 48
+D:/datasets/stanford40/JPEGImages/phoning_147.jpg
+1
+88 76 72 72
+D:/datasets/stanford40/JPEGImages/phoning_161.jpg
+1
+160 79 60 60
+D:/datasets/stanford40/JPEGImages/phoning_087.jpg
+1
+167 20 99 98
+D:/datasets/stanford40/JPEGImages/phoning_153.jpg
+1
+262 55 69 70
+D:/datasets/stanford40/JPEGImages/phoning_068.jpg
+1
+165 80 56 56
+D:/datasets/stanford40/JPEGImages/phoning_178.jpg
+1
+127 74 53 52
+D:/datasets/stanford40/JPEGImages/phoning_223.jpg
+1
+99 115 66 66
+D:/datasets/stanford40/JPEGImages/phoning_102.jpg
+1
+139 46 75 75
+D:/datasets/stanford40/JPEGImages/phoning_029.jpg
+1
+73 103 27 27
+D:/datasets/stanford40/JPEGImages/phoning_240.jpg
+1
+167 112 45 45
+D:/datasets/stanford40/JPEGImages/phoning_075.jpg
+1
+148 120 144 144
+D:/datasets/stanford40/JPEGImages/phoning_249.jpg
+1
+60 60 84 84
+D:/datasets/stanford40/JPEGImages/phoning_017.jpg
+1
+171 115 55 55
+D:/datasets/stanford40/JPEGImages/phoning_177.jpg
+1
+204 251 42 41
+D:/datasets/stanford40/JPEGImages/phoning_069.jpg
+1
+77 217 50 50
+D:/datasets/stanford40/JPEGImages/phoning_144.jpg
+1
+78 91 55 55
+D:/datasets/stanford40/JPEGImages/phoning_231.jpg
+1
+340 63 72 73
+D:/datasets/stanford40/JPEGImages/phoning_071.jpg
+1
+78 135 77 77
+D:/datasets/stanford40/JPEGImages/phoning_254.jpg
+1
+176 134 23 24
+D:/datasets/stanford40/JPEGImages/phoning_157.jpg
+1
+102 113 67 67
+D:/datasets/stanford40/JPEGImages/phoning_033.jpg
+1
+162 65 57 58
+D:/datasets/stanford40/JPEGImages/phoning_010.jpg
+1
+71 55 117 118
+D:/datasets/stanford40/JPEGImages/phoning_246.jpg
+1
+415 114 135 136
+D:/datasets/stanford40/JPEGImages/phoning_118.jpg
+1
+104 94 90 90
+D:/datasets/stanford40/JPEGImages/phoning_019.jpg
+1
+13 58 75 74
+D:/datasets/stanford40/JPEGImages/phoning_124.jpg
+1
+79 81 69 69
+D:/datasets/stanford40/JPEGImages/phoning_218.jpg
+1
+42 30 127 126
+D:/datasets/stanford40/JPEGImages/phoning_255.jpg
+1
+413 187 155 155
+D:/datasets/stanford40/JPEGImages/phoning_158.jpg
+1
+191 132 114 113
+D:/datasets/stanford40/JPEGImages/phoning_141.jpg
+1
+294 61 57 57
+D:/datasets/stanford40/JPEGImages/phoning_175.jpg
+1
+80 100 57 57
+D:/datasets/stanford40/JPEGImages/phoning_100.jpg
+1
+116 64 60 60
+D:/datasets/stanford40/JPEGImages/phoning_148.jpg
+1
+380 162 46 46
+D:/datasets/stanford40/JPEGImages/phoning_098.jpg
+1
+191 202 48 48
+D:/datasets/stanford40/JPEGImages/phoning_245.jpg
+1
+114 15 55 55
+D:/datasets/stanford40/JPEGImages/phoning_146.jpg
+1
+422 66 60 60
+D:/datasets/stanford40/JPEGImages/phoning_117.jpg
+1
+136 103 40 39
+D:/datasets/stanford40/JPEGImages/phoning_166.jpg
+1
+219 43 41 42
+D:/datasets/stanford40/JPEGImages/phoning_232.jpg
+1
+96 165 48 47
+D:/datasets/stanford40/JPEGImages/phoning_011.jpg
+1
+95 92 70 70
+D:/datasets/stanford40/JPEGImages/phoning_055.jpg
+1
+97 95 46 46
+D:/datasets/stanford40/JPEGImages/phoning_081.jpg
+1
+118 65 49 48
+D:/datasets/stanford40/JPEGImages/phoning_109.jpg
+1
+101 84 51 52
+D:/datasets/stanford40/JPEGImages/phoning_012.jpg
+1
+130 93 118 119
+D:/datasets/stanford40/JPEGImages/phoning_181.jpg
+1
+123 113 99 99
+D:/datasets/stanford40/JPEGImages/phoning_239.jpg
+1
+171 84 58 58
+D:/datasets/stanford40/JPEGImages/phoning_127.jpg
+1
+275 84 99 99
+D:/datasets/stanford40/JPEGImages/phoning_076.jpg
+1
+330 145 149 149
+D:/datasets/stanford40/JPEGImages/phoning_079.jpg
+1
+225 88 79 80
+D:/datasets/stanford40/JPEGImages/phoning_162.jpg
+1
+100 39 61 61
+D:/datasets/stanford40/JPEGImages/phoning_182.jpg
+1
+42 170 46 45
+D:/datasets/stanford40/JPEGImages/phoning_197.jpg
+1
+96 52 37 37
+D:/datasets/stanford40/JPEGImages/phoning_032.jpg
+1
+119 77 49 49
+D:/datasets/stanford40/JPEGImages/phoning_080.jpg
+1
+469 204 106 106
+D:/datasets/stanford40/JPEGImages/phoning_020.jpg
+1
+102 46 46 46
+D:/datasets/stanford40/JPEGImages/phoning_187.jpg
+1
+253 65 62 62
+D:/datasets/stanford40/JPEGImages/phoning_163.jpg
+1
+99 119 111 111
+D:/datasets/stanford40/JPEGImages/phoning_256.jpg
+1
+183 142 37 36
+D:/datasets/stanford40/JPEGImages/phoning_143.jpg
+1
+145 76 106 106
+D:/datasets/stanford40/JPEGImages/phoning_009.jpg
+1
+139 67 72 71
+D:/datasets/stanford40/JPEGImages/phoning_128.jpg
+1
+122 129 67 66
+D:/datasets/stanford40/JPEGImages/phoning_063.jpg
+1
+82 45 42 42
+D:/datasets/stanford40/JPEGImages/phoning_003.jpg
+1
+122 79 44 43
+D:/datasets/stanford40/JPEGImages/phoning_212.jpg
+1
+247 172 148 149
+D:/datasets/stanford40/JPEGImages/phoning_216.jpg
+1
+111 18 25 25
+D:/datasets/stanford40/JPEGImages/phoning_244.jpg
+1
+232 55 46 46
+D:/datasets/stanford40/JPEGImages/phoning_077.jpg
+1
+66 44 52 52
+D:/datasets/stanford40/JPEGImages/phoning_164.jpg
+1
+222 95 29 30
+D:/datasets/stanford40/JPEGImages/phoning_096.jpg
+1
+178 227 79 80
+D:/datasets/stanford40/JPEGImages/phoning_005.jpg
+1
+71 120 107 107
+D:/datasets/stanford40/JPEGImages/phoning_050.jpg
+1
+149 84 63 63
+D:/datasets/stanford40/JPEGImages/phoning_002.jpg
+1
+172 163 54 54
+D:/datasets/stanford40/JPEGImages/phoning_089.jpg
+1
+194 50 53 52
+D:/datasets/stanford40/JPEGImages/phoning_052.jpg
+1
+144 162 44 44
+D:/datasets/stanford40/JPEGImages/phoning_111.jpg
+1
+65 66 49 50
+D:/datasets/stanford40/JPEGImages/phoning_028.jpg
+1
+78 34 64 65
+D:/datasets/stanford40/JPEGImages/phoning_045.jpg
+1
+146 218 48 48
+D:/datasets/stanford40/JPEGImages/phoning_228.jpg
+1
+367 84 96 96
+D:/datasets/stanford40/JPEGImages/phoning_242.jpg
+1
+216 80 54 54
+D:/datasets/stanford40/JPEGImages/phoning_007.jpg
+1
+264 85 93 92
+D:/datasets/stanford40/JPEGImages/phoning_070.jpg
+1
+160 81 42 43
+D:/datasets/stanford40/JPEGImages/phoning_140.jpg
+1
+108 74 38 38
+D:/datasets/stanford40/JPEGImages/phoning_066.jpg
+1
+111 37 37 38
+D:/datasets/stanford40/JPEGImages/phoning_186.jpg
+1
+101 51 45 46
+D:/datasets/stanford40/JPEGImages/phoning_168.jpg
+1
+185 45 64 63
+D:/datasets/stanford40/JPEGImages/phoning_086.jpg
+1
+111 125 72 73
+D:/datasets/stanford40/JPEGImages/phoning_049.jpg
+1
+161 141 105 104
+D:/datasets/stanford40/JPEGImages/phoning_054.jpg
+1
+165 69 88 89
+D:/datasets/stanford40/JPEGImages/smoking_062.jpg
+1
+119 136 95 95
+D:/datasets/stanford40/JPEGImages/smoking_140.jpg
+1
+114 61 48 48
+D:/datasets/stanford40/JPEGImages/smoking_042.jpg
+1
+147 157 68 68
+D:/datasets/stanford40/JPEGImages/smoking_122.jpg
+1
+123 118 88 87
+D:/datasets/stanford40/JPEGImages/smoking_160.jpg
+1
+144 48 52 52
+D:/datasets/stanford40/JPEGImages/smoking_102.jpg
+1
+91 58 55 55
+D:/datasets/stanford40/JPEGImages/smoking_185.jpg
+1
+183 94 113 114
+D:/datasets/stanford40/JPEGImages/smoking_024.jpg
+1
+164 98 49 50
+D:/datasets/stanford40/JPEGImages/smoking_031.jpg
+1
+163 86 68 68
+D:/datasets/stanford40/JPEGImages/smoking_213.jpg
+1
+90 54 92 92
+D:/datasets/stanford40/JPEGImages/smoking_217.jpg
+1
+91 95 74 74
+D:/datasets/stanford40/JPEGImages/smoking_146.jpg
+1
+117 116 66 66
+D:/datasets/stanford40/JPEGImages/smoking_074.jpg
+1
+85 88 54 54
+D:/datasets/stanford40/JPEGImages/smoking_051.jpg
+1
+118 52 59 59
+D:/datasets/stanford40/JPEGImages/smoking_061.jpg
+1
+110 70 88 88
+D:/datasets/stanford40/JPEGImages/smoking_133.jpg
+1
+117 114 76 76
+D:/datasets/stanford40/JPEGImages/smoking_104.jpg
+1
+150 43 59 59
+D:/datasets/stanford40/JPEGImages/smoking_141.jpg
+1
+137 133 80 80
+D:/datasets/stanford40/JPEGImages/smoking_182.jpg
+1
+121 85 75 75
+D:/datasets/stanford40/JPEGImages/smoking_231.jpg
+1
+93 96 51 52
+D:/datasets/stanford40/JPEGImages/smoking_008.jpg
+1
+119 98 67 66
+D:/datasets/stanford40/JPEGImages/smoking_130.jpg
+1
+82 32 40 41
+D:/datasets/stanford40/JPEGImages/smoking_221.jpg
+1
+143 114 60 59
+D:/datasets/stanford40/JPEGImages/smoking_021.jpg
+1
+134 66 58 57
+D:/datasets/stanford40/JPEGImages/smoking_121.jpg
+1
+71 62 90 89
+D:/datasets/stanford40/JPEGImages/smoking_089.jpg
+1
+226 76 118 117
+D:/datasets/stanford40/JPEGImages/smoking_163.jpg
+1
+101 118 79 79
+D:/datasets/stanford40/JPEGImages/smoking_180.jpg
+1
+242 175 100 101
+D:/datasets/stanford40/JPEGImages/smoking_175.jpg
+1
+256 114 82 83
+D:/datasets/stanford40/JPEGImages/smoking_189.jpg
+1
+94 111 117 116
+D:/datasets/stanford40/JPEGImages/smoking_208.jpg
+1
+155 89 72 72
+D:/datasets/stanford40/JPEGImages/smoking_156.jpg
+1
+104 89 74 74
+D:/datasets/stanford40/JPEGImages/smoking_153.jpg
+1
+140 92 79 79
+D:/datasets/stanford40/JPEGImages/smoking_038.jpg
+1
+172 40 55 55
+D:/datasets/stanford40/JPEGImages/smoking_193.jpg
+1
+198 78 57 57
+D:/datasets/stanford40/JPEGImages/smoking_113.jpg
+1
+139 87 72 72
+D:/datasets/stanford40/JPEGImages/smoking_181.jpg
+1
+192 49 52 52
+D:/datasets/stanford40/JPEGImages/smoking_035.jpg
+1
+116 82 85 85
+D:/datasets/stanford40/JPEGImages/smoking_002.jpg
+1
+215 136 131 130
+D:/datasets/stanford40/JPEGImages/smoking_069.jpg
+1
+280 94 66 66
+D:/datasets/stanford40/JPEGImages/smoking_210.jpg
+1
+252 50 66 66
+D:/datasets/stanford40/JPEGImages/smoking_162.jpg
+1
+135 80 65 66
+D:/datasets/stanford40/JPEGImages/smoking_017.jpg
+1
+96 78 46 46
+D:/datasets/stanford40/JPEGImages/smoking_223.jpg
+1
+125 92 90 90
+D:/datasets/stanford40/JPEGImages/smoking_168.jpg
+1
+114 87 91 90
+D:/datasets/stanford40/JPEGImages/smoking_224.jpg
+1
+121 68 47 46
+D:/datasets/stanford40/JPEGImages/smoking_009.jpg
+1
+191 58 60 61
+D:/datasets/stanford40/JPEGImages/smoking_236.jpg
+1
+331 97 37 37
+D:/datasets/stanford40/JPEGImages/smoking_075.jpg
+1
+140 56 94 93
+D:/datasets/stanford40/JPEGImages/smoking_134.jpg
+1
+238 54 54 54
+D:/datasets/stanford40/JPEGImages/smoking_100.jpg
+1
+105 144 78 77
+D:/datasets/stanford40/JPEGImages/smoking_199.jpg
+1
+139 112 89 90
+D:/datasets/stanford40/JPEGImages/smoking_128.jpg
+1
+123 127 80 80
+D:/datasets/stanford40/JPEGImages/smoking_014.jpg
+1
+188 64 75 76
+D:/datasets/stanford40/JPEGImages/smoking_204.jpg
+1
+152 33 49 49
+D:/datasets/stanford40/JPEGImages/smoking_064.jpg
+1
+92 28 52 52
+D:/datasets/stanford40/JPEGImages/smoking_058.jpg
+1
+210 130 89 89
+D:/datasets/stanford40/JPEGImages/smoking_176.jpg
+1
+130 126 85 85
+D:/datasets/stanford40/JPEGImages/smoking_005.jpg
+1
+104 120 54 54
+D:/datasets/stanford40/JPEGImages/smoking_218.jpg
+1
+126 144 73 72
+D:/datasets/stanford40/JPEGImages/smoking_071.jpg
+1
+99 133 88 89
+D:/datasets/stanford40/JPEGImages/smoking_011.jpg
+1
+194 113 63 63
+D:/datasets/stanford40/JPEGImages/smoking_172.jpg
+1
+118 128 78 78
+D:/datasets/stanford40/JPEGImages/smoking_202.jpg
+1
+199 84 59 60
+D:/datasets/stanford40/JPEGImages/smoking_010.jpg
+1
+82 216 68 68
+D:/datasets/stanford40/JPEGImages/smoking_145.jpg
+1
+95 76 70 70
+D:/datasets/stanford40/JPEGImages/smoking_083.jpg
+1
+151 56 71 71
+D:/datasets/stanford40/JPEGImages/smoking_222.jpg
+1
+130 56 74 74
+D:/datasets/stanford40/JPEGImages/smoking_198.jpg
+1
+79 37 71 72
+D:/datasets/stanford40/JPEGImages/smoking_097.jpg
+1
+97 76 71 71
+D:/datasets/stanford40/JPEGImages/smoking_125.jpg
+1
+148 101 113 114
+D:/datasets/stanford40/JPEGImages/smoking_137.jpg
+1
+178 55 94 94
+D:/datasets/stanford40/JPEGImages/smoking_048.jpg
+1
+109 70 90 90
+D:/datasets/stanford40/JPEGImages/smoking_093.jpg
+1
+140 98 54 55
+D:/datasets/stanford40/JPEGImages/smoking_215.jpg
+1
+124 77 100 101
+D:/datasets/stanford40/JPEGImages/smoking_090.jpg
+1
+135 58 54 54
+D:/datasets/stanford40/JPEGImages/smoking_216.jpg
+1
+90 132 75 75
+D:/datasets/stanford40/JPEGImages/smoking_020.jpg
+1
+242 125 77 77
+D:/datasets/stanford40/JPEGImages/smoking_143.jpg
+1
+173 76 72 72
+D:/datasets/stanford40/JPEGImages/smoking_220.jpg
+1
+117 39 67 67
+D:/datasets/stanford40/JPEGImages/smoking_114.jpg
+1
+79 110 70 70
+D:/datasets/stanford40/JPEGImages/smoking_028.jpg
+1
+215 41 66 66
+D:/datasets/stanford40/JPEGImages/smoking_050.jpg
+1
+167 71 84 84
+D:/datasets/stanford40/JPEGImages/smoking_076.jpg
+1
+135 64 67 67
+D:/datasets/stanford40/JPEGImages/smoking_232.jpg
+1
+200 137 82 81
+D:/datasets/stanford40/JPEGImages/smoking_072.jpg
+1
+101 113 65 65
+D:/datasets/stanford40/JPEGImages/smoking_230.jpg
+1
+126 44 55 55
+D:/datasets/stanford40/JPEGImages/smoking_063.jpg
+1
+326 171 131 131
+D:/datasets/stanford40/JPEGImages/smoking_127.jpg
+1
+82 42 47 47
+D:/datasets/stanford40/JPEGImages/smoking_170.jpg
+1
+72 72 77 77
+D:/datasets/stanford40/JPEGImages/smoking_106.jpg
+1
+44 50 68 67
+D:/datasets/stanford40/JPEGImages/smoking_195.jpg
+1
+162 98 50 50
+D:/datasets/stanford40/JPEGImages/smoking_167.jpg
+1
+109 91 67 67
+D:/datasets/stanford40/JPEGImages/smoking_192.jpg
+1
+233 50 89 89
+D:/datasets/stanford40/JPEGImages/smoking_135.jpg
+1
+134 42 66 66
+D:/datasets/stanford40/JPEGImages/smoking_026.jpg
+1
+163 111 64 64
+D:/datasets/stanford40/JPEGImages/smoking_228.jpg
+1
+109 92 59 59
+D:/datasets/stanford40/JPEGImages/smoking_214.jpg
+1
+144 106 113 114
+D:/datasets/stanford40/JPEGImages/smoking_070.jpg
+1
+132 69 105 104
+D:/datasets/stanford40/JPEGImages/smoking_191.jpg
+1
+127 71 57 58
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_027.jpg
+1
+126 76 101 100
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_184.jpg
+1
+246 147 78 79
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_132.jpg
+1
+155 49 58 57
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_250.jpg
+1
+168 96 81 82
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_166.jpg
+1
+187 120 59 59
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_189.jpg
+1
+110 32 54 54
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_061.jpg
+1
+137 136 102 102
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_113.jpg
+1
+221 98 79 78
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_134.jpg
+1
+90 94 76 76
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_224.jpg
+1
+214 113 47 47
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_139.jpg
+1
+144 83 74 75
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_080.jpg
+1
+179 60 70 69
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_236.jpg
+1
+168 83 83 83
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_231.jpg
+1
+94 117 46 46
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_238.jpg
+1
+89 89 138 138
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_162.jpg
+1
+123 128 54 55
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_227.jpg
+1
+228 83 98 97
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_217.jpg
+1
+181 139 75 75
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_044.jpg
+1
+71 61 142 141
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_095.jpg
+1
+209 58 72 73
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_152.jpg
+1
+159 167 44 44
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_207.jpg
+1
+86 81 63 64
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_083.jpg
+1
+253 53 56 56
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_151.jpg
+1
+266 118 61 61
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_175.jpg
+1
+517 394 100 100
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_242.jpg
+1
+305 155 137 137
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_015.jpg
+1
+125 107 118 118
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_087.jpg
+1
+201 96 84 85
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_016.jpg
+1
+188 228 160 160
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_127.jpg
+1
+54 113 47 46
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_190.jpg
+1
+124 89 77 78
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_211.jpg
+1
+141 129 94 94
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_073.jpg
+1
+215 72 69 69
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_193.jpg
+1
+112 56 55 55
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_202.jpg
+1
+161 52 57 56
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_115.jpg
+1
+261 137 99 100
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_075.jpg
+1
+85 119 109 109
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_039.jpg
+1
+133 158 100 100
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_233.jpg
+1
+312 146 100 100
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_091.jpg
+1
+114 70 45 45
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_197.jpg
+1
+203 54 61 61
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_032.jpg
+1
+88 148 93 93
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_066.jpg
+1
+202 112 44 44
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_114.jpg
+1
+117 131 69 69
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_102.jpg
+1
+139 125 42 42
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_170.jpg
+1
+213 89 57 57
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_120.jpg
+1
+119 63 93 92
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_110.jpg
+1
+111 194 67 66
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_171.jpg
+1
+289 31 49 50
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_215.jpg
+1
+237 92 105 106
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_004.jpg
+1
+134 48 94 94
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_047.jpg
+1
+213 52 102 102
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_158.jpg
+1
+108 91 72 73
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_078.jpg
+1
+72 63 65 64
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_253.jpg
+1
+286 180 123 123
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_155.jpg
+1
+394 99 45 45
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_040.jpg
+1
+127 62 113 113
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_137.jpg
+1
+211 85 57 57
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_030.jpg
+1
+214 119 60 61
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_223.jpg
+1
+227 110 123 123
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_067.jpg
+1
+81 69 54 53
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_248.jpg
+1
+89 115 63 64
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_196.jpg
+1
+204 102 89 88
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_007.jpg
+1
+339 46 53 54
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_046.jpg
+1
+165 221 94 95
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_226.jpg
+1
+116 53 63 63
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_049.jpg
+1
+171 184 54 54
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_029.jpg
+1
+118 178 75 75
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_187.jpg
+1
+147 61 51 51
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_012.jpg
+1
+142 41 64 63
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_054.jpg
+1
+557 210 103 103
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_037.jpg
+1
+238 181 93 94
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_116.jpg
+1
+94 79 78 78
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_235.jpg
+1
+297 78 62 63
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_131.jpg
+1
+369 124 68 68
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_183.jpg
+1
+98 43 41 41
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_164.jpg
+1
+221 153 56 56
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_212.jpg
+1
+259 56 83 82
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_020.jpg
+1
+101 88 58 58
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_200.jpg
+1
+130 112 85 85
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_062.jpg
+1
+79 58 74 74
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_081.jpg
+1
+51 96 45 45
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_176.jpg
+1
+83 101 55 55
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_028.jpg
+1
+282 193 124 124
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_045.jpg
+1
+110 125 67 67
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_165.jpg
+1
+238 89 49 49
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_107.jpg
+1
+271 86 74 74
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_220.jpg
+1
+190 109 112 111
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_048.jpg
+1
+329 79 65 65
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_179.jpg
+1
+259 162 108 108
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_125.jpg
+1
+189 265 73 72
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_142.jpg
+1
+110 63 80 80
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_182.jpg
+1
+71 77 45 45
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_033.jpg
+1
+337 87 66 66
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_229.jpg
+1
+189 172 78 78
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_060.jpg
+1
+235 238 144 143
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_128.jpg
+1
+209 87 80 80
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_145.jpg
+1
+67 128 93 93
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_092.jpg
+1
+99 135 64 63
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_194.jpg
+1
+201 9 54 55
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_126.jpg
+1
+81 147 79 79
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_013.jpg
+1
+474 172 130 131
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_035.jpg
+1
+111 85 62 62
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_243.jpg
+1
+64 120 59 60
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_098.jpg
+1
+149 138 103 103
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_097.jpg
+1
+191 107 103 103
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_201.jpg
+1
+115 125 66 66
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_191.jpg
+1
+47 71 64 64
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_199.jpg
+1
+294 40 48 48
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_208.jpg
+1
+131 143 85 85
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_130.jpg
+1
+167 50 41 41
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_053.jpg
+1
+101 112 57 57
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_025.jpg
+1
+111 64 67 67
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_124.jpg
+1
+48 45 58 58
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_009.jpg
+1
+74 54 54 55
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_239.jpg
+1
+144 55 107 107
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_070.jpg
+1
+333 275 153 152
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_240.jpg
+1
+251 149 210 210
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_031.jpg
+1
+236 83 84 83
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_068.jpg
+1
+251 125 69 68
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_186.jpg
+1
+318 171 82 82
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_192.jpg
+1
+555 185 137 137
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_136.jpg
+1
+231 64 73 74
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_003.jpg
+1
+74 53 81 82
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_177.jpg
+1
+265 103 60 61
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_041.jpg
+1
+74 27 44 43
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_026.jpg
+1
+164 69 48 48
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_043.jpg
+1
+114 57 64 63
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_206.jpg
+1
+137 87 115 115
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_018.jpg
+1
+290 200 130 130
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_108.jpg
+1
+210 103 52 53
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_038.jpg
+1
+106 76 100 100
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_093.jpg
+1
+206 154 42 41
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_057.jpg
+1
+194 132 46 46
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_252.jpg
+1
+215 167 96 97
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_247.jpg
+1
+183 55 104 103
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_259.jpg
+1
+279 91 73 73
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_059.jpg
+1
+152 134 87 87
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_174.jpg
+1
+150 25 85 85
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_216.jpg
+1
+91 217 51 51
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_100.jpg
+1
+115 167 83 83
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_148.jpg
+1
+179 44 76 77
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_249.jpg
+1
+118 51 77 77
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_006.jpg
+1
+237 174 92 91
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_050.jpg
+1
+88 80 64 64
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_210.jpg
+1
+308 47 89 90
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_074.jpg
+1
+134 65 97 97
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_167.jpg
+1
+107 105 61 61
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_072.jpg
+1
+197 149 137 137
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_149.jpg
+1
+168 125 68 68
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_019.jpg
+1
+409 174 38 37
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_122.jpg
+1
+239 154 54 54
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_133.jpg
+1
+88 83 48 49
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_023.jpg
+1
+247 54 84 84
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_169.jpg
+1
+104 168 54 54
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_232.jpg
+1
+327 66 108 108
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_118.jpg
+1
+183 99 60 61
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_119.jpg
+1
+156 79 97 97
+D:/datasets/stanford40/JPEGImages/blowing_bubbles_160.jpg
+1
+89 148 65 65
+D:/datasets/stanford40/JPEGImages/brushing_teeth_008.jpg
+1
+233 155 91 91
+D:/datasets/stanford40/JPEGImages/brushing_teeth_040.jpg
+1
+126 109 128 128
+D:/datasets/stanford40/JPEGImages/brushing_teeth_101.jpg
+1
+188 142 76 76
+D:/datasets/stanford40/JPEGImages/brushing_teeth_111.jpg
+1
+201 78 89 88
+D:/datasets/stanford40/JPEGImages/brushing_teeth_144.jpg
+1
+109 54 74 73
+D:/datasets/stanford40/JPEGImages/brushing_teeth_080.jpg
+1
+71 81 55 55
+D:/datasets/stanford40/JPEGImages/brushing_teeth_130.jpg
+1
+172 101 150 149
+D:/datasets/stanford40/JPEGImages/brushing_teeth_166.jpg
+1
+212 255 79 79
+D:/datasets/stanford40/JPEGImages/brushing_teeth_084.jpg
+1
+130 74 91 91
+D:/datasets/stanford40/JPEGImages/brushing_teeth_151.jpg
+1
+108 180 66 66
+D:/datasets/stanford40/JPEGImages/brushing_teeth_118.jpg
+1
+135 112 47 48
+D:/datasets/stanford40/JPEGImages/brushing_teeth_157.jpg
+1
+143 66 129 130
+D:/datasets/stanford40/JPEGImages/brushing_teeth_184.jpg
+1
+307 74 157 158
+D:/datasets/stanford40/JPEGImages/brushing_teeth_086.jpg
+1
+230 197 180 181
+D:/datasets/stanford40/JPEGImages/brushing_teeth_065.jpg
+1
+128 28 62 63
+D:/datasets/stanford40/JPEGImages/brushing_teeth_003.jpg
+1
+152 97 90 90
+D:/datasets/stanford40/JPEGImages/brushing_teeth_094.jpg
+1
+159 95 85 84
+D:/datasets/stanford40/JPEGImages/brushing_teeth_196.jpg
+1
+120 105 73 72
+D:/datasets/stanford40/JPEGImages/brushing_teeth_145.jpg
+1
+170 62 101 102
+D:/datasets/stanford40/JPEGImages/brushing_teeth_075.jpg
+1
+185 81 64 65
+D:/datasets/stanford40/JPEGImages/brushing_teeth_011.jpg
+1
+215 88 80 80
+D:/datasets/stanford40/JPEGImages/brushing_teeth_036.jpg
+1
+215 90 99 99
+D:/datasets/stanford40/JPEGImages/brushing_teeth_108.jpg
+1
+115 81 82 81
+D:/datasets/stanford40/JPEGImages/brushing_teeth_093.jpg
+1
+62 42 59 59
+D:/datasets/stanford40/JPEGImages/brushing_teeth_090.jpg
+1
+231 130 71 70
+D:/datasets/stanford40/JPEGImages/brushing_teeth_152.jpg
+1
+162 117 65 65
+D:/datasets/stanford40/JPEGImages/brushing_teeth_191.jpg
+1
+211 243 61 62
+D:/datasets/stanford40/JPEGImages/brushing_teeth_127.jpg
+1
+83 56 52 51
+D:/datasets/stanford40/JPEGImages/brushing_teeth_120.jpg
+1
+119 130 74 75
+D:/datasets/stanford40/JPEGImages/brushing_teeth_038.jpg
+1
+158 31 73 73
+D:/datasets/stanford40/JPEGImages/brushing_teeth_194.jpg
+1
+190 52 54 54
+D:/datasets/stanford40/JPEGImages/brushing_teeth_044.jpg
+1
+206 179 77 77
+D:/datasets/stanford40/JPEGImages/brushing_teeth_160.jpg
+1
+120 129 127 127
+D:/datasets/stanford40/JPEGImages/brushing_teeth_022.jpg
+1
+159 87 99 98
+D:/datasets/stanford40/JPEGImages/brushing_teeth_153.jpg
+1
+112 94 70 70
+D:/datasets/stanford40/JPEGImages/brushing_teeth_121.jpg
+1
+65 57 93 93
+D:/datasets/stanford40/JPEGImages/brushing_teeth_170.jpg
+1
+172 55 109 110
+D:/datasets/stanford40/JPEGImages/brushing_teeth_189.jpg
+1
+88 109 74 73
+D:/datasets/stanford40/JPEGImages/brushing_teeth_154.jpg
+1
+46 46 48 49
+D:/datasets/stanford40/JPEGImages/brushing_teeth_023.jpg
+1
+237 64 60 59
+D:/datasets/stanford40/JPEGImages/brushing_teeth_035.jpg
+1
+123 20 70 71
+D:/datasets/stanford40/JPEGImages/brushing_teeth_055.jpg
+1
+118 51 52 52
+D:/datasets/stanford40/JPEGImages/brushing_teeth_033.jpg
+1
+60 62 77 77
+D:/datasets/stanford40/JPEGImages/brushing_teeth_005.jpg
+1
+141 52 59 60
+D:/datasets/stanford40/JPEGImages/brushing_teeth_161.jpg
+1
+259 259 67 66
+D:/datasets/stanford40/JPEGImages/brushing_teeth_051.jpg
+1
+161 84 90 91
+D:/datasets/stanford40/JPEGImages/brushing_teeth_079.jpg
+1
+64 62 78 78
+D:/datasets/stanford40/JPEGImages/brushing_teeth_123.jpg
+1
+101 128 78 78
+D:/datasets/stanford40/JPEGImages/brushing_teeth_018.jpg
+1
+130 171 87 87
+D:/datasets/stanford40/JPEGImages/brushing_teeth_034.jpg
+1
+268 223 86 86
+D:/datasets/stanford40/JPEGImages/brushing_teeth_124.jpg
+1
+162 22 38 38
+D:/datasets/stanford40/JPEGImages/brushing_teeth_135.jpg
+1
+119 79 55 55
+D:/datasets/stanford40/JPEGImages/brushing_teeth_106.jpg
+1
+201 76 87 87
+D:/datasets/stanford40/JPEGImages/brushing_teeth_122.jpg
+1
+354 216 99 99
+D:/datasets/stanford40/JPEGImages/brushing_teeth_058.jpg
+1
+279 79 55 56
+D:/datasets/stanford40/JPEGImages/brushing_teeth_019.jpg
+1
+301 86 133 133
+D:/datasets/stanford40/JPEGImages/brushing_teeth_050.jpg
+1
+274 96 65 65
+D:/datasets/stanford40/JPEGImages/brushing_teeth_052.jpg
+1
+170 170 80 80
+D:/datasets/stanford40/JPEGImages/brushing_teeth_010.jpg
+1
+102 254 72 73
+D:/datasets/stanford40/JPEGImages/brushing_teeth_042.jpg
+1
+181 109 105 105
+D:/datasets/stanford40/JPEGImages/brushing_teeth_193.jpg
+1
+338 129 60 60
+D:/datasets/stanford40/JPEGImages/brushing_teeth_195.jpg
+1
+230 20 32 33
+D:/datasets/stanford40/JPEGImages/brushing_teeth_107.jpg
+1
+98 165 108 107
+D:/datasets/stanford40/JPEGImages/brushing_teeth_140.jpg
+1
+104 85 51 50
+D:/datasets/stanford40/JPEGImages/brushing_teeth_016.jpg
+1
+299 105 38 39
+D:/datasets/stanford40/JPEGImages/brushing_teeth_071.jpg
+1
+237 119 64 64
+D:/datasets/stanford40/JPEGImages/brushing_teeth_089.jpg
+1
+202 104 59 59
+D:/datasets/stanford40/JPEGImages/brushing_teeth_098.jpg
+1
+148 109 72 72
+D:/datasets/stanford40/JPEGImages/brushing_teeth_182.jpg
+1
+61 112 52 53
+D:/datasets/stanford40/JPEGImages/brushing_teeth_081.jpg
+1
+289 156 58 58
+D:/datasets/stanford40/JPEGImages/brushing_teeth_116.jpg
+1
+333 114 94 94
+D:/datasets/stanford40/JPEGImages/brushing_teeth_037.jpg
+1
+70 164 84 84
+D:/datasets/stanford40/JPEGImages/brushing_teeth_068.jpg
+1
+143 60 54 55
+D:/datasets/stanford40/JPEGImages/brushing_teeth_115.jpg
+1
+161 67 86 86
+D:/datasets/stanford40/JPEGImages/brushing_teeth_039.jpg
+1
+344 187 193 193
+D:/datasets/stanford40/JPEGImages/brushing_teeth_099.jpg
+1
+141 127 86 85
+D:/datasets/stanford40/JPEGImages/brushing_teeth_126.jpg
+1
+121 36 45 45
+D:/datasets/stanford40/JPEGImages/brushing_teeth_165.jpg
+1
+140 65 56 55
+D:/datasets/stanford40/JPEGImages/brushing_teeth_078.jpg
+1
+159 139 113 113
+D:/datasets/stanford40/JPEGImages/brushing_teeth_056.jpg
+1
+217 121 61 61
+D:/datasets/stanford40/JPEGImages/brushing_teeth_146.jpg
+1
+112 213 86 86
+D:/datasets/stanford40/JPEGImages/brushing_teeth_100.jpg
+1
+102 162 86 86
+D:/datasets/stanford40/JPEGImages/brushing_teeth_063.jpg
+1
+165 55 46 46
+D:/datasets/stanford40/JPEGImages/brushing_teeth_114.jpg
+1
+117 79 51 50
+D:/datasets/stanford40/JPEGImages/brushing_teeth_158.jpg
+1
+109 76 74 74
+D:/datasets/stanford40/JPEGImages/brushing_teeth_183.jpg
+1
+109 91 113 113
+D:/datasets/stanford40/JPEGImages/brushing_teeth_054.jpg
+1
+237 141 59 60
+D:/datasets/stanford40/JPEGImages/brushing_teeth_104.jpg
+1
+378 117 44 43
+D:/datasets/stanford40/JPEGImages/brushing_teeth_147.jpg
+1
+208 180 58 59
+D:/datasets/stanford40/JPEGImages/brushing_teeth_091.jpg
+1
+193 60 79 80
+D:/datasets/stanford40/JPEGImages/brushing_teeth_030.jpg
+1
+170 72 48 48
+D:/datasets/stanford40/JPEGImages/brushing_teeth_002.jpg
+1
+141 56 117 116
+D:/datasets/stanford40/JPEGImages/brushing_teeth_048.jpg
+1
+293 203 52 53
+D:/datasets/stanford40/JPEGImages/brushing_teeth_049.jpg
+1
+259 79 78 79
+D:/datasets/stanford40/JPEGImages/brushing_teeth_169.jpg
+1
+135 107 46 46
+D:/datasets/stanford40/JPEGImages/brushing_teeth_032.jpg
+1
+189 180 97 96
+D:/datasets/stanford40/JPEGImages/brushing_teeth_167.jpg
+1
+164 43 144 144
+D:/datasets/stanford40/JPEGImages/brushing_teeth_027.jpg
+1
+367 93 37 36
+D:/datasets/stanford40/JPEGImages/brushing_teeth_085.jpg
+1
+271 181 142 142
+D:/datasets/stanford40/JPEGImages/brushing_teeth_083.jpg
+1
+244 114 60 61
+D:/datasets/stanford40/JPEGImages/drinking_128.jpg
+1
+66 114 84 84
+D:/datasets/stanford40/JPEGImages/drinking_004.jpg
+1
+213 63 40 39
+D:/datasets/stanford40/JPEGImages/drinking_056.jpg
+1
+133 61 91 91
+D:/datasets/stanford40/JPEGImages/drinking_190.jpg
+1
+91 159 70 70
+D:/datasets/stanford40/JPEGImages/drinking_104.jpg
+1
+196 164 181 180
+D:/datasets/stanford40/JPEGImages/drinking_046.jpg
+1
+86 62 96 96
+D:/datasets/stanford40/JPEGImages/drinking_182.jpg
+1
+72 73 88 88
+D:/datasets/stanford40/JPEGImages/drinking_007.jpg
+1
+237 126 132 133
+D:/datasets/stanford40/JPEGImages/drinking_130.jpg
+1
+268 39 43 43
+D:/datasets/stanford40/JPEGImages/drinking_132.jpg
+1
+360 134 192 192
+D:/datasets/stanford40/JPEGImages/drinking_048.jpg
+1
+344 118 54 54
+D:/datasets/stanford40/JPEGImages/drinking_022.jpg
+1
+234 61 70 70
+D:/datasets/stanford40/JPEGImages/drinking_020.jpg
+1
+90 53 68 67
+D:/datasets/stanford40/JPEGImages/drinking_059.jpg
+1
+287 103 42 41
+D:/datasets/stanford40/JPEGImages/drinking_154.jpg
+1
+189 71 71 70
+D:/datasets/stanford40/JPEGImages/drinking_200.jpg
+1
+185 76 127 128
+D:/datasets/stanford40/JPEGImages/drinking_068.jpg
+1
+147 70 86 85
+D:/datasets/stanford40/JPEGImages/drinking_146.jpg
+1
+87 129 76 76
+D:/datasets/stanford40/JPEGImages/drinking_066.jpg
+1
+183 112 58 59
+D:/datasets/stanford40/JPEGImages/drinking_124.jpg
+1
+124 56 125 124
+D:/datasets/stanford40/JPEGImages/drinking_155.jpg
+1
+94 53 63 63
+D:/datasets/stanford40/JPEGImages/drinking_087.jpg
+1
+124 102 63 63
+D:/datasets/stanford40/JPEGImages/drinking_148.jpg
+1
+229 151 86 86
+D:/datasets/stanford40/JPEGImages/drinking_109.jpg
+1
+171 62 56 56
+D:/datasets/stanford40/JPEGImages/drinking_245.jpg
+1
+266 217 118 118
+D:/datasets/stanford40/JPEGImages/drinking_106.jpg
+1
+142 42 112 112
+D:/datasets/stanford40/JPEGImages/drinking_024.jpg
+1
+242 71 71 72
+D:/datasets/stanford40/JPEGImages/drinking_172.jpg
+1
+74 69 162 162
+D:/datasets/stanford40/JPEGImages/drinking_235.jpg
+1
+66 94 110 110
+D:/datasets/stanford40/JPEGImages/drinking_023.jpg
+1
+100 87 153 153
+D:/datasets/stanford40/JPEGImages/drinking_158.jpg
+1
+494 149 135 136
+D:/datasets/stanford40/JPEGImages/drinking_099.jpg
+1
+320 178 163 163
+D:/datasets/stanford40/JPEGImages/drinking_005.jpg
+1
+436 269 131 131
+D:/datasets/stanford40/JPEGImages/drinking_019.jpg
+1
+381 169 147 147
+D:/datasets/stanford40/JPEGImages/drinking_211.jpg
+1
+201 112 53 53
+D:/datasets/stanford40/JPEGImages/drinking_090.jpg
+1
+145 59 90 90
+D:/datasets/stanford40/JPEGImages/drinking_043.jpg
+1
+143 43 66 66
+D:/datasets/stanford40/JPEGImages/drinking_225.jpg
+1
+256 104 81 81
+D:/datasets/stanford40/JPEGImages/drinking_065.jpg
+1
+344 86 61 60
+D:/datasets/stanford40/JPEGImages/drinking_256.jpg
+1
+206 36 48 49
+D:/datasets/stanford40/JPEGImages/drinking_009.jpg
+1
+123 90 115 116
+D:/datasets/stanford40/JPEGImages/drinking_120.jpg
+1
+215 224 124 124
+D:/datasets/stanford40/JPEGImages/drinking_010.jpg
+1
+165 60 93 94
+D:/datasets/stanford40/JPEGImages/drinking_096.jpg
+1
+225 94 192 191
+D:/datasets/stanford40/JPEGImages/drinking_112.jpg
+1
+67 47 48 48
+D:/datasets/stanford40/JPEGImages/drinking_083.jpg
+1
+169 132 174 175
+D:/datasets/stanford40/JPEGImages/drinking_173.jpg
+1
+79 129 103 104
+D:/datasets/stanford40/JPEGImages/drinking_028.jpg
+1
+361 201 141 142
+D:/datasets/stanford40/JPEGImages/drinking_253.jpg
+1
+107 101 66 66
+D:/datasets/stanford40/JPEGImages/drinking_167.jpg
+1
+111 95 73 74
+D:/datasets/stanford40/JPEGImages/drinking_157.jpg
+1
+44 40 64 64
+D:/datasets/stanford40/JPEGImages/drinking_217.jpg
+1
+114 76 102 102
+D:/datasets/stanford40/JPEGImages/drinking_034.jpg
+1
+185 108 54 53
+D:/datasets/stanford40/JPEGImages/drinking_094.jpg
+1
+73 98 121 121
+D:/datasets/stanford40/JPEGImages/drinking_049.jpg
+1
+270 109 56 56
+D:/datasets/stanford40/JPEGImages/drinking_214.jpg
+1
+192 29 90 90
+D:/datasets/stanford40/JPEGImages/drinking_125.jpg
+1
+112 85 83 83
+D:/datasets/stanford40/JPEGImages/drinking_150.jpg
+1
+115 79 86 85
+D:/datasets/stanford40/JPEGImages/drinking_161.jpg
+1
+71 38 60 60
+D:/datasets/stanford40/JPEGImages/drinking_069.jpg
+1
+256 36 90 90
+D:/datasets/stanford40/JPEGImages/drinking_095.jpg
+1
+192 192 122 121
+D:/datasets/stanford40/JPEGImages/drinking_163.jpg
+1
+173 31 74 74
+D:/datasets/stanford40/JPEGImages/drinking_100.jpg
+1
+178 90 91 91
+D:/datasets/stanford40/JPEGImages/drinking_054.jpg
+1
+170 71 59 59
+D:/datasets/stanford40/JPEGImages/drinking_050.jpg
+1
+174 63 75 75
+D:/datasets/stanford40/JPEGImages/drinking_201.jpg
+1
+212 86 55 55
+D:/datasets/stanford40/JPEGImages/drinking_194.jpg
+1
+399 294 68 68
+D:/datasets/stanford40/JPEGImages/drinking_103.jpg
+1
+74 89 96 96
+D:/datasets/stanford40/JPEGImages/drinking_051.jpg
+1
+194 26 32 32
+D:/datasets/stanford40/JPEGImages/drinking_143.jpg
+1
+126 28 94 94
+D:/datasets/stanford40/JPEGImages/drinking_062.jpg
+1
+150 39 48 48
+D:/datasets/stanford40/JPEGImages/drinking_113.jpg
+1
+195 70 81 81
+D:/datasets/stanford40/JPEGImages/drinking_218.jpg
+1
+160 72 58 58
+D:/datasets/stanford40/JPEGImages/drinking_086.jpg
+1
+223 42 74 74
+D:/datasets/stanford40/JPEGImages/drinking_228.jpg
+1
+173 65 69 68
+D:/datasets/stanford40/JPEGImages/drinking_107.jpg
+1
+87 91 93 93
+D:/datasets/stanford40/JPEGImages/drinking_088.jpg
+1
+68 80 53 54
+D:/datasets/stanford40/JPEGImages/drinking_076.jpg
+1
+186 53 92 92
+D:/datasets/stanford40/JPEGImages/drinking_187.jpg
+1
+80 51 53 53
+D:/datasets/stanford40/JPEGImages/drinking_013.jpg
+1
+123 81 46 46
+D:/datasets/stanford40/JPEGImages/drinking_026.jpg
+1
+130 93 61 61
+D:/datasets/stanford40/JPEGImages/drinking_199.jpg
+1
+151 61 38 38
+D:/datasets/stanford40/JPEGImages/drinking_233.jpg
+1
+201 101 73 72
+D:/datasets/stanford40/JPEGImages/drinking_134.jpg
+1
+91 139 115 115
+D:/datasets/stanford40/JPEGImages/drinking_123.jpg
+1
+86 20 52 52
+D:/datasets/stanford40/JPEGImages/drinking_248.jpg
+1
+200 95 77 76
+D:/datasets/stanford40/JPEGImages/drinking_089.jpg
+1
+324 38 61 62
+D:/datasets/stanford40/JPEGImages/drinking_250.jpg
+1
+117 53 52 52
+D:/datasets/stanford40/JPEGImages/drinking_041.jpg
+1
+254 202 199 199
+D:/datasets/stanford40/JPEGImages/drinking_070.jpg
+1
+105 68 72 72
+D:/datasets/stanford40/JPEGImages/drinking_033.jpg
+1
+100 44 58 58
+D:/datasets/stanford40/JPEGImages/drinking_255.jpg
+1
+152 6 82 82
+D:/datasets/stanford40/JPEGImages/drinking_177.jpg
+1
+300 46 85 85
+D:/datasets/stanford40/JPEGImages/drinking_224.jpg
+1
+148 99 132 132
+D:/datasets/stanford40/JPEGImages/drinking_073.jpg
+1
+137 17 94 95
+D:/datasets/stanford40/JPEGImages/drinking_137.jpg
+1
+325 139 151 151
+D:/datasets/stanford40/JPEGImages/drinking_188.jpg
+1
+235 23 44 44
+D:/datasets/stanford40/JPEGImages/drinking_236.jpg
+1
+262 84 87 87
+D:/datasets/stanford40/JPEGImages/drinking_119.jpg
+1
+366 213 128 127
+D:/datasets/stanford40/JPEGImages/drinking_003.jpg
+1
+173 143 108 108
+D:/datasets/stanford40/JPEGImages/drinking_029.jpg
+1
+217 68 97 97
+D:/datasets/stanford40/JPEGImages/drinking_162.jpg
+1
+225 97 82 82
+D:/datasets/stanford40/JPEGImages/drinking_078.jpg
+1
+272 176 40 41
+D:/datasets/stanford40/JPEGImages/drinking_084.jpg
+1
+118 65 77 77
+D:/datasets/stanford40/JPEGImages/drinking_239.jpg
+1
+124 54 82 82
+D:/datasets/stanford40/JPEGImages/drinking_219.jpg
+1
+74 39 43 42
+D:/datasets/stanford40/JPEGImages/drinking_227.jpg
+1
+146 209 128 128
+D:/datasets/stanford40/JPEGImages/drinking_036.jpg
+1
+363 187 146 146
+D:/datasets/stanford40/JPEGImages/drinking_091.jpg
+1
+236 108 76 76
+D:/datasets/stanford40/JPEGImages/drinking_165.jpg
+1
+103 100 69 69
+D:/datasets/stanford40/JPEGImages/drinking_135.jpg
+1
+298 112 128 128
+D:/datasets/stanford40/JPEGImages/drinking_151.jpg
+1
+99 73 75 76
+D:/datasets/stanford40/JPEGImages/drinking_002.jpg
+1
+151 50 90 91
+D:/datasets/stanford40/JPEGImages/drinking_114.jpg
+1
+90 61 79 79
+D:/datasets/stanford40/JPEGImages/drinking_234.jpg
+1
+106 119 111 112
+D:/datasets/stanford40/JPEGImages/drinking_030.jpg
+1
+374 64 159 160
+D:/datasets/stanford40/JPEGImages/drinking_045.jpg
+1
+77 50 53 53
+D:/datasets/stanford40/JPEGImages/drinking_141.jpg
+1
+221 88 87 87
+D:/datasets/stanford40/JPEGImages/drinking_101.jpg
+1
+256 136 141 141
+D:/datasets/stanford40/JPEGImages/drinking_098.jpg
+1
+235 76 68 68
+D:/datasets/stanford40/JPEGImages/drinking_039.jpg
+1
+231 235 130 130
+D:/datasets/stanford40/JPEGImages/drinking_129.jpg
+1
+88 54 99 99
+D:/datasets/stanford40/JPEGImages/drinking_223.jpg
+1
+225 221 85 85
+D:/datasets/stanford40/JPEGImages/drinking_052.jpg
+1
+166 115 75 74
+D:/datasets/stanford40/JPEGImages/drinking_126.jpg
+1
+394 124 85 85
+D:/datasets/stanford40/JPEGImages/drinking_249.jpg
+1
+46 32 43 43
+D:/datasets/stanford40/JPEGImages/drinking_060.jpg
+1
+152 103 45 44
+D:/datasets/stanford40/JPEGImages/drinking_202.jpg
+1
+104 97 76 77
+D:/datasets/stanford40/JPEGImages/drinking_071.jpg
+1
+287 27 66 65
+D:/datasets/stanford40/JPEGImages/drinking_189.jpg
+1
+269 47 65 65
+D:/datasets/stanford40/JPEGImages/drinking_205.jpg
+1
+217 127 129 130
+D:/datasets/stanford40/JPEGImages/drinking_138.jpg
+1
+163 60 97 97
+D:/datasets/stanford40/JPEGImages/drinking_179.jpg
+1
+219 82 92 92
+D:/datasets/stanford40/JPEGImages/drinking_075.jpg
+1
+144 81 70 70
+D:/datasets/stanford40/JPEGImages/drinking_081.jpg
+1
+236 71 50 49
+D:/datasets/stanford40/JPEGImages/drinking_192.jpg
+1
+108 81 109 110
+D:/datasets/stanford40/JPEGImages/drinking_117.jpg
+1
+154 98 103 104
+D:/datasets/stanford40/JPEGImages/drinking_021.jpg
+1
+259 67 142 142
+D:/datasets/stanford40/JPEGImages/drinking_131.jpg
+1
+205 43 92 91
+D:/datasets/stanford40/JPEGImages/drinking_171.jpg
+1
+264 26 58 57
+D:/datasets/stanford40/JPEGImages/drinking_072.jpg
+1
+172 57 89 89
+D:/datasets/stanford40/JPEGImages/drinking_042.jpg
+1
+31 33 78 79
+D:/datasets/stanford40/JPEGImages/drinking_180.jpg
+1
+77 50 112 112
+D:/datasets/stanford40/JPEGImages/drinking_064.jpg
+1
+188 75 78 77
+D:/datasets/stanford40/JPEGImages/drinking_014.jpg
+1
+260 157 65 65
+D:/datasets/stanford40/JPEGImages/drinking_018.jpg
+1
+344 137 154 155
+D:/datasets/stanford40/JPEGImages/drinking_220.jpg
+1
+276 51 101 101
+D:/datasets/stanford40/JPEGImages/drinking_241.jpg
+1
+298 34 42 42
+D:/datasets/stanford40/JPEGImages/drinking_175.jpg
+1
+301 44 63 63
+D:/datasets/stanford40/JPEGImages/drinking_097.jpg
+1
+105 39 50 49
+D:/datasets/stanford40/JPEGImages/drinking_251.jpg
+1
+107 76 92 91
+D:/datasets/stanford40/JPEGImages/drinking_055.jpg
+1
+183 75 81 81
+D:/datasets/stanford40/JPEGImages/drinking_012.jpg
+1
+329 52 46 46
+D:/datasets/stanford40/JPEGImages/drinking_108.jpg
+1
+157 61 90 90
+D:/datasets/stanford40/JPEGImages/drinking_191.jpg
+1
+142 43 107 106
+D:/datasets/stanford40/JPEGImages/drinking_153.jpg
+1
+348 198 95 94
+D:/datasets/stanford40/JPEGImages/phoning_134.jpg
+1
+144 76 91 91
+D:/datasets/stanford40/JPEGImages/phoning_219.jpg
+1
+73 32 66 66
+D:/datasets/stanford40/JPEGImages/phoning_073.jpg
+1
+130 28 59 58
+D:/datasets/stanford40/JPEGImages/phoning_108.jpg
+1
+276 204 60 60
+D:/datasets/stanford40/JPEGImages/phoning_211.jpg
+1
+37 98 72 71
+D:/datasets/stanford40/JPEGImages/phoning_135.jpg
+1
+166 99 59 59
+D:/datasets/stanford40/JPEGImages/phoning_021.jpg
+1
+142 61 40 40
+D:/datasets/stanford40/JPEGImages/phoning_110.jpg
+1
+58 64 59 59
+D:/datasets/stanford40/JPEGImages/phoning_018.jpg
+1
+284 169 113 113
+D:/datasets/stanford40/JPEGImages/phoning_047.jpg
+1
+137 109 75 76
+D:/datasets/stanford40/JPEGImages/phoning_023.jpg
+1
+368 166 39 39
+D:/datasets/stanford40/JPEGImages/phoning_250.jpg
+1
+110 62 135 135
+D:/datasets/stanford40/JPEGImages/phoning_008.jpg
+1
+170 184 73 73
+D:/datasets/stanford40/JPEGImages/phoning_088.jpg
+1
+202 90 64 63
+D:/datasets/stanford40/JPEGImages/phoning_170.jpg
+1
+189 203 132 132
+D:/datasets/stanford40/JPEGImages/phoning_189.jpg
+1
+78 65 73 72
+D:/datasets/stanford40/JPEGImages/phoning_101.jpg
+1
+211 90 60 59
+D:/datasets/stanford40/JPEGImages/phoning_041.jpg
+1
+209 80 60 60
+D:/datasets/stanford40/JPEGImages/phoning_243.jpg
+1
+164 51 46 46
+D:/datasets/stanford40/JPEGImages/phoning_198.jpg
+1
+205 66 42 41
+D:/datasets/stanford40/JPEGImages/phoning_196.jpg
+1
+139 87 87 87
+D:/datasets/stanford40/JPEGImages/phoning_165.jpg
+1
+195 28 73 74
+D:/datasets/stanford40/JPEGImages/phoning_225.jpg
+1
+118 85 51 52
+D:/datasets/stanford40/JPEGImages/phoning_116.jpg
+1
+341 77 86 86
+D:/datasets/stanford40/JPEGImages/phoning_027.jpg
+1
+36 141 47 47
+D:/datasets/stanford40/JPEGImages/phoning_044.jpg
+1
+170 169 157 158
+D:/datasets/stanford40/JPEGImages/phoning_167.jpg
+1
+98 40 41 41
+D:/datasets/stanford40/JPEGImages/phoning_259.jpg
+1
+93 78 44 45
+D:/datasets/stanford40/JPEGImages/phoning_229.jpg
+1
+274 157 95 95
+D:/datasets/stanford40/JPEGImages/phoning_226.jpg
+1
+143 90 73 73
+D:/datasets/stanford40/JPEGImages/phoning_169.jpg
+1
+33 45 105 106
+D:/datasets/stanford40/JPEGImages/phoning_208.jpg
+1
+60 84 51 50
+D:/datasets/stanford40/JPEGImages/phoning_123.jpg
+1
+164 104 62 63
+D:/datasets/stanford40/JPEGImages/phoning_199.jpg
+1
+145 109 66 66
+D:/datasets/stanford40/JPEGImages/phoning_257.jpg
+1
+185 65 45 45
+D:/datasets/stanford40/JPEGImages/phoning_067.jpg
+1
+129 162 58 58
+D:/datasets/stanford40/JPEGImages/phoning_051.jpg
+1
+60 105 47 47
+D:/datasets/stanford40/JPEGImages/phoning_251.jpg
+1
+98 72 56 57
+D:/datasets/stanford40/JPEGImages/phoning_132.jpg
+1
+149 143 44 44
+D:/datasets/stanford40/JPEGImages/phoning_202.jpg
+1
+72 72 124 124
+D:/datasets/stanford40/JPEGImages/phoning_094.jpg
+1
+162 63 106 107
+D:/datasets/stanford40/JPEGImages/phoning_184.jpg
+1
+259 116 105 106
+D:/datasets/stanford40/JPEGImages/phoning_247.jpg
+1
+155 106 129 129
+D:/datasets/stanford40/JPEGImages/phoning_234.jpg
+1
+158 131 50 50
+D:/datasets/stanford40/JPEGImages/phoning_238.jpg
+1
+92 22 49 49
+D:/datasets/stanford40/JPEGImages/phoning_036.jpg
+1
+103 63 52 52
+D:/datasets/stanford40/JPEGImages/phoning_062.jpg
+1
+74 150 52 53
+D:/datasets/stanford40/JPEGImages/phoning_061.jpg
+1
+134 235 64 64
+D:/datasets/stanford40/JPEGImages/phoning_104.jpg
+1
+239 314 95 95
+D:/datasets/stanford40/JPEGImages/phoning_115.jpg
+1
+245 107 76 76
+D:/datasets/stanford40/JPEGImages/phoning_171.jpg
+1
+84 114 47 46
+D:/datasets/stanford40/JPEGImages/phoning_040.jpg
+1
+124 131 56 55
+D:/datasets/stanford40/JPEGImages/phoning_038.jpg
+1
+86 83 69 69
+D:/datasets/stanford40/JPEGImages/phoning_160.jpg
+1
+159 74 54 54
+D:/datasets/stanford40/JPEGImages/phoning_030.jpg
+1
+154 70 61 61
+D:/datasets/stanford40/JPEGImages/phoning_059.jpg
+1
+113 208 63 63
+D:/datasets/stanford40/JPEGImages/phoning_091.jpg
+1
+99 80 103 103
+D:/datasets/stanford40/JPEGImages/phoning_126.jpg
+1
+122 60 60 60
+D:/datasets/stanford40/JPEGImages/phoning_188.jpg
+1
+269 121 70 70
+D:/datasets/stanford40/JPEGImages/phoning_105.jpg
+1
+68 38 68 69
+D:/datasets/stanford40/JPEGImages/phoning_114.jpg
+1
+97 125 20 19
+D:/datasets/stanford40/JPEGImages/phoning_151.jpg
+1
+265 126 72 72
+D:/datasets/stanford40/JPEGImages/phoning_056.jpg
+1
+85 27 48 48
+D:/datasets/stanford40/JPEGImages/phoning_026.jpg
+1
+129 111 86 86
+D:/datasets/stanford40/JPEGImages/phoning_159.jpg
+1
+171 80 72 72
+D:/datasets/stanford40/JPEGImages/phoning_252.jpg
+1
+109 114 121 121
+D:/datasets/stanford40/JPEGImages/phoning_224.jpg
+1
+173 1 103 103
+D:/datasets/stanford40/JPEGImages/phoning_131.jpg
+1
+132 65 53 53
+D:/datasets/stanford40/JPEGImages/phoning_176.jpg
+1
+79 52 51 51
+D:/datasets/stanford40/JPEGImages/phoning_103.jpg
+1
+430 341 54 54
+D:/datasets/stanford40/JPEGImages/phoning_206.jpg
+1
+116 103 77 77
+D:/datasets/stanford40/JPEGImages/phoning_207.jpg
+1
+349 52 74 74
+D:/datasets/stanford40/JPEGImages/phoning_074.jpg
+1
+396 149 118 118
+D:/datasets/stanford40/JPEGImages/phoning_200.jpg
+1
+191 22 49 48
+D:/datasets/stanford40/JPEGImages/phoning_152.jpg
+1
+56 108 47 47
+D:/datasets/stanford40/JPEGImages/phoning_236.jpg
+1
+78 70 59 59
+D:/datasets/stanford40/JPEGImages/phoning_190.jpg
+1
+149 60 51 52
+D:/datasets/stanford40/JPEGImages/phoning_172.jpg
+1
+193 108 47 46
+D:/datasets/stanford40/JPEGImages/phoning_060.jpg
+1
+125 202 55 55
+D:/datasets/stanford40/JPEGImages/phoning_195.jpg
+1
+229 160 84 84
+D:/datasets/stanford40/JPEGImages/phoning_122.jpg
+1
+100 37 67 67
+D:/datasets/stanford40/JPEGImages/phoning_037.jpg
+1
+172 101 50 50
+D:/datasets/stanford40/JPEGImages/phoning_217.jpg
+1
+263 40 48 48
+D:/datasets/stanford40/JPEGImages/phoning_022.jpg
+1
+213 28 60 61
+D:/datasets/stanford40/JPEGImages/phoning_084.jpg
+1
+166 77 75 76
+D:/datasets/stanford40/JPEGImages/phoning_001.jpg
+1
+95 69 60 59
+D:/datasets/stanford40/JPEGImages/phoning_237.jpg
+1
+135 244 116 116
+D:/datasets/stanford40/JPEGImages/phoning_120.jpg
+1
+69 69 69 68
+D:/datasets/stanford40/JPEGImages/phoning_015.jpg
+1
+258 97 51 52
+D:/datasets/stanford40/JPEGImages/phoning_173.jpg
+1
+100 93 70 71
+D:/datasets/stanford40/JPEGImages/phoning_227.jpg
+1
+155 83 46 46
+D:/datasets/stanford40/JPEGImages/phoning_136.jpg
+1
+109 92 103 102
+D:/datasets/stanford40/JPEGImages/phoning_138.jpg
+1
+90 101 105 105
+D:/datasets/stanford40/JPEGImages/phoning_125.jpg
+1
+182 61 64 63
+D:/datasets/stanford40/JPEGImages/phoning_248.jpg
+1
+147 71 41 41
+D:/datasets/stanford40/JPEGImages/phoning_039.jpg
+1
+233 49 37 36
+D:/datasets/stanford40/JPEGImages/phoning_113.jpg
+1
+214 125 51 50
+D:/datasets/stanford40/JPEGImages/phoning_150.jpg
+1
+205 118 84 85
+D:/datasets/stanford40/JPEGImages/phoning_142.jpg
+1
+271 53 55 54
+D:/datasets/stanford40/JPEGImages/phoning_064.jpg
+1
+220 154 67 66
+D:/datasets/stanford40/JPEGImages/phoning_235.jpg
+1
+187 37 56 56
+D:/datasets/stanford40/JPEGImages/phoning_083.jpg
+1
+72 16 39 39
+D:/datasets/stanford40/JPEGImages/phoning_233.jpg
+1
+132 39 97 96
+D:/datasets/stanford40/JPEGImages/phoning_057.jpg
+1
+113 43 119 118
+D:/datasets/stanford40/JPEGImages/phoning_258.jpg
+1
+133 82 73 74
+D:/datasets/stanford40/JPEGImages/phoning_121.jpg
+1
+169 69 48 48
+D:/datasets/stanford40/JPEGImages/phoning_031.jpg
+1
+351 175 57 58
+D:/datasets/stanford40/JPEGImages/phoning_180.jpg
+1
+229 37 64 65
+D:/datasets/stanford40/JPEGImages/phoning_090.jpg
+1
+228 77 48 48
+D:/datasets/stanford40/JPEGImages/phoning_194.jpg
+1
+170 60 50 50
+D:/datasets/stanford40/JPEGImages/phoning_215.jpg
+1
+109 30 52 53
+D:/datasets/stanford40/JPEGImages/phoning_193.jpg
+1
+218 69 135 134
+D:/datasets/stanford40/JPEGImages/phoning_213.jpg
+1
+120 79 88 87
+D:/datasets/stanford40/JPEGImages/phoning_191.jpg
+1
+55 64 75 74
+D:/datasets/stanford40/JPEGImages/phoning_130.jpg
+1
+90 87 63 63
+D:/datasets/stanford40/JPEGImages/phoning_133.jpg
+1
+184 31 71 71
+D:/datasets/stanford40/JPEGImages/phoning_149.jpg
+1
+149 34 41 41
+D:/datasets/stanford40/JPEGImages/phoning_053.jpg
+1
+148 7 40 39
+D:/datasets/stanford40/JPEGImages/phoning_042.jpg
+1
+138 93 76 76
+D:/datasets/stanford40/JPEGImages/phoning_093.jpg
+1
+86 187 89 88
+D:/datasets/stanford40/JPEGImages/phoning_204.jpg
+1
+171 45 47 47
+D:/datasets/stanford40/JPEGImages/phoning_082.jpg
+1
+217 114 29 28
+D:/datasets/stanford40/JPEGImages/phoning_043.jpg
+1
+399 229 69 69
+D:/datasets/stanford40/JPEGImages/phoning_035.jpg
+1
+182 90 72 72
+D:/datasets/stanford40/JPEGImages/phoning_156.jpg
+1
+136 82 112 111
+D:/datasets/stanford40/JPEGImages/phoning_092.jpg
+1
+51 175 42 42
+D:/datasets/stanford40/JPEGImages/phoning_014.jpg
+1
+61 66 53 53
+D:/datasets/stanford40/JPEGImages/phoning_129.jpg
+1
+104 13 69 69
+D:/datasets/stanford40/JPEGImages/phoning_058.jpg
+1
+238 128 35 35
+D:/datasets/stanford40/JPEGImages/phoning_230.jpg
+1
+156 84 40 41
+D:/datasets/stanford40/JPEGImages/phoning_097.jpg
+1
+115 183 43 43
+D:/datasets/stanford40/JPEGImages/phoning_154.jpg
+1
+120 83 70 70
+D:/datasets/stanford40/JPEGImages/phoning_048.jpg
+1
+109 38 94 95
+D:/datasets/stanford40/JPEGImages/phoning_034.jpg
+1
+99 49 114 114
+D:/datasets/stanford40/JPEGImages/phoning_112.jpg
+1
+90 109 82 82
+D:/datasets/stanford40/JPEGImages/phoning_119.jpg
+1
+123 108 59 59
+D:/datasets/stanford40/JPEGImages/phoning_065.jpg
+1
+185 82 82 81
+D:/datasets/stanford40/JPEGImages/phoning_016.jpg
+1
+190 69 54 55
+D:/datasets/stanford40/JPEGImages/phoning_253.jpg
+1
+185 93 44 44
+D:/datasets/stanford40/JPEGImages/phoning_024.jpg
+1
+254 95 69 69
+D:/datasets/stanford40/JPEGImages/phoning_013.jpg
+1
+72 87 64 63
+D:/datasets/stanford40/JPEGImages/phoning_006.jpg
+1
+132 134 70 69
+D:/datasets/stanford40/JPEGImages/phoning_205.jpg
+1
+16 63 61 61
+D:/datasets/stanford40/JPEGImages/phoning_155.jpg
+1
+92 64 106 106
+D:/datasets/stanford40/JPEGImages/phoning_203.jpg
+1
+142 116 49 49
+D:/datasets/stanford40/JPEGImages/phoning_210.jpg
+1
+160 65 53 53
+D:/datasets/stanford40/JPEGImages/phoning_241.jpg
+1
+173 90 71 71
+D:/datasets/stanford40/JPEGImages/phoning_085.jpg
+1
+93 209 39 39
+D:/datasets/stanford40/JPEGImages/phoning_145.jpg
+1
+152 183 52 51
+D:/datasets/stanford40/JPEGImages/phoning_004.jpg
+1
+80 36 45 44
+D:/datasets/stanford40/JPEGImages/phoning_179.jpg
+1
+118 53 20 21
+D:/datasets/stanford40/JPEGImages/phoning_072.jpg
+1
+144 78 67 66
+D:/datasets/stanford40/JPEGImages/phoning_099.jpg
+1
+184 143 59 58
+D:/datasets/stanford40/JPEGImages/phoning_139.jpg
+1
+102 65 40 40
+D:/datasets/stanford40/JPEGImages/phoning_183.jpg
+1
+264 110 113 113
+D:/datasets/stanford40/JPEGImages/phoning_078.jpg
+1
+149 146 116 117
+D:/datasets/stanford40/JPEGImages/phoning_222.jpg
+1
+46 70 75 75
+D:/datasets/stanford40/JPEGImages/phoning_095.jpg
+1
+155 155 56 57
+D:/datasets/stanford40/JPEGImages/phoning_137.jpg
+1
+94 25 49 49
+D:/datasets/stanford40/JPEGImages/smoking_206.jpg
+1
+281 101 64 64
+D:/datasets/stanford40/JPEGImages/smoking_131.jpg
+1
+183 64 60 60
+D:/datasets/stanford40/JPEGImages/smoking_004.jpg
+1
+280 81 65 65
+D:/datasets/stanford40/JPEGImages/smoking_150.jpg
+1
+75 68 65 65
+D:/datasets/stanford40/JPEGImages/smoking_108.jpg
+1
+218 126 46 46
+D:/datasets/stanford40/JPEGImages/smoking_081.jpg
+1
+108 71 55 56
+D:/datasets/stanford40/JPEGImages/smoking_203.jpg
+1
+113 112 78 79
+D:/datasets/stanford40/JPEGImages/smoking_067.jpg
+1
+173 68 53 53
+D:/datasets/stanford40/JPEGImages/smoking_132.jpg
+1
+224 52 54 55
+D:/datasets/stanford40/JPEGImages/smoking_209.jpg
+1
+191 60 70 70
+D:/datasets/stanford40/JPEGImages/smoking_194.jpg
+1
+88 83 77 77
+D:/datasets/stanford40/JPEGImages/smoking_233.jpg
+1
+141 95 73 74
+D:/datasets/stanford40/JPEGImages/smoking_041.jpg
+1
+100 104 87 88
+D:/datasets/stanford40/JPEGImages/smoking_018.jpg
+1
+77 100 78 78
+D:/datasets/stanford40/JPEGImages/smoking_092.jpg
+1
+203 86 59 59
+D:/datasets/stanford40/JPEGImages/smoking_212.jpg
+1
+118 73 66 66
+D:/datasets/stanford40/JPEGImages/smoking_119.jpg
+1
+125 139 62 61
+D:/datasets/stanford40/JPEGImages/smoking_066.jpg
+1
+156 71 46 45
+D:/datasets/stanford40/JPEGImages/smoking_174.jpg
+1
+192 122 107 108
+D:/datasets/stanford40/JPEGImages/smoking_205.jpg
+1
+132 100 80 80
+D:/datasets/stanford40/JPEGImages/smoking_136.jpg
+1
+225 110 113 113
+D:/datasets/stanford40/JPEGImages/smoking_101.jpg
+1
+224 113 61 61
+D:/datasets/stanford40/JPEGImages/smoking_096.jpg
+1
+138 76 30 29
+D:/datasets/stanford40/JPEGImages/smoking_109.jpg
+1
+153 89 92 93
+D:/datasets/stanford40/JPEGImages/smoking_094.jpg
+1
+152 84 79 80
+D:/datasets/stanford40/JPEGImages/smoking_154.jpg
+1
+142 152 60 60
+D:/datasets/stanford40/JPEGImages/smoking_239.jpg
+1
+118 78 69 68
+D:/datasets/stanford40/JPEGImages/smoking_187.jpg
+1
+67 45 81 81
+D:/datasets/stanford40/JPEGImages/smoking_235.jpg
+1
+132 48 54 55
+D:/datasets/stanford40/JPEGImages/smoking_229.jpg
+1
+144 116 67 67
+D:/datasets/stanford40/JPEGImages/smoking_115.jpg
+1
+127 106 61 60
+D:/datasets/stanford40/JPEGImages/smoking_117.jpg
+1
+151 60 54 55
+D:/datasets/stanford40/JPEGImages/smoking_055.jpg
+1
+142 70 83 83
+D:/datasets/stanford40/JPEGImages/smoking_057.jpg
+1
+271 111 44 45
+D:/datasets/stanford40/JPEGImages/smoking_047.jpg
+1
+78 48 40 40
+D:/datasets/stanford40/JPEGImages/smoking_207.jpg
+1
+145 97 46 46
+D:/datasets/stanford40/JPEGImages/smoking_165.jpg
+1
+253 54 57 58
+D:/datasets/stanford40/JPEGImages/smoking_234.jpg
+1
+220 70 46 46
+D:/datasets/stanford40/JPEGImages/smoking_147.jpg
+1
+108 86 87 88
+D:/datasets/stanford40/JPEGImages/smoking_060.jpg
+1
+142 75 85 85
+D:/datasets/stanford40/JPEGImages/smoking_025.jpg
+1
+185 68 74 73
+D:/datasets/stanford40/JPEGImages/smoking_188.jpg
+1
+85 114 57 57
+D:/datasets/stanford40/JPEGImages/smoking_030.jpg
+1
+123 55 61 62
+D:/datasets/stanford40/JPEGImages/smoking_196.jpg
+1
+79 37 63 63
+D:/datasets/stanford40/JPEGImages/smoking_237.jpg
+1
+222 114 151 151
+D:/datasets/stanford40/JPEGImages/smoking_052.jpg
+1
+74 55 77 77
+D:/datasets/stanford40/JPEGImages/smoking_144.jpg
+1
+166 94 49 49
+D:/datasets/stanford40/JPEGImages/smoking_227.jpg
+1
+112 100 66 66
+D:/datasets/stanford40/JPEGImages/smoking_158.jpg
+1
+270 117 47 47
+D:/datasets/stanford40/JPEGImages/smoking_155.jpg
+1
+54 49 76 76
+D:/datasets/stanford40/JPEGImages/smoking_123.jpg
+1
+146 66 106 106
+D:/datasets/stanford40/JPEGImages/smoking_053.jpg
+1
+156 79 77 77
+D:/datasets/stanford40/JPEGImages/smoking_006.jpg
+1
+180 87 110 111
+D:/datasets/stanford40/JPEGImages/smoking_015.jpg
+1
+300 69 65 65
+D:/datasets/stanford40/JPEGImages/smoking_111.jpg
+1
+135 117 54 53
+D:/datasets/stanford40/JPEGImages/smoking_036.jpg
+1
+96 36 33 33
+D:/datasets/stanford40/JPEGImages/smoking_186.jpg
+1
+127 68 49 50
+D:/datasets/stanford40/JPEGImages/smoking_034.jpg
+1
+80 44 80 80
+D:/datasets/stanford40/JPEGImages/smoking_105.jpg
+1
+57 52 123 123
+D:/datasets/stanford40/JPEGImages/smoking_178.jpg
+1
+99 82 89 88
+D:/datasets/stanford40/JPEGImages/smoking_184.jpg
+1
+98 52 50 50
+D:/datasets/stanford40/JPEGImages/smoking_091.jpg
+1
+103 69 75 75
+D:/datasets/stanford40/JPEGImages/smoking_039.jpg
+1
+113 88 67 66
+D:/datasets/stanford40/JPEGImages/smoking_126.jpg
+1
+232 40 132 132
+D:/datasets/stanford40/JPEGImages/smoking_078.jpg
+1
+124 50 61 61
+D:/datasets/stanford40/JPEGImages/smoking_120.jpg
+1
+93 53 65 66
+D:/datasets/stanford40/JPEGImages/smoking_045.jpg
+1
+106 74 48 47
+D:/datasets/stanford40/JPEGImages/smoking_171.jpg
+1
+150 136 57 56
+D:/datasets/stanford40/JPEGImages/smoking_013.jpg
+1
+156 62 58 58
+D:/datasets/stanford40/JPEGImages/smoking_107.jpg
+1
+90 114 82 82
+D:/datasets/stanford40/JPEGImages/smoking_124.jpg
+1
+107 60 52 52
+D:/datasets/stanford40/JPEGImages/smoking_149.jpg
+1
+138 62 54 55
+D:/datasets/stanford40/JPEGImages/smoking_099.jpg
+1
+172 175 102 102
+D:/datasets/stanford40/JPEGImages/smoking_029.jpg
+1
+224 69 92 92
+D:/datasets/stanford40/JPEGImages/smoking_226.jpg
+1
+88 78 77 77
+D:/datasets/stanford40/JPEGImages/smoking_019.jpg
+1
+201 136 120 121
+D:/datasets/stanford40/JPEGImages/smoking_161.jpg
+1
+100 70 82 82
+D:/datasets/stanford40/JPEGImages/smoking_103.jpg
+1
+161 42 93 93
+D:/datasets/stanford40/JPEGImages/smoking_023.jpg
+1
+183 83 80 80
+D:/datasets/stanford40/JPEGImages/smoking_164.jpg
+1
+258 155 46 46
+D:/datasets/stanford40/JPEGImages/smoking_201.jpg
+1
+685 151 150 150
+D:/datasets/stanford40/JPEGImages/smoking_065.jpg
+1
+102 116 102 103
+D:/datasets/stanford40/JPEGImages/smoking_177.jpg
+1
+129 54 51 51
+D:/datasets/stanford40/JPEGImages/smoking_110.jpg
+1
+201 32 68 69
+D:/datasets/stanford40/JPEGImages/smoking_148.jpg
+1
+142 66 87 86
+D:/datasets/stanford40/JPEGImages/smoking_139.jpg
+1
+132 76 60 60
+D:/datasets/stanford40/JPEGImages/smoking_016.jpg
+1
+128 83 54 54
+D:/datasets/stanford40/JPEGImages/smoking_086.jpg
+1
+138 51 66 66
+D:/datasets/stanford40/JPEGImages/smoking_068.jpg
+1
+80 86 56 55
+D:/datasets/stanford40/JPEGImages/smoking_190.jpg
+1
+151 49 54 55
+D:/datasets/stanford40/JPEGImages/smoking_022.jpg
+1
+117 171 73 74
+D:/datasets/stanford40/JPEGImages/smoking_129.jpg
+1
+151 61 100 99
+D:/datasets/stanford40/JPEGImages/smoking_085.jpg
+1
+145 91 98 98
+D:/datasets/stanford40/JPEGImages/smoking_049.jpg
+1
+155 83 93 93
+D:/datasets/stanford40/JPEGImages/smoking_152.jpg
+1
+67 24 32 32
+D:/datasets/stanford40/JPEGImages/smoking_033.jpg
+1
+148 155 76 76
+D:/datasets/stanford40/JPEGImages/smoking_079.jpg
+1
+104 79 98 97
+D:/datasets/stanford40/JPEGImages/smoking_012.jpg
+1
+145 50 58 58
+D:/datasets/stanford40/JPEGImages/smoking_059.jpg
+1
+242 75 98 99
+D:/datasets/stanford40/JPEGImages/smoking_240.jpg
+1
+128 57 59 58
+D:/datasets/stanford40/JPEGImages/smoking_118.jpg
+1
+218 155 84 84
+D:/datasets/stanford40/JPEGImages/smoking_073.jpg
+1
+164 111 105 105
+D:/datasets/stanford40/JPEGImages/smoking_179.jpg
+1
+195 113 78 79
+D:/datasets/stanford40/JPEGImages/smoking_219.jpg
+1
+244 100 41 41
+D:/datasets/stanford40/JPEGImages/smoking_173.jpg
+1
+114 79 67 66
+D:/datasets/stanford40/JPEGImages/smoking_112.jpg
+1
+104 76 85 85
+D:/datasets/stanford40/JPEGImages/smoking_169.jpg
+1
+126 64 81 81
+D:/datasets/stanford40/JPEGImages/smoking_142.jpg
+1
+82 52 95 95
+D:/datasets/stanford40/JPEGImages/smoking_088.jpg
+1
+125 102 72 72
+D:/datasets/stanford40/JPEGImages/smoking_044.jpg
+1
+53 44 66 65
+D:/datasets/stanford40/JPEGImages/smoking_225.jpg
+1
+118 129 60 61
+D:/datasets/stanford40/JPEGImages/smoking_056.jpg
+1
+190 78 55 55
+D:/datasets/stanford40/JPEGImages/smoking_027.jpg
+1
+115 49 63 62
+D:/datasets/stanford40/JPEGImages/smoking_084.jpg
+1
+110 63 72 72
+D:/datasets/stanford40/JPEGImages/smoking_138.jpg
+1
+103 51 38 37
+D:/datasets/stanford40/JPEGImages/smoking_032.jpg
+1
+112 67 56 56
+D:/datasets/stanford40/JPEGImages/smoking_040.jpg
+1
+170 29 50 51
+D:/datasets/stanford40/JPEGImages/smoking_211.jpg
+1
+151 70 98 97
+D:/datasets/stanford40/JPEGImages/smoking_197.jpg
+1
+87 164 92 92
+D:/datasets/stanford40/JPEGImages/smoking_077.jpg
+1
+131 113 63 62
+D:/datasets/stanford40/JPEGImages/smoking_238.jpg
+1
+164 60 66 66
+D:/datasets/stanford40/JPEGImages/smoking_159.jpg
+1
+124 45 56 57
+D:/datasets/stanford40/JPEGImages/smoking_151.jpg
+1
+114 84 93 93
+D:/datasets/stanford40/JPEGImages/smoking_007.jpg
+1
+267 91 56 57
+D:/datasets/stanford40/JPEGImages/smoking_183.jpg
+1
+160 57 49 49
+D:/datasets/stanford40/JPEGImages/smoking_082.jpg
+1
+109 56 52 53
+D:/datasets/stanford40/JPEGImages/smoking_116.jpg
+1
+129 25 73 73
+D:/datasets/stanford40/JPEGImages/smoking_003.jpg
+1
+124 75 54 53
+D:/datasets/stanford40/JPEGImages/smoking_046.jpg
+1
+132 56 57 57
+D:/datasets/stanford40/JPEGImages/smoking_080.jpg
+1
+96 65 47 46
+D:/datasets/stanford40/JPEGImages/smoking_037.jpg
+1
+89 106 72 72
+D:/datasets/stanford40/JPEGImages/smoking_098.jpg
+1
+201 41 43 43
+D:/datasets/stanford40/JPEGImages/smoking_054.jpg
+1
+93 67 92 91
+D:/datasets/stanford40/JPEGImages/smoking_001.jpg
+1
+250 38 66 66
+D:/datasets/stanford40/JPEGImages/smoking_043.jpg
+1
+112 111 66 66
+D:/datasets/stanford40/JPEGImages/smoking_087.jpg
+1
+174 59 86 86
+D:/datasets/stanford40/JPEGImages/smoking_200.jpg
+1
+147 55 85 85
+D:/datasets/stanford40/JPEGImages/smoking_095.jpg
+1
+165 118 111 111
+D:/datasets/stanford40/JPEGImages/smoking_166.jpg
+1
+134 90 71 72
+D:/datasets/stanford40/JPEGImages/smoking_241.jpg
+1
+339 255 84 84
+D:/datasets/stanford40/JPEGImages/smoking_157.jpg
+1
+249 57 54 54

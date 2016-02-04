@@ -1,0 +1,13 @@
+#!/bin/csh
+#
+# Runs a matlab command
+# The matlab command can access the special variable 'job_id'
+# that identifies the id of the specific job in the parallel batch.
+#
+# Usage:
+# run_matlab_script command
+#
+
+echo "Running Matlab script: $1"
+
+matlab2012a -nojvm -nodisplay -r "job_id = $SGE_TASK_ID ; $1 ; exit"

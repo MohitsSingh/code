@@ -1,0 +1,75 @@
+function R = doMaskSearch(I,net_deep,layers,w)
+imRect = [1 1 fliplr(size2(I))];
+curRect = imRect;
+% curRect = makeSquare(imRect,true);
+sz = size2(I);
+nIters = 0;
+R = zeros(size2(I));
+maxIters =15;
+scores = -inf(1,maxIters);
+
+p_chop = .7;
+while(nIters < maxIters)
+    
+%     curRect = inflatebbox(curRect,1.1,'both',false);
+    
+    right_child = chopLeft(curRect,p_chop);
+    left_child = chopRight(curRect,p_chop);
+    bottom_child = chopTop(curRect,p_chop);
+    top_child = chopBottom(curRect,p_chop);
+            
+    curChildren = struct('rect',{},'mask',{},'img',{},'score',{});
+    rects = [right_child;left_child;bottom_child;top_child];
+    
+    rects = inflatebbox(rects,1.1,'both',false);
+    pp = randperm(size(rects,1));
+    rects = rects(pp,:);
+
+%     curRect = repmat(curRect,size(rects,1),1);
+%     alpha_ = .2;
+%     rects = ((1-alpha_)*rects+alpha_*curRect);
+
+    rects = BoxIntersection(rects,imRect);
+    if (nIters>0) % keep only reasonable aspect ratios
+        [a,b] = BoxSize(rects);
+        aspects = max(a./b,b./a);
+        rects = rects(aspects<3,:);
+    end
+    nIters = nIters+1;
+    
+    for t = 1:size(rects,1)
+        curChildren(t).rect = rects(t,:);
+        %mask = max(box2Region(rects(t,:),sz,true),curMask);
+        mask = box2Region(rects(t,:),sz,true);
+        curChildren(t).mask = mask;
+        curChildren(t).img = I.*(1-mask)+.5*mask;
+    end
+    masked_images = {curChildren.img};
+    f = extractDNNFeats(masked_images,net_deep,layers,false);
+    curScores = w*f.x;
+    
+    figure(1);
+    clf;
+    mm = 2;
+    nn = 1;
+    subplot(mm,nn,1);
+    imagesc2(I);
+    %         imagesc2(blendRegion(I,curMask(:,:,1))); title('prev mask');
+    [m,im] = sort(curScores,'ascend');
+    curRect = curChildren(im(1)).rect;
+    R = R+curChildren(im(1)).mask(:,:,1);
+    plotBoxes(curRect);
+    
+    subplot(mm,nn,2);
+    scores(nIters) = m(1);
+    plot(scores)
+%     pause
+%     subplot(mm,nn,2);
+%     imagesc2(blendRegion(I,curChildren(im(1)).mask(:,:,1))); title('cur mask');
+    %      subplot(2,1,1);imagesc2(I); plotBoxes(curRect);
+    %         title(m(1));
+%     curMask = ~curChildren(im(1)).mask;
+    %         zzz = mImage(masked_images(im));
+    %         subplot(2,1,2); imagesc2(zzz);
+    drawnow;pause(.01);
+end

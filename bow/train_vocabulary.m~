@@ -1,0 +1,35 @@
+function vocab = train_vocabulary(vocabPath,,image_ids)
+%TRAIN_VOCABULARY train a vocabulary from pre-calculated descriptors.
+%   Detailed explanation goes here
+
+if (exist(globalOpts.vocabPath,'file'))
+    load(globalOpts.vocabPath);
+    return;
+end
+
+descrs = {} ;
+for ii = 1:length(image_ids)
+    currentID = image_ids{ii};
+    descPath = getDescFile(globalOpts,currentID,1);
+    fprintf('loading descriptors for image %s %d/%d [%s%03.3f]\n', ...
+        currentID, ii, length(image_ids), '%', 100*ii/length(image_ids));
+    if (~exist(descPath,'file'))
+        extract_descs(globalOpts,{currentID},1);
+        disp(['trwain_vocabulary ---> descriptors for image' currentID ' don''t exist, calculating now']);
+    end
+    load(descPath);
+    descrs{ii} = D; %#ok<AGROW>
+    if (~globalOpts.keepDescFiles)
+        delete(descPath);
+    end
+end
+
+%descrs = vl_colsubset(cat(2, descrs{:}), 25e4); % 250000 for 4096 descs
+descrs = vl_colsubset(cat(2, descrs{:}), 10e4); % 10000 for 4096 descs
+
+% Quantize the descriptors to get the visual words
+vocab = vl_kmeans(descrs, globalOpts.numWords,...
+    'verbose','verbose','verbose', 'algorithm', 'elkan');
+save(globalOpts.vocabPath, 'vocab') ;
+
+end

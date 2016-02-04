@@ -1,0 +1,526 @@
+function featData = extract_all_features(conf,imgData,params,featData)
+%Aggregates multiple feature types for images. Some features have been
+%pre-computed
+
+% if (nargin  < 4 || isempty(featData))
+%     featData = struct;
+% end
+featData.imgIndex = imgData.imgIndex;
+featData.valid = true;
+
+% obtain:
+% 1. image
+% 2. facial keypoints
+% 3. segmentation
+% 4. saliency
+% 5. object mask
+% 6. shape probability prediction
+% 7. line segment features (to server as additional candidates.
+
+feats = struct('label',{},'mask',{},'attributeFeats',{},'geometricFeats',{},'shapeFeats',{},'meanSaliency',{},'meanProb',{});
+[rois,roiBox,I,scaleFactor,roiParams] = get_rois_fra(conf,imgData,params.roiParams);
+featData.I = I;
+
+% first , make sure that the image contains enough of the action object. If
+% not, consider it invalid.f
+% if (imgData.isTrain)
+
+[gt_object_masks,bads] = getGtPolygons(I,rois);
+
+if isempty(bads) || all(bads)
+    if (~params.testMode)
+        featData.valid = false;
+        return;
+    end
+end
+
+gt_object_masks = gt_object_masks(~bads);
+
+% end
+[I_orig,I_rect] = getImage(conf,imgData);
+% facial keypoints
+
+if (~imgData.isTrain || (imgData.isTrain && isempty(imgData.indInFraDB))) % if a test image, read the predicted keypoints
+    %     [kp_preds,goods] = getKPPredictions(kpData,imgData.imgIndex);
+    
+    outDir = conf.landmarks_myDir;
+    curOutPath = j2m(outDir,imgData);
+    load(curOutPath,'res');%,'curKP_global','curKP_local');
+    global_pred = res.kp_global;
+    local_pred = res.kp_local;
+    
+    preds = local_pred;
+    bc1 = boxCenters(global_pred);
+    bc2 = boxCenters(local_pred);
+    bc_dist = sum((bc1-bc2).^2,2).^.5;
+    bad_local = bc_dist > 30;
+    goods_1= global_pred(:,end) > 2;
+    local_pred(bad_local,1:4) = global_pred(bad_local,1:4);
+    goods = goods_1 & ~bad_local;
+    kp_preds = local_pred;
+    goods = true(size(kp_preds,1),1);
+    kp_centers = boxCenters(kp_preds);
+    nKP = size(kp_centers,1);
+    
+    % % %     % transform preds to global image coordinates.
+    % % %     preds_global = kp_preds;
+    % % %     preds_global(:,1:4) = preds_global(:,1:4)/scaleFactor + repmat(roiBox(1:2),size(preds_global,1),2);
+    % % %     kp_preds(:,1:4) = (preds_global(:,1:4) - repmat(roiBox(1:2),size(preds_global,1),2))*scaleFactor;
+else
+    [kp_preds,goods] = loadKeypointsGroundTruth(imgData,params.requiredKeypoints);
+    confidences = kp_preds(:,3);
+    kp_preds = kp_preds(:,1:2);
+    kp_preds = kp_preds-repmat(roiBox(1:2),size(kp_preds,1),1);
+    kp_preds = kp_preds*scaleFactor;
+    kp_centers = kp_preds;
+    kp_preds = inflatebbox([kp_preds kp_preds],[5 5],'both',true);
+    nKP = size(kp_preds,1);
+end
+
+if (~isfield(imgData,'mouth'))
+    imgData.mouth = boxCenters(kp_preds(3,:))/scaleFactor+roiBox(1:2);
+end
+
+if (params.skipCalculation)
+    showStuff();
+    return;
+end
+
+featData.kp_confidences = kp_preds(:,end);
+
+% segmentation
+
+
+
+% if (isfield(featData,'segmentation'));
+%     candidates = featData.segmentation.candidates;
+%         ucm = featData.segmentation.ucm;
+    %     segBox = featData.segmentation.segBox;
+if (nargin >= 4) 
+    selected_regions = {featData.feats.mask};
+    ovp = [featData.feats.gt_ovp];
+    labels = [featData.feats.label];
+else
+    disp('getting segmentation...');
+    [candidates,ucm,segBox] = getSegmentation(conf,imgData,true);
+    selected_regions = candidates.masks;
+    region_scores = candidates.score;
+    %     regions = struct('masks'
+    %     pause;
+    %displayRegions(I,candidates.masks(ovp>.5),-ovp(ovp>.5));
+    %
+    %[face_ovp,face_int,face_areas] = boxRegionOverlap(faceBoxShifted,regions,[],regionBoxes);
+    % find the best face region...
+    
+    % heuristically remove obvious none-candidates
+    selected_regions(region_scores < .1) = [];
+    region_scores(region_scores < .1) = [];
+    [selected_regions,toKeep] = removeObviousSegments(selected_regions);
+    region_scores = region_scores(toKeep);
+    %     end
+    ucm = ucm(1:2:end-1,1:2:end-1);
+    
+end
+% saliency (todo - later load it rather than compute each time)
+if (isfield(featData,'saliency'))
+    sal = featData.saliency.sal;
+    %sal = paintSeg(sal,segData.candidates.superpixels);
+    sal_bd = featData.saliency.sal_bd;
+    sal_global = featData.saliency.sal_global;
+    sal_bd_global = featData.saliency.sal_bd_global;
+else
+    disp('computing saliency...');
+    [sal,sal_bd,sal_global,sal_bd_global] = extractSaliencyHelper(conf,imgData,params.saliencyParams);
+    sal = imResample(cropper(sal,round(roiBox)),size2(I));
+    sal_bd = imResample(cropper(sal_bd,round(roiBox)),size2(I));
+    sal_global= imResample(cropper(sal_global,round(roiBox)),size2(I));
+    sal_bd_global = imResample(cropper(sal_bd_global,round(roiBox)),size2(I));
+    
+    %     figure(7); imagesc2(sal_bd);
+    featData.saliency.sal = sal;
+    featData.saliency.sal_bd = sal_bd;
+    featData.saliency.sal_global = sal_global;
+    featData.saliency.sal_bd_global = sal_bd_global;
+end
+
+% object probability prediction
+if (~isfield(featData,'predictions'))
+    [objPredictionImage,maskPredictionImage] = getPredictionImages(conf,imgData,roiBox);
+    maskPredictionImage = imResample(maskPredictionImage,size2(I));
+    objPredictionImage = imResample(objPredictionImage,size2(I));
+    objPredictionImage = normalise(objPredictionImage).^.5;
+    featData.predictions.objPredictionImage = objPredictionImage;
+    featData.predictions.maskPredictionImage = maskPredictionImage;
+else
+    objPredictionImage = featData.predictions.objPredictionImage;
+    maskPredictionImage = featData.predictions.maskPredictionImage;
+end
+% maskPredictionImage = normalise(maskPredictionImage);
+% maskPredictionImage = maskPredictionImage.^.5;
+if params.segmentation.useGraphCut
+    % graph-cut segmentation
+    gc_segResult = getSegments_graphCut_2(I,objPredictionImage,[],0);
+    gc_segResult = double(repmat(gc_segResult,[1 1 3])).*I;
+end
+
+% line segments features
+if (params.features.getLineSegs)
+    if (isfield(featData,'lineSegments'))
+        lineSegments = featData.lineSegments;
+    else
+        lineSegments = getELSDLineSegmentFeatures(conf,imgData,I);
+        lineSegments = clipEdge(lineSegments, roiBox([1 3 2 4]));
+        lineSegments(all(lineSegments==0,2),:) = [];
+        lineSegments = lineSegments-repmat(roiBox([1 2 1 2]),size(lineSegments,1),1);
+        lineSegments = lineSegments*scaleFactor;
+        
+        E = edge(im2double(rgb2gray(I)),'canny');
+        [edgelist edgeim] = edgelink(E, []);
+        segs = [lineseg(edgelist,2),lineseg(edgelist,4),lineseg(edgelist,6)];
+        segs = seglist2segs(segs);
+        segs = unique(segs,'rows');
+        %     x2(I); hold on;plotSegs(segs(:,[2 1 4 3]),'g-')
+        lineSegments = [segs(:,[2 1 4 3]);lineSegments];
+        featData.lineSegments = lineSegments;
+        % add elsd line segments too
+        candidatesFromLines = processLinesToCandidates(I,lineSegments)';
+        nonZeros = @(x) cellfun(@nnz,x);
+        assert(all(nonZeros(candidatesFromLines)));
+        assert(all(nonZeros(candidates.masks)));
+        %         candidates.masks = candidatesFromLines;
+        selected_regions = [candidatesFromLines;selected_regions];
+        %if (params.testMode && params.keepSegments)
+        %         if (params.keepSegments)
+        %             featData.segmentation.candidates = candidates;
+        %         end
+        %end
+    end
+end
+
+% finally, extract features from candidates...
+if (isempty(gt_object_masks))
+    ovp = zeros(1,length(selected_regions));
+else
+    ovp = regionsOverlap(gt_object_masks,selected_regions);
+    ovp = max(ovp,[],1);
+end
+    
+
+% training mode:
+% define ground truth, negative samples and possibly some more ground truth
+% (from segmentation) samples as well.
+if (nargin <4)
+    region_labels = imgData.classID*ones(length(selected_regions) + length(gt_object_masks),1);
+    region_labels(length(selected_regions)+1:end) = imgData.classID;
+    selected_regions = [selected_regions(:);gt_object_masks(:)];
+    [selected_regions,toKeep_regions] = removeDuplicateRegions(selected_regions);
+    ovp = [ovp(:);ones(length(gt_object_masks),1)];
+else
+    region_labels = imgData.classID*ones(length(selected_regions),1);
+end
+% if (~params.testMode)
+%     sel_neg = row(find(max(ovp,[],1) < params.learning.negOvp));
+%     % diversify the negatives....
+% %     [ovp,ints,uns] = regionsOverlap2(candidates.masks);
+%     all_neg_regions = candidates.masks(sel_neg(randperm(length(sel_neg))));
+%     [ovp1,ints1,uns1] = regionsOverlap3(all_neg_regions,all_neg_regions);
+%     T_ovp =.3;
+%     [subsets] = suppresRegions(ovp1,T_ovp);
+%     sel_neg = subsets{1};
+%     sel_neg = vl_colsubset(sel_neg,params.learning.nNegsPerPos,'random');
+% %     displayRegions(I,(all_neg_regions(subsets{1})));
+%     sel_pos = row(find(min(ovp,[],1) >= params.learning.posOvp));
+%     pos_regions = [row(gt_object_masks),candidates.masks(sel_pos)'];
+%     neg_regions = row(all_neg_regions(sel_neg));
+%     region_labels = [-ones(size(neg_regions)),ones(size(pos_regions))*imgData.classID];
+%     selected_regions = [neg_regions,pos_regions];
+% else
+%     region_labels = -1*ones(length(candidates.masks),1);
+%     selected_regions = candidates.masks;
+% end
+
+% ppp = randperm(length(selected_regions));
+% [regions] = packRegions2(selected_regions(ppp));
+allRegionBoxes = cellfun2(@region2Box,selected_regions);
+allRegionBoxes = cat(1,allRegionBoxes{:});
+if (params.features.getAttributeFeats)
+    attributeFeats = extract_features(I, allRegionBoxes);
+else
+    attributeFeats = NaN(1,size(allRegionBoxes,1));
+end
+
+tic_id = ticStatus( 'extracting segment feautures', 1,1);
+
+if (params.features.getSimpleShape)
+    simpleShapes = cellfun2(@(x) imResample(im2single(x),[7 7],'bilinear'),selected_regions);
+end
+
+resizeFactor = .3;
+smallMasks = cellfun2(@(x) imResample(im2single(x),round(size2(x)*resizeFactor),'bilinear')>0,selected_regions);
+% if (params.features.getGeometry)
+
+% end
+
+% create log-polar masks for each of the 21 keypoints.
+
+m = getLogPolarMask(30,6,3);%(10,nTheta,nLayers);
+
+z_shapes = {};zeros([size2(I),nKP]);
+nbins = max(m(:));
+for iz = 1:nKP
+    kp_topleft = round(kp_centers(iz,:)-.5*fliplr(size2(m)));
+    kp_bottomright = kp_topleft+fliplr(size2(m))-1;
+    T = shiftRegions(m,[kp_topleft,kp_bottomright],I);
+    %     clf;imagesc2(T);
+    %     plotPolygons(kp_centers(iz,:),'r+');
+    %     pause
+    T(T==0) = nbins+1;
+    z_shapes{iz} = imResample(T,resizeFactor,'nearest');
+end
+
+if (params.features.getAppearance)
+    [learnParams,conf] = getDefaultLearningParams(conf,1024);
+    featureExtractor = learnParams.featureExtractors{1};
+    featureExtractor.bowConf.bowmodel.numSpatialX = [1 2];
+    featureExtractor.bowConf.bowmodel.numSpatialY = [1 2];
+    disp('extracting appearance features...');
+    appearanceFeats = featureExtractor.extractFeatures(I,selected_regions,'normalization','Improved');
+end
+
+
+iFaceBox = find(strncmpi('face',{rois.name},3));
+[bbox_feats,B] = get_bbox_feats(selected_regions,rois(iFaceBox).bbox);
+
+for t = 1:length(selected_regions)
+    feats(t).label = region_labels(t);
+    curMask = selected_regions{t};
+    feats(t).gt_ovp = ovp(t);
+    feats(t).boxFeats = B(t,:);
+    
+    if (params.features.getSimpleShape)
+        feats(t).simpleShape = simpleShapes{t};
+    end
+    if (params.keepSegments)
+        feats(t).mask = curMask;
+    end
+    
+    if (params.features.getAppearance)
+        feats(t).appearance = appearanceFeats(:,t);
+    end
+    
+    if (params.features.getAttributeFeats)
+        feats(t).attributeFeats = attributeFeats(:,t);
+    end
+    if (params.features.getLogPolarShape)
+        [logPolarMask,m_vis] = getLogPolarShape(curMask,36);
+    else
+        logPolarMask = NaN;
+    end
+    
+    if (params.features.getShape)
+        r = regionprops(curMask,'Area','Eccentricity','MajorAxisLength','MinorAxisLength','Orientation');
+        r = r(1);
+        shapeFeats = [r.Area^.5;r.Eccentricity;r.MajorAxisLength;r.MinorAxisLength;r.Orientation];
+        feats(t).shapeFeats = shapeFeats;
+    else
+        feats(t).shapeFeats = NaN;
+    end
+    % % % %     feats(t).shapeFeats = [logPolarMask(:);r.Area^.5;r.Eccentricity;r.MajorAxisLength;r.MinorAxisLength;r.Orientation;r.Solidity];
+    
+    if (params.features.getGeometry)
+        %[y,x] = find(curMask);
+        [y,x] = find(smallMasks{t});
+        
+        % for each keypoint, find the nearest and furthest distance on the mask
+        % to this keypoint.
+        xy_mask = [x(:) y(:)]/resizeFactor;
+        kp_to_mask = l2(kp_centers,xy_mask);
+        feats(t).geometricFeats = [min(kp_to_mask,[],2);max(kp_to_mask,[],2)];
+    end
+    if (params.features.getGeometryLogPolar)
+        geometric_feats_log_polar = zeros(nKP,nbins+1);
+        S = smallMasks{t}>0;
+        for u = 1:size(kp_centers,1)
+            curZShape = z_shapes{u};
+            accum = zeros(nbins+1,1);
+            geometric_feats_log_polar(u,:)=vl_binsum(accum,1,curZShape(S));
+        end
+        feats(t).geometric_feats_log_polar =  geometric_feats_log_polar(:);
+    end
+    
+    %     feats(t).geometricFeats = [min(kp_to_mask,[],2);max(kp_to_mask,[],2)];
+    
+    if (params.features.getPixelwiseProbs)
+        feats(t).meanSaliency = mean(sal(curMask(:)));
+        feats(t).meanBDSaliency = mean(sal_bd(curMask(:)));
+        feats(t).meanGlobalSaliency = mean(sal_global(curMask(:)));
+        feats(t).meanGlobalBDSaliency = mean(sal_bd_global(curMask(:)));
+        feats(t).meanLocationProb = mean(objPredictionImage(curMask(:)));
+        feats(t).meanShapeProb = mean(maskPredictionImage(curMask(:)));
+    end
+    tocStatus(tic_id,t/length(selected_regions));
+end
+% profile viewer
+featData.feats = feats;
+
+% visualization (for debugging)
+if (params.debug)
+    showStuff()
+end
+    function showStuff()
+        mm = 3;
+        nn = 3;
+        ss = 1;
+        % if (debug_)
+        
+        subplotFun = @subplot;
+        
+        % show keypoints
+        figure(1);clf;
+        subplotFun(mm,nn,ss);ss = ss+1;
+        imagesc2(I);
+        subplotFun(mm,nn,ss);ss = ss+1;
+        imagesc2(I);title('original + keypoints + object');
+        plotBoxes(kp_preds(goods,:));
+        plotBoxes(kp_preds(3,:),'color','y','LineWidth',3);
+        plotBoxes(kp_preds(4,:),'color','r','LineWidth',3);
+        plotBoxes(kp_preds(5,:),'color','c','LineWidth',3);
+        % show object
+        iObj = find(strncmpi('obj',{rois.name},3));
+        
+        % % %     if ~isempty(iObj)
+        % % %         for ii = 1:length(iObj)
+        % % %             plotPolygons(rois(iObj(ii)).poly,'r-','LineWidth',2);
+        % % %         end
+        % % %     end
+        % show segmentation
+        subplotFun(mm,nn,ss);ss = ss+1;
+        %         ucm = featData.segmentation.ucm;
+        imagesc2(ucm);title('ucm');
+        % show saliency
+        subplotFun(mm,nn,ss);ss = ss+1;
+        imagesc2(featData.saliency.sal);title('foreground');
+        subplotFun(mm,nn,ss);ss = ss+1;
+        imagesc2(featData.saliency.sal_bd);title('foreground-bd');
+        % show object prediction image
+        subplotFun(mm,nn,ss);ss = ss+1;
+        imagesc2(sc(cat(3,featData.predictions.objPredictionImage,I),'prob_jet'));title('predicted obj. loc');
+        if params.segmentation.useGraphCut
+            subplotFun(mm,nn,ss);ss = ss+1;
+            imagesc2(gc_segResult);title('graph-cut segmentation');
+        end
+        subplotFun(mm,nn,ss);ss = ss+1;
+        imagesc2(sal_global); title('foreground - global');
+        subplotFun(mm,nn,ss);ss = ss+1;
+        imagesc2(sal_bd_global);title('foreground - bd - global');
+        if (params.features.getLineSegs)
+            subplotFun(mm,nn,ss);ss = ss+1;
+            imagesc2(I); plotSegs(lineSegments,'g-');
+        end
+    end
+    function [gt_masks,bads] = getGtPolygons(I,rois)
+        iObj = find(strncmpi('obj',{rois.name},3));
+        gt_masks = {};
+        bads = false(size(iObj));
+        if ~isempty(iObj)
+            for ii = 1:length(iObj)
+                curPoly = rois(iObj(ii)).poly;
+                Z = poly2mask2(curPoly,size2(I));
+                gt_masks{ii} = Z;
+                if (nnz(Z)/polyarea(curPoly(:,1),curPoly(:,2)) < .5)
+                    % discard only if a small object...
+                    if (nnz(Z) < 100) % TODO - check if this is a good heuristic
+                        bads(ii) = true;
+                        %                         clf; displayRegions(I,Z);
+                        %                         continue;
+                    end
+                end
+                %gt_masks{end+1} = Z;
+            end
+        end
+    end
+    function [masks,toKeep] = removeObviousSegments(masks)
+        %         displayRegions(I,masks(randperm(length(masks))));
+        % remove too large regions
+        sz = prod(size2(I));
+        toKeep = 1:length(masks);
+        areas = cellfun(@nnz,masks);
+        maxArea = .4;
+        minAreaPix = 30;
+        masks(areas/sz > maxArea | areas < minAreaPix) = [];
+        toKeep(areas/sz > maxArea | areas < minAreaPix) = [];
+        %         displayRegions(I,masks)
+        % remove regions for which the ratio of pixels taken from the
+        % border of the image is too large
+        Z = addBorder(false(size2(I)),1,1);
+        totalBorderElements = nnz(Z);
+        maskBorderElements = cellfun(@(x) sum(x(Z)),masks);
+        maxBorderElements = .2;
+        masks(maskBorderElements/totalBorderElements>=maxBorderElements) = [];
+        toKeep(maskBorderElements/totalBorderElements>=maxBorderElements) = [];
+        maskBorderElements(maskBorderElements/totalBorderElements>=maxBorderElements) = [];
+        
+        % remove region for which the ratio of border elements w.r.t the
+        % total region perimeter is too large
+        % calculate a lower bound on perimeter using an equivalent circle
+        equivCircleDiameter = cellfun(@(x) 2*(nnz(x)*pi)^.5, masks);
+        maxSelfBorder = .5;
+        
+        masks(maskBorderElements./equivCircleDiameter > maxSelfBorder) = [];
+        toKeep(maskBorderElements./equivCircleDiameter > maxSelfBorder) = [];
+        
+        
+    end
+
+    function [objPredictionImage,maskPredictionImage] = getPredictionImages(conf,imgData,roiBox)
+        if (any(imgData.indInFraDB))
+            resDir = '~/storage/s40_fra_box_pred_2014_09_17';
+            resPath = fullfile(resDir,[imgData.imageID '_' 'obj' '.mat']);
+            L_obj = load(resPath);
+        else
+            resDir = '~/storage/s40_obj_prediction';
+            resPath = j2m(resDir,imgData);
+            L_obj = load(resPath);
+            L_obj = L_obj.res;
+            
+        end
+        f =  @(x)  cropper(normalise(transformBoxToImage(I_orig, x, L_obj.roiBox, false)),roiBox).^4;
+        objPredictionImage = f(L_obj.pMap);
+        maskPredictionImage = f(L_obj.shapeMask);
+        
+    end
+    function [sal,sal_bd,sal_global,sal_bd_global] = extractSaliencyHelper(conf,imgData,saliencyParams)
+        curRoiParams.infScale = 1.5;
+        curRoiParams.absScale = 100;
+        [curRois,curRoiBox,I_sal] = get_rois_fra(conf,imgData,curRoiParams);
+        [sal,sal_bd,resizeRatio] = extractSaliencyMap(im2uint8(I_sal),saliencyParams);
+        sal = transformBoxToImage(I_orig, sal, curRoiBox, false);
+        sal_bd = transformBoxToImage(I_orig, 1-sal_bd, curRoiBox, false);
+        
+        %         I_orig = getImage(conf,imgData);
+        [sal_global,sal_bd_global,resizeRatio] = extractSaliencyMap(im2uint8(I_orig),saliencyParams);
+        sal_global = cropper(imResample(sal_global,size2(I_orig)),round(curRoiBox));
+        sal_bd_global = cropper(imResample(sal_bd_global,size2(I_orig)),round(curRoiBox));
+        sal_global = transformBoxToImage(I_orig, sal_global, curRoiBox, false);
+        sal_bd_global = transformBoxToImage(I_orig, 1-sal_bd_global, curRoiBox, false);
+    end
+
+    function [kp_preds,goods] = loadKeypointsGroundTruth(imgData,reqKeyPoints)
+        goods = true(size(reqKeyPoints));
+        kp_preds = zeros(length(reqKeyPoints),3);
+        %         if (imgData.isTrain)
+        dbPath = '/home/amirro/storage/data/face_related_action';
+        annoPath = j2m(dbPath,imgData);
+        L = load(annoPath);
+        curLandmarks = L.curLandmarks;
+        kp_preds(:,end) = 1;
+        for k = 1:length(reqKeyPoints)
+            fn = reqKeyPoints{k};
+            if (curLandmarks.(fn).skipped)
+                goods(k) = false;
+            else
+                kp_preds(k,1:2) = curLandmarks.(fn).pts;
+            end
+        end
+    end
+end

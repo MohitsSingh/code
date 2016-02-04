@@ -1,0 +1,8 @@
+function featPath = getFeatPath( conf,imageID )
+%GETFEATPATH Summary of this function goes here
+%   Detailed explanation goes here
+
+       featPath = fullfile(conf.featPath,imageID);
+
+end
+

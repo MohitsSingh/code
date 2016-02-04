@@ -1,0 +1,4 @@
+curGT = getGroundTruth(imgData)
+segData = getSegments(imgData,cutGT)
+shapeFeats = extractShapeFeats(segData)
+appearanceFeats = extractAppearanceFeats(segData)

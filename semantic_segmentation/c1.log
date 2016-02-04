@@ -1,0 +1,35 @@
+I1012 14:38:11.087366  8217 caffe.cpp:113] Use GPU with device ID 1
+I1012 14:38:11.448439  8217 caffe.cpp:121] Starting Optimization
+I1012 14:38:11.448582  8217 solver.cpp:32] Initializing solver from parameters: 
+test_iter: 150
+test_interval: 290
+base_lr: 0.002
+display: 50
+max_iter: 50000
+lr_policy: "step"
+gamma: 0.1
+momentum: 0.9
+weight_decay: 0.0005
+stepsize: 20000
+snapshot: 2900
+snapshot_prefix: "fcn-32sfo"
+solver_mode: GPU
+net: "fcn-32sfo_train_val.prototxt"
+I1012 14:38:11.448629  8217 solver.cpp:70] Creating training net from net file: fcn-32sfo_train_val.prototxt
+F1012 14:38:11.448828  8217 io.cpp:34] Check failed: fd != -1 (-1 vs. -1) File not found: fcn-32sfo_train_val.prototxt
+*** Check failure stack trace: ***
+    @     0x2b3a03cab58d  google::LogMessage::Fail()
+    @     0x2b3a03caf577  google::LogMessage::SendToLog()
+    @     0x2b3a03cade74  google::LogMessage::Flush()
+    @     0x2b3a03cae0a6  google::LogMessageFatal::~LogMessageFatal()
+    @     0x2b39fdd0b617  caffe::ReadProtoFromTextFile()
+    @     0x2b39fdd24da3  caffe::ReadNetParamsFromTextFileOrDie()
+    @     0x2b39fdc641c3  caffe::Solver<>::InitTrainNet()
+    @     0x2b39fdc646cf  caffe::Solver<>::Init()
+    @     0x2b39fdc64b05  caffe::Solver<>::Solver()
+    @           0x40a63d  caffe::SGDSolver<>::SGDSolver()
+    @           0x40ddf0  caffe::GetSolver<>()
+    @           0x408b41  train()
+    @           0x40608e  main
+    @       0x3eb321ed5d  (unknown)
+    @           0x405759  (unknown)

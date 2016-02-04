@@ -1,0 +1,30 @@
+function [ res ] = loadOrCalc( conf, fun_handle, imageID, cachePath,reqInfo,moreParams )
+%LOADORCALC Generic caching function, loads result from cachepath if it
+%exists, or calculates it and saves if not; if cachePath is empty simply
+% performs the calculation and returns.
+
+if (~isempty(cachePath))
+    gotFile = false;
+    if (exist(cachePath,'file'))
+        try
+            res = load(cachePath); % assume that this contains 'res'
+            gotFile = true;
+        catch e
+            disp(['deleting corrupt file: ' cachePath]);
+            delete(cachePath);
+        end
+    end
+    %         save(cachePath,'-struct','res');
+    %L = load(U,'feats','moreData');
+    if (~gotFile)
+        res = feval(fun_handle,conf,imageID,reqInfo,moreParams);
+        try
+            save(cachePath,'-struct','res');
+        catch e
+            save([cachePath '.error'],'imageID','e');
+        end
+    end
+else
+    res = fun_handle(conf,imageID,reqInfo,moreParams);
+end
+end

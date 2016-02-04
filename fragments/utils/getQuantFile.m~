@@ -1,0 +1,7 @@
+function [ quant ] = getQuantFile( input_args )
+%GETQUANTFILE Summary of this function goes here
+%   Detailed explanation goes here
+
+
+end
+

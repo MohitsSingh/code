@@ -1,0 +1,285 @@
+
+k Adjacent Segments Detector V1.04
+==================================
+
+Matlab source code by V. Ferrari and L. Fevrier
+Research by V. Ferrari, L. Fevrier, F. Jurie, and C. Schmid
+
+
+Quick start
+~~~~~~~~~~~
+Start Matlab in <dir>, the directory where you uncompressed the release archive .tgz
+Now type the following within Matlab:
+
+1. addpath(genpath(pwd));
+2. setenv('BERKELEY_UNITEX_PATH',pwd);
+3. detect_kas_exec_interface('TryOnMe','jpg',3);
+4. load colors.mat
+5. load TryOnMe/blue.mat
+6. DrawkASBG(obj, [], 'all', 2, false, false, false);
+   this displays all found kAS (with k=3).
+7. Compare the contents of directory TryOnMe to those of CompareToMe.
+   Compare the the first matlab figure opened by DrawkASBG to CompareToMe/blue_first_few_3AS.fig.
+   If everything is identical, then you kAS software works perfectly !
+
+
+Instruction manual
+~~~~~~~~~~~~~~~~~~
+Welcome to the instruction manual of the kAS local features detector.
+kAS are small groups of connected, approximately straight contour segments. The segments in a kAS form a path of length k through the Contour Segment Network of the image [1].
+The value of k controls the complexity of the local shape structures formed by kAS. 1AS are just individual segments, while 2AS include L shapes, and 3AS can form C,F and Z shapes.
+Each kAS has a well defined location, scale, and a descriptor invariant to translation and scale transformations.
+Hence, kAS can be used within a variety of recognition and image matching frameworks.
+For more details about the kAS features and their advantageous properties, please refer to [2].
+
+
+Using the kAS detector
+----------------------
+After installation (see 'Quick start' above), the matlab main routine can be invoked in the following syntax:
+
+detect_kas_exec_interface(dir,image_type,k);
+
+with
+  dir         =  the directory with the images to be processed (a string)
+  image_type  =  the filename extension of the images (e.g. jpg, tif, png) (a string)
+  k           =  the degree of the features to extract (an integer). This is optional, and if omitted the processing stops after building the Contour Segment Network.
+
+
+The program scans <dir> and processes every image of type <image_type>.
+For each image <img> it goes through the following steps:
+
+ 1. detect edges using the Berkeley Natural Boundary detector [3].
+    An edgemap <img>_edges.tif is produced, with stronger edgels being brighter.
+
+ 2. chain edgels, fit contour segments, and build the Contour Segment Network [1].
+    An ascii file <img>.segments is output, describing all contour segments (format below).
+    Additionally, an <img>.mat file is also generated. It contains all data so far, and
+    it is reloaded when the detector is run another time, for example to detect kAS of another degree.
+
+ 3. detect kAS features of degree k.
+    This produces an ascii file <img>.<k>AS in the format below.
+    The <img>.mat file is updated to contain also the kAS.
+
+
+After detect_kas_exec_interface, you can display kAS using DrawkASBG, as in the 'Quick start' section above
+(i.e. load the 'obj' variable from the <img>.mat file, then pass it to DrawkASBG).
+
+
+
+Format of .segments and .kAS output files
+-----------------------------------------
+The <img>.segments file contains straight line segments which are approximating the contour segments found on <img>_edges.tif.
+Each line describes a segment:
+
+id center_x center_y orientation length strength
+
+with
+  id           =  segment id, used to refer to the segment in files <img>.<k>AS
+  center_{x,y} =  coordinates of the segment center 
+  orientation  =  orientation in [0,2*Pi]. A value of zero means horizontal, directed from left to right (i.e. in order of increasing coordinates).
+                  Since image coordinates increase from left to right and from top to bottom, orientation values increase in clockwise order.
+                  For all practical purposes Pi can be subtracted to values larger than Pi, resulting
+                  in undirected segments. Indeed, segments are only directed within the Contour Segment Network.
+  strength     =  average strength of the edgels composing the segment, in [0,1].
+
+
+
+The <img>.<k>AS file contains all kAS features of degree k found in the image.
+Each line describes a feature:
+
+segm_id_1 ... segm_id_k    center_x center_y scale strength    descriptor
+
+with
+  segm_id_*    = ids of the contour segments composing the feature, given in the order defined below.
+  center_{x,y} = coordinates of the feature's center. This is the average location of composing segments' centers.
+  scale        = feature's scale. This is the distance between the centers of the two farthest segments.
+                 For 1AS, it is simply the length of the segment.
+  strength     = average strength of the composing segments.
+  descriptor   = A vector invariant to translation and scale transformations, which encodes the geometric properties of the segments
+                 and of their spatial arrangement.
+                 For k>1, it is the (4*k-2)-dimensional vector defined below.
+                 For 1AS, it is simply the orientation of the segment.
+
+We give here a brief description of how the segments are ordered in a kAS, and what the descriptor means.
+However, for a full understanding of these kAS attributes, we refer the reader to [2].
+
+The segments are ordered in a repeatable manner, so that similar kAS have the same order.
+The first segment is the one with midpoint closest to the centroid of all midpoints.
+When several segments have similar distances to the centroid, we pick the first one according to the lexicographic order defined just below.
+The remaining segments take up positions 2 through k, and are ordered from left to right, according to their midpoint.
+If two segments have similar x coordinate, then they are ordered from top to bottom.
+
+Once the order established, a kAS is a list s_1,s_2,...,s_k of segments.
+Let r_i = (r_i^x, r_i^y) be the vector going from the midpoint of s_1 to the midpoint of s_i.
+Furthermore, let theta_i and l_i be the orientation and length of s_i.
+The descriptor is composed of 4k-2 values:
+
+r_2^x / N_d
+r_3^x / N_d
+...
+r_k^x / N_d
+
+r_2^y / N_d
+r_3^y / N_d
+r_k^y / N_d
+
+theta_1
+theta_2
+...
+theta_k
+
+l_1 / N_d
+l_2 / N_d
+...
+l_k / N_d
+
+The distance N_d between the two farthest midpoints is used as normalization factor,
+making the descriptor scale-invariant.
+
+
+
+Format of .mat output file
+--------------------------
+The <img>.mat file contains all data associated to an image.
+The most important fields are defined as follows:
+
+.all_eds(:,j) = [x y strength orient]'
+   edgels in the image (order is unimportant);
+   strength in [0,255]; orient in [-pi,pi].
+
+.ecs(i).chain(:,j) = [x y]'
+   coordinates of the edgels of an edgel-chain;
+   these are in image coordinates, starting from (0,0) = top-left corner.
+
+.mainlines(:,j) = [id chain_id ctr_x ctr_y orient length]'
+   a contour segment; the identifier id is unique within the image;
+   chain_id is the edgel-chain it lies on (this is set to -1 for segments bridging over
+   two chains, see ECCV 2006 paper); orient in [0,2pi], although it's
+   equivalent modulo pi; ctr_x/y are the image coordinates of the center of the segment.
+
+.eds(:,j) = [id chain_id1 first1 last1 chain_id2 first2 last2]'
+   edgels covered by a segment (with id its unique identifier);
+   The segment covers edgels first1:last1 of chain chain_id1, and analog for chain2;
+   most segments lie entirely on one edgelchain, and have the last three values set to 0;
+   the image coordinates of the edgels can be found in .ecs(chain_id).chain (see above).
+
+.strengths(j) = strength
+   the strength of a segment, in [0,1].
+
+.mlnet(j)
+   the countour-segment-network;
+   mlnet(j).front/.back report which contour segments are connected to segment j.
+   mlnet(j).front(:,i) = [id contact]' means that segment j is connected to segment i
+   at i's contact point (contact = 1 -> back, contact = 2 -> front).
+
+.pas(:,j) = [segment_ids descriptor]'
+   a kAS; the first k entries are the segment ids, the rest is the kAS descriptor.
+   despite the name of this field, it's not just for PAS, it is for any kAS; the value of k can be deduced from
+   size(.pas,1), by noting the descriptor has 4k-2 dimensions.
+   The descriptor format is exactly the same as in the <img>.<k>AS ASCII file described above.
+
+.pas_ls(:,j) = [x y scale]'
+   a kAS location and scale as defined above
+
+.pas_strengths(j) = strength
+   a kAS strength as defined above
+
+
+Fields not mentioned above are either obvious (e.g. .name) or only used by internal processing (e.g. .becs).
+
+
+
+Reusing previous computation
+----------------------------
+The executable only detect edgels if <img>_edgels.tif is not already present.
+If it is, it is simply reloaded.
+In a similar fashion, the Contour Segment Network is only computed is <img>.mat is not found.
+This makes the kAS detection software remarkably flexible.
+It is possible to compute kAS of different degrees k, and at different times, without going through the computationally expensive
+Berkeley edge detection more than once.
+Moreover, it is possible to plug in any other edge detector (as discussed just below).
+
+
+
+Using another edge detector
+---------------------------
+If <img>_edgels.tif exists, the executable will load it and proceed to the later processing stages.
+Hence, it is possible to use your favorite edge detector instead of Berkeley's, simply by
+creating files <img>_edgels.tif in the appropriate format: a 8-bit greylevel image, where pixel
+values range from 0 (no edgel) to 255 (the strongest possible edgel).
+
+
+
+Support for parallel processing
+-------------------------------
+When processing an image, the executable creates an empty <img>.guard file, and deletes it
+when it's done. Moreover, before starting to process an image, the executable checks for
+the existence of <img>.guard. If it exists, the executable skips the image and tries to process the next one.
+
+Thanks to this simple mechanism, you can run the executable multiple times on the same directory
+(e.g. from different machines). The images will automatically be divided up among the multiple processes so
+that no image is treated more than once.
+This commodity is particularly useful in combination to the Berkeley edge detector, as it is quite slow.
+
+
+
+Support
+-------
+For any query/suggestion/complaint or simply to say you like/use this software, just drop me an email.
+Best is to write to all my addresses at the same time ;)
+
+ferrari@vision.ee.ethz.ch
+
+I wish you a good time using the kAS features !
+
+   Vittorio Ferrari
+
+
+
+
+References
+----------
+[1] V. Ferrari, T. Tuytelaars, and L. Van Gool,
+    Object Detection by Contour Segment Networks,
+    ECCV 2006
+
+[2] V. Ferrari, L. Fevrier, F. Jurie, and C. Schmid,
+    Groups of Adjacent Contour Segments for Object Detection,
+    PAMI, January 2008
+
+[3] D. Martin, C. Fowlkes, and J. Malik,
+    Learning to Detect Natural Image Boundaries Using Local Brightness, Color, and Texture Cues
+    PAMI, May 2004
+
+
+
+Versions history
+================
+
+1.04
+----
+- fixed README to report the correct order of the descriptor components in sections "Format of .segments and .kAS output files"
+  and "Format of .mat output file" (thanks to Di Wang for reporting this bug)
+- fixed section 'Quick start' of README to correctly say to load blue.mat from TryOnMe and not from CompareToMe
+
+
+1.03
+----
+- README updated to mention drawing routine
+- includes drawing routine DrawkASBG and associated colors.mat
+- first fully public source code release (though source code for 1.02 was given on email request since Feb 2009)
+
+
+1.02
+----
+- extended documentation to describe datastructures in the <img>.mat output files
+
+
+1.01
+----
+- fixed bug: now it no longer crashes when given an image containing no edges
+
+
+1.0
+---
+Initial release

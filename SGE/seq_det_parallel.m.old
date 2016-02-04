@@ -1,0 +1,200 @@
+function seq_det_parallel(baseDir,d,indRange,outDir)
+
+cd /home/amirro/code/mircs;
+echo off;
+if (~exist('toStart','var'))
+    initpath;
+    config;
+    load lipData.mat;
+    initLandMarkData_lite;
+    %     clf;
+    conf.class_subset = conf.class_enum.DRINKING;
+    check_test = true;
+    
+    if (check_test)
+        suffix = 'test';
+        cur_t = t_test;
+        cur_dir = '~/storage/gbp_tdpmest/';
+        cur_face_scores = test_faces_scores_r;
+        imageIDs = test_ids_r;
+        curLipBoxes = lipBoxes_test_r_2;
+        curFaces = test_faces;
+        locs_r = test_locs_r;
+    else
+        
+        cur_t = t_train
+        cur_dir = '~/storage/gbp_train/'
+        cur_set = lipImages_train;
+        suffix = 'train';
+        cur_comp = face_comp_train;
+        cur_face_scores = train_faces_scores_r;
+        imageIDs = train_ids_r;
+        curLipBoxes = lipBoxes_train_r_2;
+        curFaces = train_faces;
+        locs_r = train_locs_r;
+    end
+    
+    
+    conf.get_full_image = true;
+    [train_ids,train_labels,all_train_labels] = getImageSet(conf,'train');
+    [groundTruth,partNames] = getGroundTruth(conf,train_ids,train_labels);
+    
+    conf.featConf = init_features(conf);
+    % learn the part models...
+    extractors = initializeFeatureExtractors(conf);
+    
+    partModels = learnModels2(conf,train_ids,train_labels,groundTruth,partNames,extractors);
+    
+    if (~exist('normalizers.mat'))
+        normalizers = getNormalizationFactors(conf,train_ids); %
+        save normalizers normalizers;
+    else
+        load normalizers;
+    end
+    
+    binaryFactors = learnBinaryFactors(conf,train_ids,train_labels,groundTruth,partNames);
+    
+    s = binaryFactors.relativeShape(1,3).shape;
+    m = getLogPolarMask(10,10,4);
+    conf.get_full_image = true;
+    
+    
+    relativeShape = binaryFactors.relativeShape;
+    for ii = 1:size(relativeShape,1)
+        for jj = 1:size(relativeShape,2)
+            ind = sub2ind(size(relativeShape),ii,jj);
+            posFeats = [relativeShape(ind).shape];
+            if (~isempty(posFeats))
+                negFeats = [relativeShape([1:ind-1 ind+1:end]).shape];
+                x = [posFeats,negFeats];
+                y = zeros(size(x,2),1);
+                y(1:size(posFeats,2)) = 1;
+                y(size(posFeats,2)+1:end) = -1;
+                relativeShape(ind).classifier = Pegasos(x,y);
+                %             [x,m_vis] = getLogPolarShape([],[],[],m,relativeShape(ind).classifier.w);
+                [x,m_vis1] = getLogPolarShape([],[],[],m,relativeShape(ind).classifier.w(1:end/2));
+                [x,m_vis2] = getLogPolarShape([],[],[],m,relativeShape(ind).classifier.w(end/2+1:end));
+                %                 clf;
+                %                 imshow([m_vis1 m_vis2],[]);
+                %                 title([relativeShape(ind).part1 ' - ' relativeShape(ind).part2]);
+                %                 pause
+            end
+        end
+    end
+    
+    %     for k = 1:size(s,2)
+    %         [x,m_vis1] = getLogPolarShape([],[],[],m,s(1:end/2,k));
+    %         [x,m_vis2] = getLogPolarShape([],[],[],m,s(end/2+1:end,k));
+    %         imshow([m_vis1 m_vis2],[]);title([relativeShape(k).part1 ' - ' relativeShape(k).part2]);
+    %         pause
+    %     end
+    
+    toStart = 1;
+end
+
+%%
+for k = 1:length(indRange)
+    currentID = d(indRange(k)).name;
+    imagePath = fullfile(baseDir,d(indRange(k)).name);
+    [~,filename,~] = fileparts(imagePath);
+    resFileName = fullfile(outDir,[filename '.mat']);
+    fprintf('checking if results for image %s exist...',filename);
+    if (exist(resFileName,'file'))
+        fprintf('results exist. skipping\n');
+        continue;
+    else
+        fprintf('calculating...');
+    end
+    
+    res = struct('parts',{},'regions',{},'scores',{});
+    res(1).scores = -inf;
+    
+    imageInd = find(cellfun(@any,strfind(imageIDs,currentID)));
+    if (~any(imageInd))
+        save(resFileName,'res');
+        continue;
+    end
+    
+    % flip the x of the mouth location if necessary
+    curTitle = '';
+    curFaceBox = locs_r(imageInd,:);
+    curLipRect = curLipBoxes(imageInd,:);
+    if (curFaceBox(:,conf.consts.FLIP))
+        curTitle = 'flip';
+        curLipRect = flip_box(curLipRect,[128 128]);
+    end
+    
+    conf.get_full_image = true;
+    [I,xmin,xmax,ymin,ymax] = getImage(conf,currentID);
+    
+    faceBoxShifted = curFaceBox(1:4) + [xmin ymin xmin ymin];
+    
+    gpbFile = fullfile('/home/amirro/storage/gpb_s40/',strrep(currentID,'.jpg','.mat'));
+    topleft_ = locs_r(imageInd,1:2);
+    [rows cols ~] = BoxSize(locs_r(imageInd,:));
+    lipRectShifted = rows*curLipRect/128 + [topleft_ topleft_];
+    [rows2 cols2 ~] = BoxSize(lipRectShifted);
+    ucmFile = strrep(gpbFile,'.mat','_ucm.mat');
+    if (exist(ucmFile,'file'))
+        load(ucmFile);
+    end
+    [regions,regionOvp,G] = getRegions(conf,currentID);
+    [regionConfs] = applyModel(conf,currentID);%,partModels);
+    dpmResPath = fullfile(conf.dpmDir,strrep(currentID,'.jpg','.mat'));
+    load(dpmResPath);
+    [regionConfs,modelResults] = normalizeScores(normalizers,regionConfs,modelResults);
+    T_ovp = 1; % don't show overlapping regions...
+    region_sel = suppresRegions(regionOvp, T_ovp); % help! we're being oppressed! :-)
+    regions = regions(region_sel);
+    regionOvp = regionOvp(region_sel,region_sel);
+    origBoundaries = ucm<=.1;
+    segLabels = bwlabel(origBoundaries);
+    segLabels = imdilate(segLabels,[1 1 0]);
+    segLabels = imdilate(segLabels,[1 1 0]');
+    S = medfilt2(segLabels); % close the small holes...
+    
+    segLabels(segLabels==0) = S(segLabels==0);
+    
+    conf.get_full_image = true;
+    
+    
+    segImage = paintSeg(I,segLabels);
+    %     subplot(1,2,1); imagesc(I); axis image;
+    %     subplot(1,2,2); imagesc(segImage); axis image;
+    %     hold on;plotBoxes2([ymin xmin ymax xmax],'g');
+    lipRectShifted = lipRectShifted + [xmin ymin xmin ymin];
+    plotBoxes2(lipRectShifted([2 1 4 3]));
+    %     [~,name,~] = fileparts(currentID);
+    %     outDir = '/home/amirro/storage/res_s40';
+    %     [~,filename,~] = fileparts(currentID);
+    %     resFileName = fullfile(outDir,[filename '.mat']);
+    %
+    %     if (exist(resFileName,'file'))
+    %         load(resFileName);
+    %     end
+    for iModel = 1:length(regionConfs)
+        regionConfs(iModel).score = regionConfs(iModel).score(region_sel);
+        nans = isnan(regionConfs(iModel).score);
+        regionConfs(iModel).score(nans) = -inf;
+    end
+    
+    %     selBox = faceBoxShifted;
+    selBox = lipRectShifted;
+    load(fullfile('~/storage/relativeFeats_s40',strrep(currentID,'.jpg','.mat')));
+    %     relativeShapes = relativeShapes(:,region_sel);
+    
+    relativeShapes_ = region2EdgeSubset(G,relativeShapes,region_sel);
+    
+    
+    G = G(region_sel,region_sel);
+    
+    faceBox = faceBoxShifted;
+    
+    [res.parts,res.allRegions,res.scores] = followSegments2(regions,G,regionConfs,I,selBox,faceBox,regionOvp,relativeShape,relativeShapes_);
+    save(resFileName,'res');
+    %     pause;
+    %
+end
+%%
+
+end

@@ -1,0 +1,44 @@
+function run_all(inputDir,outDir,fun,justTesting,suffix)
+if (nargin < 5) 
+    suffix = '.mat';
+end
+% load nonPersonIds;
+% d = struct('name',{});
+% for k = 1:length(nonPersonIds)
+%     d(k).name = [nonPersonIds{k} '.jpg'];
+% end
+d = dir(fullfile(inputDir,'*.jpg')); 
+needsWork = false(size(d));
+for k = 1:length(d)
+    if (~exist(fullfile(outDir,strrep(d(k).name,'.jpg',suffix)),'file'))
+        needsWork(k) = true;
+    end
+end
+d = d(needsWork);
+ranges = {};
+nSplits = 100;
+d = d(randperm(length(d)));
+for k = 0:nSplits-1
+    ranges{k+1} = find(mod(1:length(d),nSplits)==k);
+end
+ranges = ranges(cellfun(@any,ranges));
+
+% create parallel code
+if (nargin == 4 && justTesting)
+    feval(fun,inputDir,d,1:10,outDir);
+    return
+end
+code = ['cd /home/amirro/code/SGE; ' fun '(inputDir,d,indRange,outDir)'];
+fprintf('Parallel code:\n%s\n', code);
+
+% run parallel code
+fprintf('Running in parallel:\n');
+echo on;
+mkdir(outDir);
+
+run_parallel(code, 'inputDir',inputDir,'d',d,'indRange',ranges,'outDir',outDir,...
+    '-cluster', 'mcluster01');
+echo off;
+fprintf('Done\n');
+
+end

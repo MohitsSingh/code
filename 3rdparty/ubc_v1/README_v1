@@ -1,0 +1,47 @@
+# jemdoc: title{Upper Body Configuration Detector - README}
+# menu{menu}{README_v1.html}, title{UBC - README}
+= Upper Body Configuration Detector -- version 1
+
+By: Minh Hoai Nguyen (minhhoai@gmail.com)              
+
+Date: 20 Mar 2014
+
+Last modified: 18 Apr 2014
+
+== Requirements
+
+- Code for DPM: [http://www.cs.berkeley.edu/~rbg/latent/voc-release5.tgz voc-release5]
+
+== Compilation
+
+Most of the code is in Matlab, which does not require compiliation.
+The only function that requires compilation is dt_ramanan.cc for generalize distance transform.
+We include precompiled binaries for Mac OS 10.9 and Linux 64 bit.
+If you need to compile the file, open Matlab and run:
+
+> mex dt_ramanan.cc 
+
+== Demo
+
+> MUB_Demo.demo1()
+
+> MUB_Demo.demo2()
+
+> MUB_Demo.demo3()
+
+> MUB_Demo.demo4()
+
+== Limitation
+
+This version contains pretrained models and testing code.
+Training data and training code will be made available in future release. 
+
+
+== Citation
+
+If you find the code useful, please cite:
+
+Hoai, M. & Zisserman, A. (2014) 
+Talking Heads: Detecting Humans and Recognizing Their Interactions.
+Proceedings of IEEE Conference on Computer Vision and Pattern Recognition
+

@@ -1,0 +1,1 @@
+gcc -o elsd elsd.c valid_curve.c process_curve.c process_line.c write_svg.c -I/usr/local/src/bundler/bundler-v0.4-source/lib/clapack/INCLUDE/ -I/usr/include/python2.4/Numeric/ -I/usr/local/src/bundler/bundler-v0.4-source/include -L/usr/lib64 -Ilib/clapack/INCLUDE -llapack -lblas -lm

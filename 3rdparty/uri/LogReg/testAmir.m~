@@ -1,0 +1,21 @@
+load forUri;
+
+X = M';
+y = train_labels;
+
+f = 10;
+[n d] = size(X);
+cvIdx = crossvalind('Kfold', n, f);
+f = zeros(f, 1);
+p = zeros(f, 1);
+r = zeros(f, 1);
+
+for i = 1:f
+    frpintf
+    testIdx = cvIdx == i;
+    trainIdx = ~testIdx;
+    [w b] = logReg(X(trainIdx, :), y(trainIdx));
+    yhat = (X(testIdx, :)*w + b) > 0;
+    [f(i) p(i) r(i)] = fmes(y(testIdx), yhat);        
+end
+

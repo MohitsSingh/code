@@ -1,0 +1,20 @@
+balcony
+building
+chimney
+door
+dormer
+entrance
+facade
+ground
+non-building
+pavement
+road
+roof
+sky
+stairs
+vegetation
+wall
+window
+window array
+window pane
+world part

@@ -1,0 +1,54 @@
+
+addpath('~/code/SGE/');
+
+% code = ['cd /home/amirro/code/fragments; defaultOpts;'...
+%     'globalOpts.numTrain = 200; globalOpts.det_rescale = 128;updateOpts;'...
+%     'test_images = textread(sprintf(VOCopts.imgsetpath,VOCopts.testset),''%s'');'...
+
+defaultOpts;
+tt_0_1x2_1000;
+test_images = textread(sprintf(globalOpts.VOCopts.imgsetpath,globalOpts.VOCopts.testset),'%s');
+train_images = textread(sprintf(globalOpts.VOCopts.imgsetpath,globalOpts.VOCopts.trainset),'%s');
+iter = 3;
+all_images = [train_images;test_images];
+
+code = ['cd /home/amirro/code/fragments; initpath; defaultOpts;tt_0_1x2_1000;init;'...
+    'globalOpts.class_subset = 1;'...
+    'model = do_training(globalOpts,train_images,model,' num2str(iter) ');'...
+    'applyModel(globalOpts,model,nimage,' num2str(iter)  ')'];
+
+to_calc = false(size(all_images));
+cls = 1;
+[~,t2] = textread(sprintf(VOCopts.imgsetpath,[VOCopts.classes{cls} '_val']),'%s %d');
+[~,t1] = textread(sprintf(VOCopts.imgsetpath,[VOCopts.classes{cls} '_train']),'%s %d');
+rPath = getResultsPath(globalOpts,iter);
+for k = 1:length(all_images)
+    %     k
+    fPath = fullfile(rPath, [all_images{k} '.txt']);
+    if (~exist(fPath,'file'))
+        to_calc(k) = true;
+    end
+end
+%
+% to_calc = (to_calc & [t1==1;t2==1]);
+% to_calc = (to_calc & [t1==10;t2==1]);
+%  to_calc = (to_calc & [false(size(t1==1));true(size(t2==1))]);
+
+all_images = all_images(to_calc);
+
+test_ = 0;
+
+images = cell(0);
+
+L = 100;
+c = mod(1:length(all_images),L)+1;
+for k = 1:L
+    images{k} = all_images(c==k);
+    %     images_(c==k);
+end
+
+if (test_)
+    images = images(1);
+end
+
+run_parallel(code, 'nimage',images,'-cluster', 'mcluster01');

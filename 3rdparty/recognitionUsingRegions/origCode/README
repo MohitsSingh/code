@@ -1,0 +1,18 @@
+1. Run main_train.m for training (an .mat file will be automatically generated).
+
+2. Run test_voting.m to evaluate the detection performance of region-based 
+Hough voting only.
+
+3. Run test_detection.m to evaluate the detection performance of voting + 
+verification.
+
+4. Pre-computed bounding boxes .mat files for voting only and voting + 
+verification are available (det_bboxes_voting.mat and det_bboxes_detection.mat)
+
+5. feat_extraction.m extracts shape contour region features from an image.
+
+6. For more information, see paper online at 
+http://www.eecs.berkeley.edu/~chunhui/index_files/glam-09.pdf, or contact 
+Chunhui Gu at chunhui@eecs.berkeley.edu.
+
+Copyright @ Chunhui Gu, April 2009

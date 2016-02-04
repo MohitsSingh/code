@@ -1,0 +1,74 @@
+<!-- Document Type Definition (DTD) of annotation XML document produced by Annotation Tool Version 2.0 -->
+
+<!ELEMENT annotation (filename, folder, sourceImage, sourceAnnotationXML, rectified, viewType, scale, imageWidth, imageHeight, transformationMatrix, annotatedClasses, object*)>
+
+<!ELEMENT filename (#PCDATA)>
+<!ELEMENT folder (#PCDATA)>
+<!ELEMENT sourceImage (#PCDATA)>
+<!ELEMENT sourceAnnotationXML (#PCDATA)>
+<!ELEMENT rectified (#PCDATA)>
+<!ELEMENT viewType (#PCDATA)>
+<!ELEMENT scale (#PCDATA)>
+<!ELEMENT imageWidth (#PCDATA)>
+<!ELEMENT imageHeight (#PCDATA)>
+<!ELEMENT transformationMatrix (#PCDATA)>
+<!ELEMENT annotatedClasses (className*)>
+<!ELEMENT object (name, objectID, occlusion, representativeness, uncertainty, deleted, verified, date, sourceAnnotation, polygon, objectParts, comment)>
+
+<!ELEMENT className (#PCDATA)>
+
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT objectID (#PCDATA)>
+<!ELEMENT occlusion (#PCDATA)>
+<!ELEMENT representativeness (#PCDATA)>
+<!ELEMENT uncertainty (#PCDATA)>
+<!ELEMENT deleted (#PCDATA)>
+<!ELEMENT verified (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT sourceAnnotation (#PCDATA)>
+<!ELEMENT polygon (pt)+>
+
+<!ELEMENT pt (x, y)>
+
+<!ELEMENT x (#PCDATA)>
+<!ELEMENT y (#PCDATA)>
+
+<!ELEMENT objectParts (#PCDATA)>
+<!ELEMENT comment (#PCDATA)>
+
+<!-- Semantic description of elements of annotation XML document
+
+filename: name of image file (including extension)
+folder: name of image dataset (folder name)
+sourceImage: source of image file (owner, author)
+sourceAnnotationXML: AnnotationTool version (eg. Annotation Tool Version 2.0)
+rectified: '0' original image, '1' rectified image
+viewType: 'terrestrial', 'aerial', ...
+scale: scale estimate [cm/pel]
+imageWidth: image width [pel]
+imageHeight: image height [pel]
+transformationMatrix: image transformation matrix (rectification)
+
+annotatedClasses: defines a list of the object classes, used in object.name
+className: the actual object classes, used in object.name
+
+object: annotated image object
+name: name of the annotated image object
+objectID: unique identifier of the annotated image object
+occlusion: degree of occlusion of the annotated image object [percent]
+representativeness: labeler's subjective measure of how well the annotated image object represents its class
+uncertainty: uncertainty of the annotated image region boundary [pel]
+deleted: auxiliary flag
+verified: auxiliary flag
+date: date of annotation
+sourceAnnotation: identifier of labeler
+polygon: image region boundary
+
+pt:	point on the image region boundary (polygon corner)
+
+x: image axis running horizontally from left to right
+y: image axis running vertically from top to bottom
+
+objectParts: set of other annotated image objects defined as parts of current image object
+comment: arbitrary text comment
+-->

@@ -1,0 +1,9 @@
+function visualizeBoxes(globalOpts, bboxes, image_ids)
+
+for kk = 1:size(bboxes,1)    
+    currentID = image_ids{kk};
+    imshow(getImageFile(currentID));
+        
+    plotBoxes2(bboxes(kk,:),'g-','LineWidth',2);
+    pause(.3)
+end

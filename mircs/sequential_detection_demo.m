@@ -1,0 +1,3 @@
+initpath;
+config;
+

@@ -1,0 +1,121 @@
+% Run code in parallel on the SGE cluster.
+% Pass different variable values to each job.
+%
+% This function does the following:
+%   - Save the variables into a temporary file
+%   - Create a wrapper script for the code, that first loads the variables
+%       and chooses their value according to the job id
+%   - Run the script in parallel (one job per set of variable values)
+%   - Delete the temporary variables file
+%
+% Note:
+%   Can be used from any linux workstation.
+%   Requires ssh connection to cluster without password.
+%
+% Syntax:
+%   run_parallel(code, varname1, value1, varname2, value2, ...)
+%   run_parallel(..., '-cluster', cluster_name)
+%
+% Input:
+%   code -
+%       Code to run, as string.
+%   varname -
+%       Variable name
+%   value -
+%       Variable value.
+%       If this is a cell array, each job will get a value of one cell.
+%       Otherwise this value will be replicated for each job.
+%       All cell arrays should have the same number of elements.
+%       The number of jobs is determined according to the size of the cell
+%       arrays.
+%   cluster_name (optional) -
+%       Name of SGE cluster to use.
+%       Default is mcluster01.
+%
+% Output:
+%   qsub log files are saved as
+%   ~/sge_parallel/run_matlab_script.[e|o][task_id].[job_id]
+%
+function run_parallel(code, varargin)
+
+% temp file for saving variables
+% note: filename uses milisec time, but uniqueness is not checked.
+data_file = sprintf('~/sge_parallel_new/sge_parallel_data_%s.mat', datestr(now, 'yyyymmddHHMMSSFFF'));
+
+% parse variables and save them
+[data, num_jobs, cluster_name] = parse_vars(varargin);
+data_dir = fileparts(data_file);
+if ~exist(data_dir, 'dir')
+    mkdir(data_dir);
+end
+save(data_file, '-struct', 'data');
+
+% generate matlab script for parallel jobs
+script = gen_script(code, data, data_file);
+
+% run in parallel
+if isempty(cluster_name)
+    sge_parallel(script, num_jobs);
+else
+    sge_parallel(script, num_jobs, cluster_name,'debug');
+end
+
+% delete data file
+delete(data_file);
+
+
+
+%--------------------------------------------------------------------------
+% Parse variables
+% Convert them to a struct where each variable is a field
+% Also find number of jobs and verify that all cell values are of same size
+% If var_list contains the pair ['-cluster', cluster_name], cluster_name is
+% used as the name of the SGE cluster (not as a variable).
+%--------------------------------------------------------------------------
+function [data, num_jobs, cluster_name] = parse_vars(var_list)
+
+cluster_name = [];
+n = numel(var_list);
+assert(mod(n, 2) == 0, 'Variables must be specified in name, value pairs');
+
+cell_size = zeros(1, n/2);
+for i = 1:2:n
+    if strcmpi(var_list{i}, '-cluster')
+        % cluster name
+        cluster_name = var_list{i+1};
+    else
+        % variable-value pair
+        data.(var_list{i}) = var_list{i+1};
+        if iscell(var_list{i+1})
+            assert(~isempty(var_list{i+1}), 'Cell variables must contain one element per job. They cannot be empty.');
+            cell_size(i) = numel(var_list{i+1});
+        end
+    end
+end
+
+num_jobs = max(1, max(cell_size));
+assert(all(cell_size(cell_size > 0) == num_jobs), 'All cell variables must have the same size');
+
+
+
+%--------------------------------------------------------------------------
+% generate matlab script for parallel jobs
+%--------------------------------------------------------------------------
+function script = gen_script(code, data, data_file)
+
+% load data
+script = sprintf('load %s;', data_file);
+
+% choose variable values
+names = fieldnames(data);
+for i = 1:numel(names)
+    if iscell(data.(names{i}))
+        command = sprintf('%s = %s{job_id};', names{i}, names{i});
+        script = [script command];
+    end
+end
+
+% run code
+script = [script code];
+
+

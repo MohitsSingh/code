@@ -1,0 +1,17 @@
+function extract_boxes(VOCopts,globalOpts,image_ids)
+%EXTRACT_BOXES preprocess each of the images in the given list to extract boxes
+%and tiny images
+%   Detailed explanation goes here
+    jump= length(image_ids)/10;
+    c = 0;
+    c_ = 0;
+    tic;
+    for c = 1:length(image_ids)        
+        if (toc > 1)
+            progressTracker(
+            tic;
+        end
+%    r     disp(c);
+        preprocess_image(VOCopts,globalOpts,image_ids{c});
+    end
+end

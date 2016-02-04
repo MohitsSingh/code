@@ -1,0 +1,7 @@
+#!/bin/tcsh
+if ($# == 1) then
+	ssh -X mcluster0$1 qsh -display $HOST$DISPLAY
+else
+	ssh -t -X mcluster0$1 "cd $cwd; $argv[2-]"
+endif
+

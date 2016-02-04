@@ -1,0 +1,20 @@
+
+addpath('~/code/SGE/');
+
+defaultOpts;
+
+test_images = textread(sprintf(globalOpts.VOCopts.imgsetpath,globalOpts.VOCopts.testset),'%s');
+train_images = textread(sprintf(globalOpts.VOCopts.imgsetpath,globalOpts.VOCopts.trainset),'%s');
+
+all_images = [train_images;test_images];
+
+code = ['cd /home/amirro/code/fragments; t;'...
+    'extract_boxes(globalOpts,img)'];
+
+cd /home/amirro/code/fragments; t;extract_boxes(globalOpts,all_images(1))
+
+images = all_images(1);
+% images = (length(train_images)+1):length(all_images);
+
+
+run_parallel(code, 'img',mat2cell(images,1,ones(1,length(images))),'-cluster', 'mcluster01');

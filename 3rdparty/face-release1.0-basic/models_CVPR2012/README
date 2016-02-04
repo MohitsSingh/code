@@ -1,0 +1,7 @@
+This folder contains two models we used to produce the curves in our paper:
+
+Xiangxin Zhu, Deva Ramanan, "Face detection, pose estimation and landmark localization in the wild", CVPR 2012
+
+- multipie_maxshare.mat: The fully shared model with 99 parts and 13 view-specific mixtures.
+
+- multipie_independent.mat: The independent model (no part sharing at all) with 1050 parts, 13 view-specific mixtures and 5 frontal expression mixtures. It is the best-performing one for landmark localization.

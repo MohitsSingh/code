@@ -1,0 +1,6 @@
+#!/bin/tcsh
+rm ~/.ssh/*
+ssh-keygen -t dsa
+cat ~/.ssh/id_dsa.pub > ~/.ssh/authorized_keys
+chmod 505 ~/.ssh/authorized_keys
+

@@ -1,0 +1,44 @@
+
+addpath('~/code/SGE/');
+
+% code = ['cd /home/amirro/code/fragments; defaultOpts;'...
+%     'globalOpts.numTrain = 200; globalOpts.det_rescale = 128;updateOpts;'...
+%     'test_images = textread(sprintf(VOCopts.imgsetpath,VOCopts.testset),''%s'');'...
+
+defaultOpts;
+tt;
+test_images = textread(sprintf(globalOpts.VOCopts.imgsetpath,globalOpts.VOCopts.testset),'%s');
+train_images = textread(sprintf(globalOpts.VOCopts.imgsetpath,globalOpts.VOCopts.trainset),'%s');
+
+all_images = [train_images;test_images];
+
+code = ['cd /home/amirro/code/fragments; tt;init;'...
+    'collectResults(globalOpts,test_images,[],0,suffix);'];                   
+L = 100;
+suffix = cell(1,L);
+img = cell(1,L);
+c = mod(1:length(test_images),L)+1;
+for k = 1:L
+    img{k} = test_images(c==k);
+    suffix{k} = num2str(k);
+end
+%        
+test_ = 1;
+if (test_)
+    img = img(1);
+    suffix = suffix(1);
+    
+end
+
+% collectResults(globalOpts,img{1},[],0,suffix{1});
+
+%run_parallel(code, 'nimage',mat2cell(images,1,ones(1,length(images))),'-cluster', 'mcluster03');
+
+run_parallel(code, 'test_images',img,'suffix',suffix,'-cluster', 'mcluster03');
+
+% code = ' cd /home/amirro/code/fragments; do_stuff(numbers);'
+
+%images = images(1:20);
+% (length(train_images)+1):length(all_images);
+
+

@@ -1,0 +1,37 @@
+close all
+cls = 'bicycle';
+id = 'comp3';
+fPath = sprintf(VOCopts.detrespath,id,cls);
+[ids,confidence,b1,b2,b3,b4]=textread(sprintf(VOCopts.detrespath,id,cls),'%s %f %f %f %f %f');
+
+[c,ic] = sort(confidence,'descend');
+ic = ic(~isnan(c));
+ids = ids(ic);
+confidence = confidence(ic);
+b1 = b1(ic);
+b2 = b2(ic);
+b3 = b3(ic);
+b4 = b4(ic);
+%%
+
+imgs_so_far = cell(0);
+
+for k = 1:1:length(ic)
+    currentID = ids{k};
+    if (strfind(img_so_far,currentID)
+    imgPath = sprintf(VOCopts.imgpath,currentID);
+    I = imread(imgPath);
+    clf;
+    imshow(I);
+    currentScore = confidence(k);
+    bbox = [b2(k) b1(k) b4(k) b3(k)];        
+    hold on;
+    plotBoxes2(bbox, 'LineWidth',2,'Color','green');
+    pause(.1)   
+end
+
+
+
+
+
+

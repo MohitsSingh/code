@@ -1,0 +1,51 @@
+function quantize_descs(globalOpts,image_ids,vocab,kdtree)
+%EXTRACT_DESCS quantize the descriptors in each image.
+%   Detailed explanation goes here
+
+% Extract PHOW descriptors
+tic;
+if (~iscell(image_ids))
+    image_ids = {image_ids};
+end
+
+for ii = 1:length(image_ids)
+    currentID = image_ids{ii};
+    if (toc > 1)
+        fprintf('quantizing descriptors for image %s %d/%d [%s%03.3f]\n', ...
+            currentID, ii, length(image_ids), '%', 100*ii/length(image_ids));
+        tic
+    end
+    
+    quantPath = getQuantFile(globalOpts,currentID);
+    descPath = getDescFile(globalOpts,currentID);
+    %
+    if (exist(quantPath,'file'))
+        %         if (~globalOpts.keepDescFiles)
+        %             if (exist(descPath,'file'))
+        %                 delete(descPath);
+        %             end
+        %         end
+        continue;
+    end
+    
+    if (~exist(descPath,'file'))
+        disp(['quantize_descs ---> calculating descriptors for image' currentID ]);
+        imagePath = getImageFile(globalOpts,currentID);
+        im = imread(imagePath);        
+        [F,D] = globalOpts.descfun(im, globalOpts.phowOpts{:}); %#ok<ASGLU>        
+%         save(descPath,'F','D');
+    else
+        load(descPath);
+    end
+    
+    quantized = double(vl_kdtreequery(kdtree, vocab, D,...
+        'MaxComparisons', 15)) ; %#ok<NASGU>
+    
+    save(quantPath,'quantized','F');
+    if (~globalOpts.keepDescFiles)
+        if (exist(descPath,'file'))
+            delete(descPath);
+        end
+    end
+    
+end

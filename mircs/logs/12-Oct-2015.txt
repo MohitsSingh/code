@@ -1,0 +1,323 @@
+2015-10-12 10:36:10,723 INFO training first phase... - run_pipeline
+2015-10-12 10:40:16,821 INFO training first phase... - run_pipeline
+2015-10-12 10:46:11,085 INFO training first phase... - run_pipeline
+2015-10-12 10:49:58,639 INFO training first phase... - run_pipeline
+2015-10-12 14:12:06,418 INFO training first phase... - run_pipeline
+2015-10-12 14:12:31,648 INFO training first phase... - run_pipeline
+2015-10-12 14:13:02,142 INFO training first phase... - run_pipeline
+2015-10-12 14:14:24,802 INFO training first phase... - run_pipeline
+2015-10-12 15:20:23,105 INFO training first phase... - run_pipeline
+2015-10-12 15:21:16,766 INFO training first phase... - run_pipeline
+2015-10-12 15:25:18,786 INFO training first phase... - run_pipeline
+2015-10-12 15:28:27,148 INFO training first phase... - run_pipeline
+2015-10-12 15:57:35,962 INFO training first phase... - run_pipeline
+2015-10-12 15:57:42,642 INFO training first phase... - run_pipeline
+2015-10-12 15:57:58,269 INFO training first phase... - run_pipeline
+2015-10-12 15:58:16,970 INFO training first phase... - run_pipeline
+2015-10-12 16:00:37,752 INFO training first phase... - run_pipeline
+2015-10-12 16:01:45,425 INFO training first phase... - run_pipeline
+2015-10-12 16:02:32,425 INFO training first phase... - run_pipeline
+2015-10-12 16:06:30,352 INFO training first phase... - run_pipeline
+2015-10-12 16:08:31,522 INFO training first phase... - run_pipeline
+2015-10-12 16:11:45,164 INFO training first phase... - run_pipeline
+2015-10-12 16:12:50,676 INFO training first phase... - run_pipeline
+2015-10-12 16:13:23,344 INFO training first phase... - run_pipeline
+2015-10-12 16:13:43,976 INFO training first phase... - run_pipeline
+2015-10-12 16:24:39,616 WARN invalid image found : 340 --> brushing_teeth_081.jpg
+skipping this image!!! - collectSamples
+2015-10-12 16:24:44,453 WARN invalid image found : 1018 --> smoking_044.jpg
+skipping this image!!! - collectSamples
+2015-10-12 16:24:44,492 WARN invalid image found : 1094 --> smoking_120.jpg
+skipping this image!!! - collectSamples
+2015-10-12 16:34:20,347 INFO training first phase... - run_pipeline
+2015-10-12 16:34:54,978 INFO training first phase... - run_pipeline
+2015-10-12 16:38:17,372 INFO training first phase... - run_pipeline
+2015-10-12 16:39:29,787 INFO training first phase... - run_pipeline
+2015-10-13 07:25:08,307 INFO training first phase... - run_pipeline
+2015-10-13 07:26:29,053 WARN invalid image found : 88 --> blowing_bubbles_088.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:26:48,009 WARN invalid image found : 168 --> blowing_bubbles_168.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:26:48,947 WARN invalid image found : 178 --> blowing_bubbles_178.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:26:48,982 WARN invalid image found : 180 --> blowing_bubbles_180.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:26:49,999 WARN invalid image found : 188 --> blowing_bubbles_188.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:27:01,110 WARN invalid image found : 221 --> blowing_bubbles_221.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:27:38,814 WARN invalid image found : 372 --> brushing_teeth_113.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:27:49,185 WARN invalid image found : 418 --> brushing_teeth_159.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:29:36,276 WARN invalid image found : 717 --> phoning_002.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:29:53,488 WARN invalid image found : 770 --> phoning_055.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:29:53,550 WARN invalid image found : 781 --> phoning_066.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:21,493 WARN invalid image found : 901 --> phoning_186.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:25,407 WARN invalid image found : 929 --> phoning_214.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:33,539 WARN invalid image found : 957 --> phoning_242.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:33,588 WARN invalid image found : 959 --> phoning_244.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:37,711 WARN invalid image found : 979 --> smoking_005.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:38,855 WARN invalid image found : 985 --> smoking_011.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:39,360 WARN invalid image found : 991 --> smoking_017.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:39,399 WARN invalid image found : 994 --> smoking_020.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:40,235 WARN invalid image found : 1000 --> smoking_026.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:40,271 WARN invalid image found : 1002 --> smoking_028.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:40,305 WARN invalid image found : 1005 --> smoking_031.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:40,722 WARN invalid image found : 1012 --> smoking_038.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:45,462 WARN invalid image found : 1046 --> smoking_072.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:45,497 WARN invalid image found : 1048 --> smoking_074.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:45,531 WARN invalid image found : 1049 --> smoking_075.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:45,563 WARN invalid image found : 1050 --> smoking_076.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:46,995 WARN invalid image found : 1071 --> smoking_097.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:48,555 WARN invalid image found : 1087 --> smoking_113.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:50,983 WARN invalid image found : 1101 --> smoking_127.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:51,053 WARN invalid image found : 1102 --> smoking_128.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:51,121 WARN invalid image found : 1104 --> smoking_130.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:52,394 WARN invalid image found : 1111 --> smoking_137.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:52,427 WARN invalid image found : 1114 --> smoking_140.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:52,462 WARN invalid image found : 1115 --> smoking_141.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:53,626 WARN invalid image found : 1120 --> smoking_146.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:53,661 WARN invalid image found : 1127 --> smoking_153.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:54,630 WARN invalid image found : 1137 --> smoking_163.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:54,663 WARN invalid image found : 1141 --> smoking_167.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:54,696 WARN invalid image found : 1142 --> smoking_168.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:55,464 WARN invalid image found : 1146 --> smoking_172.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:55,794 WARN invalid image found : 1150 --> smoking_176.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:56,575 WARN invalid image found : 1156 --> smoking_182.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:56,616 WARN invalid image found : 1159 --> smoking_185.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:57,764 WARN invalid image found : 1165 --> smoking_191.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:58,189 WARN invalid image found : 1167 --> smoking_193.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:30:58,740 WARN invalid image found : 1176 --> smoking_202.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:31:00,725 WARN invalid image found : 1189 --> smoking_215.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:31:02,944 WARN invalid image found : 1197 --> smoking_223.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:31:03,529 WARN invalid image found : 1205 --> smoking_231.jpg
+skipping this image!!! - collectSamples
+2015-10-13 07:31:03,870 WARN invalid image found : 1210 --> smoking_236.jpg
+skipping this image!!! - collectSamples
+2015-10-13 08:13:03,085 INFO training first phase... - run_pipeline
+2015-10-13 08:14:19,665 WARN invalid image found at test time: 19 --> blowing_bubbles_019.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:14:53,886 WARN invalid image found at test time: 27 --> blowing_bubbles_027.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:16:16,677 WARN invalid image found at test time: 80 --> blowing_bubbles_080.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:16:23,762 WARN invalid image found at test time: 93 --> blowing_bubbles_093.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:17:09,330 WARN invalid image found at test time: 136 --> blowing_bubbles_136.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:17:09,365 WARN invalid image found at test time: 137 --> blowing_bubbles_137.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:17:34,632 WARN invalid image found at test time: 175 --> blowing_bubbles_175.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:17:44,464 WARN invalid image found at test time: 192 --> blowing_bubbles_192.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:17:50,961 WARN invalid image found at test time: 199 --> blowing_bubbles_199.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:17:59,951 WARN invalid image found at test time: 210 --> blowing_bubbles_210.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:18:06,502 WARN invalid image found at test time: 215 --> blowing_bubbles_215.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:18:06,913 WARN invalid image found at test time: 216 --> blowing_bubbles_216.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:18:07,253 WARN invalid image found at test time: 217 --> blowing_bubbles_217.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:18:36,164 WARN invalid image found at test time: 239 --> blowing_bubbles_239.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:18:46,438 WARN invalid image found at test time: 243 --> blowing_bubbles_243.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:19:05,568 WARN invalid image found at test time: 264 --> brushing_teeth_005.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:19:52,598 WARN invalid image found at test time: 340 --> brushing_teeth_081.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:19:59,099 WARN invalid image found at test time: 348 --> brushing_teeth_089.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:20:20,054 WARN invalid image found at test time: 386 --> brushing_teeth_127.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:20:39,378 WARN invalid image found at test time: 420 --> brushing_teeth_161.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:21:00,310 WARN invalid image found at test time: 469 --> drinking_010.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:21:47,600 WARN invalid image found at test time: 504 --> drinking_045.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:22:02,090 WARN invalid image found at test time: 518 --> drinking_059.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:23:03,765 WARN invalid image found at test time: 568 --> drinking_109.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:23:04,166 WARN invalid image found at test time: 571 --> drinking_112.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:23:16,919 WARN invalid image found at test time: 585 --> drinking_126.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:23:42,437 WARN invalid image found at test time: 613 --> drinking_154.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:23:43,626 WARN invalid image found at test time: 617 --> drinking_158.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:24:00,634 WARN invalid image found at test time: 636 --> drinking_177.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:24:06,904 WARN invalid image found at test time: 650 --> drinking_191.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:24:18,311 WARN invalid image found at test time: 673 --> drinking_214.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:24:25,371 WARN invalid image found at test time: 683 --> drinking_224.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:25:00,665 WARN invalid image found at test time: 719 --> phoning_004.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:25:29,541 WARN invalid image found at test time: 753 --> phoning_038.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:25:32,956 WARN invalid image found at test time: 758 --> phoning_043.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:25:40,459 WARN invalid image found at test time: 768 --> phoning_053.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:25:53,754 WARN invalid image found at test time: 788 --> phoning_073.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:25:54,203 WARN invalid image found at test time: 789 --> phoning_074.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:25:54,788 WARN invalid image found at test time: 797 --> phoning_082.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:26:26,421 WARN invalid image found at test time: 838 --> phoning_123.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:26:32,053 WARN invalid image found at test time: 848 --> phoning_133.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:26:42,757 WARN invalid image found at test time: 869 --> phoning_154.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:26:50,884 WARN invalid image found at test time: 880 --> phoning_165.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:26:54,535 WARN invalid image found at test time: 888 --> phoning_173.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:26:59,928 WARN invalid image found at test time: 899 --> phoning_184.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:27:08,459 WARN invalid image found at test time: 908 --> phoning_193.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:27:11,059 WARN invalid image found at test time: 911 --> phoning_196.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:27:12,154 WARN invalid image found at test time: 913 --> phoning_198.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:27:24,908 WARN invalid image found at test time: 923 --> phoning_208.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:27:42,212 WARN invalid image found at test time: 948 --> phoning_233.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:28:07,820 WARN invalid image found at test time: 974 --> phoning_259.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:28:09,179 WARN invalid image found at test time: 977 --> smoking_003.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:28:12,793 WARN invalid image found at test time: 981 --> smoking_007.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:28:20,181 WARN invalid image found at test time: 1003 --> smoking_029.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:28:28,766 WARN invalid image found at test time: 1013 --> smoking_039.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:28:28,798 WARN invalid image found at test time: 1014 --> smoking_040.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:28:31,721 WARN invalid image found at test time: 1017 --> smoking_043.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:28:31,995 WARN invalid image found at test time: 1018 --> smoking_044.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:28:33,416 WARN invalid image found at test time: 1023 --> smoking_049.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:28:33,902 WARN invalid image found at test time: 1027 --> smoking_053.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:28:34,664 WARN invalid image found at test time: 1029 --> smoking_055.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:28:34,699 WARN invalid image found at test time: 1030 --> smoking_056.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:28:34,863 WARN invalid image found at test time: 1031 --> smoking_057.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:28:38,879 WARN invalid image found at test time: 1041 --> smoking_067.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:28:38,914 WARN invalid image found at test time: 1042 --> smoking_068.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:28:44,947 WARN invalid image found at test time: 1054 --> smoking_080.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:28:47,208 WARN invalid image found at test time: 1058 --> smoking_084.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:28:55,212 WARN invalid image found at test time: 1062 --> smoking_088.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:28:57,958 WARN invalid image found at test time: 1070 --> smoking_096.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:28:58,092 WARN invalid image found at test time: 1072 --> smoking_098.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:01,701 WARN invalid image found at test time: 1081 --> smoking_107.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:02,075 WARN invalid image found at test time: 1083 --> smoking_109.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:03,036 WARN invalid image found at test time: 1085 --> smoking_111.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:05,763 WARN invalid image found at test time: 1090 --> smoking_116.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:07,524 WARN invalid image found at test time: 1093 --> smoking_119.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:12,073 WARN invalid image found at test time: 1105 --> smoking_131.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:15,609 WARN invalid image found at test time: 1112 --> smoking_138.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:29,604 WARN invalid image found at test time: 1135 --> smoking_161.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:32,856 WARN invalid image found at test time: 1145 --> smoking_171.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:34,397 WARN invalid image found at test time: 1152 --> smoking_178.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:35,018 WARN invalid image found at test time: 1153 --> smoking_179.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:35,053 WARN invalid image found at test time: 1157 --> smoking_183.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:35,082 WARN invalid image found at test time: 1158 --> smoking_184.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:35,115 WARN invalid image found at test time: 1160 --> smoking_186.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:36,102 WARN invalid image found at test time: 1162 --> smoking_188.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:52,800 WARN invalid image found at test time: 1193 --> smoking_219.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:54,622 WARN invalid image found at test time: 1203 --> smoking_229.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:54,917 WARN invalid image found at test time: 1207 --> smoking_233.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:55,893 WARN invalid image found at test time: 1209 --> smoking_235.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:57,980 WARN invalid image found at test time: 1213 --> smoking_239.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:58,015 WARN invalid image found at test time: 1214 --> smoking_240.jpg
+setting this ground truth to empty image - collectSamples
+2015-10-13 08:29:58,062 WARN invalid image found at test time: 1215 --> smoking_241.jpg
+setting this ground truth to empty image - collectSamples

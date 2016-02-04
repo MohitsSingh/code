@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title>Upper Body Configuration Detector - README</title>
+</head>
+<body>
+<div id="layout-content">
+<div id="toptitle">
+<h1>Upper Body Configuration Detector &ndash; version 1</h1>
+</div>
+<p>By: Minh Hoai Nguyen (minhhoai@gmail.com)              </p>
+<p>Date: 20 Mar 2014</p>
+<p>Last modified: 18 Apr 2014</p>
+<h2>Requirements</h2>
+<ul>
+<li><p>Code for DPM: <a href="http://www.cs.berkeley.edu/~rbg/latent/voc-release5.tgz">voc-release5</a></p>
+</li>
+</ul>
+<h2>Compilation</h2>
+<p>Most of the code is in Matlab, which does not require compiliation.
+The only function that requires compilation is dt_ramanan.cc for generalize distance transform.
+We include precompiled binaries for Mac OS 10.9 and Linux 64 bit.
+If you need to compile the file, open Matlab and run:</p>
+<p>&gt; mex dt_ramanan.cc </p>
+<h2>Demo</h2>
+<p>&gt; MUB_Demo.demo1()</p>
+<p>&gt; MUB_Demo.demo2()</p>
+<p>&gt; MUB_Demo.demo3()</p>
+<p>&gt; MUB_Demo.demo4()</p>
+<h2>Limitation</h2>
+<p>This version contains pretrained models and testing code.
+Training data and training code will be made available in future release. </p>
+<h2>Citation</h2>
+<p>If you find the code useful, please cite:</p>
+<p>Hoai, M. &amp; Zisserman, A. (2014) 
+Talking Heads: Detecting Humans and Recognizing Their Interactions.
+Proceedings of IEEE Conference on Computer Vision and Pattern Recognition</p>
+<div id="footer">
+<div id="footer-text">
+Page generated 2014-04-18 18:03:24 BST, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
+</div>
+</div>
+</div>
+</body>
+</html>

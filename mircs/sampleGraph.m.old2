@@ -1,0 +1,93 @@
+function configurations = sampleGraph(imgData,useGT,nodes,edges,myParams)
+% actually, sampling a chain.
+
+
+% get the ground-truth for this image, if available
+
+I = imgData.I;
+mouthCenter = imgData.face_landmarks.xy(3,:);
+configuration = {};
+
+if useGT
+    configurations = {};
+    for iNode = 1:length(nodes)
+        curNode = nodes(iNode);
+        switch curNode.name
+            case 'mouth'
+                curNode.bbox = inflatebbox(mouthCenter, fliplr(curNode.spec.size), 'both', true);
+                curNode.poly = box2Pts(curNode.bbox);
+            case 'obj'
+                startPt = imgData.face_landmarks.xy(3,:);
+                avgWidth = curNode.spec.avgWidth;
+                avgLength = curNode.spec.avgLength;
+                [rois] = hingedSample(startPt,avgWidth,avgLength,0:15:360);
+                %                 p = randi(length(rois),1);
+                %                 rois = rois(p);
+                gt_region = poly2mask2(imgData.gt_obj, size2(I));
+                roiMasks = cellfun2(@(x) poly2mask2(x.xy,size2(I)),rois);
+                %                     roiPatches = cellfun2(@(x) rectifyWindow(I,x,[avgLength avgWidth]),rois);
+                [~,ints,uns] = regionsOverlap(roiMasks,gt_region);
+                [r,ir] = max(ints);
+                curNode.poly = rois{ir}.xy;
+                %                     curNode.poly =
+            case 'hand'
+                curNode.poly = box2Pts(imgData.gt_hand);
+        end
+        configuration{iNode} = curNode;
+    end
+    configurations = {configuration};
+else
+    configurations = {};
+    for z = 1
+        newConfig = {};
+        
+        for iNode = 1:length(nodes)
+            
+            curNode = nodes(iNode);
+            % still using the ground-truth mouth center
+            switch curNode.name
+                case 'mouth'
+                    curNode.bbox = inflatebbox(mouthCenter, fliplr(curNode.spec.size), 'both', true);
+                    curNode.poly = box2Pts(curNode.bbox);
+                case 'obj'
+                    %                 startPt = configuration(iNode-1)%imgData.face_landmarks.xy(3,:);
+                    startPt = boxCenters(newConfig{iNode-1}.bbox);
+                    avgWidth = curNode.spec.avgWidth;
+                    avgLength = curNode.spec.avgLength;
+                    thetas = 0:15:360;
+                    p = randi(length(thetas));
+                    thetas = thetas(p);
+                    [rois] = hingedSample(startPt,avgWidth,avgLength,thetas);
+                    theta = rois{1}.theta;
+                    %                 obj_poly = imgData.gt_obj;
+                    %                 gt_region = poly2mask2(obj_poly,size2(I));
+                    %                 roiMasks = cellfun2(@(x) poly2mask2(x.xy,size2(I)),rois);
+                    %                 [~,ints,uns] = regionsOverlap(roiMasks,gt_region);
+                    %                 [r,ir] = max(ints);
+                    curNode.params = rois{1};
+                    curNode.poly = rois{1}.xy;
+                    
+                    
+                    %                 curNode.poly = rois{ir};
+                    %                     curNode.poly =
+                case 'hand'
+                    % generate a bounding box around the end of the previous
+                    % node
+                    
+                    prevNode = newConfig{iNode-1};
+                    p = prevNode.params;
+                    u = p.endPoint-p.startPoint;
+                    plotPolygons(p.endPoint,'m+');
+                    u1 = p.endPoint+u/3;
+                    quiver(p.endPoint(1),p.endPoint(2),u(1),u(2));
+                    curNode.bbox = inflatebbox(u1,[100 100],'both',true);
+                    curNode.poly = box2Pts(curNode.bbox);
+                    %curNode.poly = box2Pts(imgData.gt_hand);
+                    % get some edge boxes which is attached to the previous
+                    % box, or generate a box on your own
+            end
+            newConfig{iNode} = curNode;
+        end
+        configurations{end+1} = newConfig;
+    end
+end
